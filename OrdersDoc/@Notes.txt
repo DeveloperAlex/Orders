@@ -27,4 +27,8 @@ ngmodules.org
 
 
 
+Presumptions Made:
+- We're assuming all stores are near enough to share each others inventory/warehouse.
+
+
 
