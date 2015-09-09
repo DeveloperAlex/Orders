@@ -1,0 +1,24 @@
+
+
+Get the weather for the store location:
+  http://openweathermap.org/api
+Udemy course that uses OpenWeatherMap.org:
+  https://www.udemy.com/learn-angularjs/learn/#/lecture/1669596
+
+
+
+pm2 = process manager 2 - to run node.js app.
+
+
+John Papa's style guide
+
+
+Have kitchenOpen show its orders as new ones are added:
+  https://github.com/btford/angular-socket-io
+
+
+Make an Order Pump - so its easier to see it working.  One screen can be the pump - while I manually add orders on another orderNew screen.
+
+
+
+
