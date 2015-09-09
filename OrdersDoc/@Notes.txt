@@ -20,5 +20,11 @@ Have kitchenOpen show its orders as new ones are added:
 Make an Order Pump - so its easier to see it working.  One screen can be the pump - while I manually add orders on another orderNew screen.
 
 
+Tokens - how am I having each user have an auth token?
+
+
+ngmodules.org
+
+
 
 
