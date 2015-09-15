@@ -3,9 +3,9 @@
 // references each time - only first time.
 
 //angular.module("ordersApp", ['OTPWeb.Directives', 'ngynSelectKey', 'bento.modern', 'aa.notify', 'ui.router', 'ui.bootstrap', 'angular-data.DSCacheFactory', 'wijmo', 'wijspread']);
-angular.module("ordersapp", []);   //['ui.router', 'ui.bootstrap']);
+angular.module("ordersApp", []);   //['ui.router', 'ui.bootstrap']);
 
-angular.module("ordersapp")
+angular.module("ordersApp")
     .run(['$rootScope',
         function ($rootScope) {
             //Debugging hooks
@@ -32,10 +32,11 @@ angular.module("ordersapp")
 
 
 
-angular.module('ordersapp')
+angular.module('ordersApp')
     .controller('testController', ['$scope', function($scope) {
         $scope.name = 'Testing 123';
     }]);
 
 //angular.module("ordersApp")
 //.directive();
+
