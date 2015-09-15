@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Orders Test Page</title>
 </head>
-<body>
+<body ng-app="ordersApp">
 
     <script src="bower_components/angular/angular.js"></script>
     <link href="http://blah.css" rel="stylesheet" type="text/css" />
 
     <script src="app/appConfig/app.js"></script>
 
-    <div ng-app="ordersApp">
+    <div>
         <div ng-controller="testController">
             {{name}}
         </div>
+
+
+        <my-directive/>
+
     </div>
 
 

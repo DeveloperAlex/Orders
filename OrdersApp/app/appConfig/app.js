@@ -40,3 +40,13 @@ angular.module('ordersApp')
 //angular.module("ordersApp")
 //.directive();
 
+
+
+angular.module('ordersApp')
+.directive('myDirective', function() {
+    return {
+        restrict: 'E',
+        template: '<div>This is my directive</div>'
+    };
+});
+
