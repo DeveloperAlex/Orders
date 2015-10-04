@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersApp", "OrdersApp\OrdersApp.csproj", "{5609E86A-82BA-4CDF-ABAC-EAE6198B5EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersRestSvc", "OrdersRestSvc\OrdersRestSvc.csproj", "{26903064-9763-4276-AFBF-FAB52E5FE8FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E652A4AA-F003-4BA6-8810-CA6FA093FBF7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDb", "OrdersDb\OrdersDb.csproj", "{EB2CF800-824D-47DF-9546-31F2430D7484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersDoc", "OrdersDoc\OrdersDoc.csproj", "{C58F3BED-9037-45A5-88D5-B15A94D0EF63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5609E86A-82BA-4CDF-ABAC-EAE6198B5EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5609E86A-82BA-4CDF-ABAC-EAE6198B5EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5609E86A-82BA-4CDF-ABAC-EAE6198B5EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26903064-9763-4276-AFBF-FAB52E5FE8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26903064-9763-4276-AFBF-FAB52E5FE8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26903064-9763-4276-AFBF-FAB52E5FE8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2CF800-824D-47DF-9546-31F2430D7484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2CF800-824D-47DF-9546-31F2430D7484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2CF800-824D-47DF-9546-31F2430D7484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58F3BED-9037-45A5-88D5-B15A94D0EF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58F3BED-9037-45A5-88D5-B15A94D0EF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58F3BED-9037-45A5-88D5-B15A94D0EF63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
