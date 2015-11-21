@@ -39,6 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\appConfig\app.js" />
+    <Content Include="app\appConfig\constants.js" />
+    <Content Include="app\appConfig\routes.js" />
     <Content Include="app\common\rest.svc.js" />
     <Content Include="index.html" />
     <Content Include="screens\admin\admin.html" />
@@ -58,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\feature\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
