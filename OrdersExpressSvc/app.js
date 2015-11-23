@@ -1,4 +1,10 @@
-﻿var express = require('express');
+﻿var mongoose = require('mongoose');
+//var db = mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds037283.mongolab.com:37283/orders');
+var db = mongoose.connect('mongodb://ordersUser:o1r2d3e4r5s6U7s8e9r@ds037283.mongolab.com:37283/orders');
+var Employee = require('./models/employeeModel.js');
+
+
+var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -6,6 +12,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var api = require('./routes/api.js');
 var users = require('./routes/users');
 
 var app = express();
@@ -24,6 +31,7 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/api', api);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
