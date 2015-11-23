@@ -1,11 +1,17 @@
 ﻿"use strict";
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema();
+var Schema = mongoose.Schema;
 
 var orderModel = new Schema({
-    //user: { type: String },
-    //pw: { type: String }
+    _id: { type: String },
+    server: { type: String },
+    orderNum: { type: String },
+    orderTime: { type: Date },
+    items: { type: { food: String, quantity: String } }
 });
+
+
+module.exports = mongoose.model('Order', orderModel);
 
 
 
