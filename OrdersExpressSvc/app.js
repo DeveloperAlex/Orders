@@ -1,11 +1,7 @@
-﻿var mongoose = require('mongoose');
-//var db = mongoose.connect('mongodb://ordersUser:o1r2d3e4r5s6U7s8e9r@ds037283.mongolab.com:37283/orders');
-//var Employee = require('./models/employeeModel.js');
-
-
+﻿"use strict";
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+//var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
