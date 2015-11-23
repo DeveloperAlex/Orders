@@ -1,7 +1,6 @@
 ﻿var mongoose = require('mongoose');
-//var db = mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds037283.mongolab.com:37283/orders');
-var db = mongoose.connect('mongodb://ordersUser:o1r2d3e4r5s6U7s8e9r@ds037283.mongolab.com:37283/orders');
-var Employee = require('./models/employeeModel.js');
+//var db = mongoose.connect('mongodb://ordersUser:o1r2d3e4r5s6U7s8e9r@ds037283.mongolab.com:37283/orders');
+//var Employee = require('./models/employeeModel.js');
 
 
 var express = require('express');
