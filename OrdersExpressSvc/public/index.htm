@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Redirect to Orders App</title>
+    <script type="text/javascript">
+        function Redirect() {
+            window.location = "http://app.developeralex.com:8080";
+        }
+        document.write("You will be redirected in 2 sec.");
+        setTimeout('Redirect()', 2000);
+    </script>
 </head>
 <body>
-<div>
-    <a href="http://app.developeralex.com:8080">Go to http://app.developeralex.com:8080</a>
-</div>
 </body>
 </html>
