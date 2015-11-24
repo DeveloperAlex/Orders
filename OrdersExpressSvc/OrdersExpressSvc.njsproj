@@ -35,6 +35,7 @@
     <Compile Include="models\menuModel.js" />
     <Compile Include="models\orderModel.js" />
     <Compile Include="routes\api.js" />
+    <Compile Include="routes\public.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
