@@ -57,7 +57,7 @@
     <Content Include="public\mockScreens\store\store.html" />
     <Content Include="public\mockScreens\store\storeAddEdit.html" />
     <Content Include="public\stylesheets\style.styl" />
-    <Content Include="public\test.html" />
+    <Content Include="public\index.htm" />
     <Content Include="README.md" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
