@@ -7,5 +7,6 @@ Notes:
 * pm2 = npm package to keep node.js running forever. https://www.npmjs.com/package/pm2  https://github.com/Unitech/pm2
 >> iisnode = not used - https://github.com/tjanczuk/iisnode
 
+* maybe try: https://github.com/pm2-hive/pm2-auto-pull
 
 
