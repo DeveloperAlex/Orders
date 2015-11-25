@@ -5,11 +5,12 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var lessMiddleware = require('less-middleware');  //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
 
 var routes = require('./routes/index');
 var api = require('./routes/api');
 //var publicDir = require('./routes/public');
-var users = require('./routes/users');
+//var users = require('./routes/users');
 
 var app = express();
 
@@ -23,12 +24,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+
+//app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+app.use(lessMiddleware(__dirname + '/public'));  //Must come before "express.static".
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/api', api);
-app.use('/users', users);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

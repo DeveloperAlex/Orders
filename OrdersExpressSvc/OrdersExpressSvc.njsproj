@@ -57,6 +57,7 @@
     <Content Include="public\mockScreens\store\menu\menuitem\menuitemAddEdit.html" />
     <Content Include="public\mockScreens\store\store.html" />
     <Content Include="public\mockScreens\store\storeAddEdit.html" />
+    <Content Include="public\stylesheets\style.less" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="public\index.htm" />
     <Content Include="README.md" />
