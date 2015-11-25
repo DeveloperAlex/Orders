@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+//app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public'));  //Must come before "express.static".
 app.use(express.static(path.join(__dirname, 'public')));
 

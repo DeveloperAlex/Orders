@@ -1,5 +1,5 @@
 ﻿"use strict";
-var mongoose = require('mongoose');
+var mongoose = require('mongoose');  //http://mongoosejs.com/docs/api.html
 var Schema = mongoose.Schema;
 
 var employeeModel = new Schema({

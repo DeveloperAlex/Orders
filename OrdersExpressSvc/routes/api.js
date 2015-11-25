@@ -2,8 +2,9 @@
 var express = require('express');
 var router = express.Router();
 var passwords = require('../passwords');
-var mongoose = require('mongoose');  //https://mongolab.com/databases/orders
-var db = mongoose.connect(passwords.mongolab_com_orders);
+var mongoose = require('mongoose');  //http://mongoosejs.com/docs/api.html
+mongoose.set('debug', true);
+var db = mongoose.connect(passwords.mongolab_com_orders);  //https://mongolab.com/databases/orders
 
 var Employee = require('../models/employeeModel.js');
 var Menu = require('../models/menuModel.js');
@@ -19,14 +20,19 @@ router.use(function (req, res, next) {
 });
 
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 /* GET home page. */
 router.get('/', function (req, res) {
     var responseJson = { choices: "employee, menu, order" };
     res.json(responseJson);
 });
 
-router.get('/employee', function (req, res) {
-    var query = req.query;  //Works: http://localhost:1337/api/employee?user=Anne
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+router.route('/employee')
+.get(function (req, res) {
+    var query = req.query;  //Works: http://localhost:8080/api/employee?user=Anne
     Employee.find(query, function (err, employee) {
         if (err) {
             res.status(500).send(err);
@@ -34,10 +40,26 @@ router.get('/employee', function (req, res) {
             res.json(employee);
         }
     });
-
 });
 
 
+router.route('/employee/:employeeId')
+.get(function (req, res) {
+    Employee.findById(req.params.employeeId, function (err, employee) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.json(employee);
+        }
+    });
+});
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 router.get('/menu', function (req, res) {
     var query = req.query;
     Menu.find(query, function (err, menu) {
@@ -51,6 +73,7 @@ router.get('/menu', function (req, res) {
 });
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 router.get('/order', function (req, res) {
     var query = req.query;
     Order.find(query, function (err, order) {
@@ -64,4 +87,5 @@ router.get('/order', function (req, res) {
 });
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = router;
