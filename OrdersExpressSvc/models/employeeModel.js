@@ -3,10 +3,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var employeeModel = new Schema({
-    _id: { type: String },
-    user: { type: String },
-    pw: { type: String }
-    ,admin: { type: Boolean, default: false }
+    _id: { type: String }
+    //,user: { type: String }
+    //,pw: { type: String }
+    //,admin: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Employee', employeeModel);
