@@ -1,9 +1,15 @@
 ﻿"use strict";
-var fs = require('fs');  //Eventually read passwords from a file: c:/passwords.json
+var fs = require('fs');
 
-
-var passwords = {
-    mongolab_com_orders: 'mongodb://ordersUser:o1r2d3e4r5s6U7s8e9r@ds037283.mongolab.com:37283/orders'
+try {
+    var dir = __dirname;
+    dir = dir.substr(0, dir.lastIndexOf('\\'));
+    dir = dir.substr(0, dir.lastIndexOf('\\'));
+    var file = dir + '\\passwords.json';
+    console.log('Using passwords file= ' + file);
+    var obj = JSON.parse(fs.readFileSync(file, 'utf8'));
+} catch (e) {
+    console.log('Unable to find ' + file + '.  Error= ' + e);    
 };
 
-module.exports = passwords;
+module.exports = obj;
