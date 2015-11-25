@@ -4,27 +4,12 @@ var Schema = mongoose.Schema;
 
 var menuModel = new Schema({
     _id: { type: String },
-    mealtime: { type: String }
-    //items: { type: { category: String, title: String , price: String , prepTime: String } }
+    mealtime: { type: String },
+    items: { type: { category: String, title: String , price: String , prepTime: String } }
     //items: { type: Object }
 });
 
 module.exports = mongoose.model('Menu', menuModel);
-
-
-
-//"use strict";
-//var mongoose = require('mongoose');
-//var Schema = mongoose.Schema;
-//
-//var employeeModel = new Schema({
-//    _id: { type: String },
-//    user: { type: String },
-//    pw: { type: String }
-//    ,admin: { type: Boolean, default: false }
-//});
-//
-//module.exports = mongoose.model('Employee', employeeModel);
 
 
 

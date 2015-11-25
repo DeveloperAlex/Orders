@@ -42,7 +42,6 @@ router.route('/employee')
     });
 });
 
-
 router.route('/employee/:employeeId')
 .get(function (req, res) {
     Employee.findById(req.params.employeeId, function (err, employee) {
@@ -53,10 +52,6 @@ router.route('/employee/:employeeId')
         }
     });
 });
-
-
-
-
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
