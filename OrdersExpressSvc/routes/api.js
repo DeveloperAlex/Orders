@@ -30,8 +30,7 @@ router.get('/', function (req, res) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-router.route('/employee')
-.get(function (req, res) {
+router.route('/employee').get(function (req, res) {
     var query = req.query;  //Works: http://localhost:8080/api/employee?user=Anne
     Employee.find(query, function (err, employee) {
         if (err) {
@@ -42,8 +41,7 @@ router.route('/employee')
     });
 });
 
-router.route('/employee/:employeeId')
-.get(function (req, res) {
+router.route('/employee/:employeeId').get(function (req, res) {
     Employee.findById(req.params.employeeId, function (err, employee) {
         if (err) {
             res.status(500).send(err);
@@ -55,7 +53,7 @@ router.route('/employee/:employeeId')
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-router.get('/menu', function (req, res) {
+router.route('/menu').get(function (req, res) {
     var query = req.query;
     Menu.find(query, function (err, menu) {
         if (err) {
@@ -64,12 +62,21 @@ router.get('/menu', function (req, res) {
             res.json(menu);
         }
     });
+});
 
+router.route('/menu/:menuId').get(function (req, res) {
+    Menu.findById(req.params.menuId, function (err, menu) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.json(menu);
+        }
+    });
 });
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-router.get('/order', function (req, res) {
+router.route('/order').get(function (req, res) {
     var query = req.query;
     Order.find(query, function (err, order) {
         if (err) {
@@ -78,7 +85,16 @@ router.get('/order', function (req, res) {
             res.json(order);
         }
     });
+});
 
+router.route('/order/:orderId').get(function (req, res) {
+    Order.findById(req.params.orderId, function (err, order) {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.json(order);
+        }
+    });
 });
 
 

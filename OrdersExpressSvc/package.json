@@ -7,8 +7,8 @@
   },
   "description": "OrdersExpressSvc",
   "author": {
-    "name": "devel_000",
-    "email": ""
+    "name": "DeveloperAlex",
+    "email": "developeralex@gmail.com"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
