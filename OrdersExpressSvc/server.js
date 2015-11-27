@@ -17,10 +17,10 @@ app.use(function (req, res, next) {
     var host = req.headers.host;
     if (host !== 'localhost:8080' || host.indexOf('developeralex') !== -1 && host.indexOf('8080') !== -1) {
         //res.close();
-        res.send('1');
+        res.send('1 host= ' + host);
     } else {
         //res.close();  //Does this work? Nope.
-        res.send('2');
+        res.send('2 host= ' + host);
     }
     next();
 });
