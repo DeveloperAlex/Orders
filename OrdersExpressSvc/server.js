@@ -13,15 +13,9 @@ var api = require('./routes/api');
 
 var app = express();
 app.use(function (req, res, next) {
-    //Attempting to filter out bogus calls to my node-express server app.
     var host = req.headers.host;
-    //if (host !== 'localhost:8080' || host.indexOf('developeralex') !== -1 && host.indexOf('8080') !== -1) {
-    if (host.indexOf('localhost:8080') !== -1 || host.indexOf('developeralex.com:8080') !== -1) {
-        //res.close();
-        res.send('1 host= ' + host);
-    } else {
-        //res.close();  //Does this work? Nope.
-        res.send('2 host= ' + host);
+    if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
+        res.send('');  //Bad request - stop processing it.
     }
     next();
 });
