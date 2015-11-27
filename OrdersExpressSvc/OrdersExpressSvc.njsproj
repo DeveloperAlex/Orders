@@ -30,7 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
+    <Compile Include="server.js" />
     <Compile Include="models\employeeModel.js" />
     <Compile Include="models\menuModel.js" />
     <Compile Include="models\orderModel.js" />
@@ -41,6 +41,7 @@
     <Compile Include="bin\www" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
+    <Content Include="nodemon.json" />
     <Content Include="package.json" />
     <Content Include="public\index.html" />
     <Content Include="public\mockScreens\admin\admin.html" />

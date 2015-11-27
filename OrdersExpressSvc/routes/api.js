@@ -1,5 +1,10 @@
 ﻿"use strict";
 var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
 var router = express.Router();
 var passwords = require('../passwords');
 var mongoose = require('mongoose');  //http://mongoosejs.com/docs/api.html
@@ -30,7 +35,14 @@ router.get('/', function (req, res) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-router.route('/employee').get(function (req, res) {
+router.route('/employee')
+.post(function (req, res) {
+    var employee = new Employee(req.body);
+    console.log(employee);
+    res.send(employee);
+
+})
+.get(function (req, res) {
     var query = req.query;  //Works: http://localhost:8080/api/employee?user=Anne
     Employee.find(query, function (err, employee) {
         if (err) {
@@ -96,6 +108,52 @@ router.route('/order/:orderId').get(function (req, res) {
         }
     });
 });
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// https://github.com/simonholmes/mongoose-default-connection/blob/master/model/db.js
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {
+    console.log('Mongoose default connection opened');
+});
+
+// If the connection throws an error
+mongoose.connection.on('error', function (err) {
+    console.log('Mongoose default connection error: ' + err);
+});
+
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () {
+    console.log('Mongoose default connection disconnected');
+});
+
+//// If the Node process ends, close the Mongoose connection
+//process.on('SIGINT', function () {
+//    mongoose.connection.close(function () {
+//        console.log('Mongoose default connection disconnected through app termination');
+//        process.exit(0);
+//    });
+//});
+
+//process.once('SIGUSR2', function () {
+//    // https://github.com/remy/nodemon#controlling-shutdown-of-your-script
+//    // http://www.benjiegillam.com/2011/08/node-js-clean-restart-and-faster-development-with-nodemon/
+//    gracefulShutdown(function () {
+//        console.log('gracefulShutdown');
+//        process.kill(process.pid, 'SIGUSR2');
+//    });
+//});
+
+
+function gracefulExit() {
+    mongoose.connection.close(function () {
+        console.log('Mongoose connection closed because of app termination: SIGINT, SIGTERM, or SIGUSR2 (which nodemon sends on restart).');
+        process.exit(0);
+    });
+}
+process.on('SIGINT', gracefulExit).on('SIGTERM', gracefulExit).on('SIGUSR2', gracefulExit);  // If the Node process ends, close the Mongoose connection
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
