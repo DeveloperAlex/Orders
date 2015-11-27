@@ -16,8 +16,9 @@ app.use(function (req, res, next) {
     var host = req.headers.host;
     if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
         res.send('');  //Bad request - stop processing it.
+    } else {
+        next();
     }
-    next();
 });
 
 
