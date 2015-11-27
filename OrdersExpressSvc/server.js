@@ -12,6 +12,20 @@ var api = require('./routes/api');
 //var users = require('./routes/users');
 
 var app = express();
+app.use(function (req, res, next) {
+    //Attempting to filter out bogus calls to my node-express server app.
+    var host = req.headers.host;
+    if (host !== 'localhost:8080' || host.indexOf('developeralex') !== -1 && host.indexOf('8080') !== -1) {
+        //res.close();
+        res.send('1');
+    } else {
+        //res.close();  //Does this work? Nope.
+        res.send('2');
+    }
+    next();
+});
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,17 +48,22 @@ app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
+    //if (true) {
+    //    res.redirect('http://google.com');
+    //    //res.redirect(301, 'http://google.com');
+    //}
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-// error handlers
 
-// development error handler
-// will print stacktrace
+// development error handler - will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
+        //if (true) {
+        //    res.redirect('http://google.com');
+        //}
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -53,9 +72,11 @@ if (app.get('env') === 'development') {
     });
 }
 
-// production error handler
-// no stacktraces leaked to user
+// production error handler - no stacktraces leaked to user
 app.use(function (err, req, res, next) {
+    //if (true) {
+    //    res.redirect('http://google.com');
+    //}
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
