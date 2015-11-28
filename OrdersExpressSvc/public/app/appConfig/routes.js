@@ -47,6 +47,17 @@
                 parent: 'otp'
             }
         },
+    ];
+    
+    
+    angular
+            .module('otp')
+            .constant('OTP_ROUTE_MAP', routeMap);
+})();
+
+
+
+
         //{
         //    state: 'oneSourceProvision_AutoLink_AutoLinkFilingTypeControl',
         //    config: {
@@ -2181,12 +2192,4 @@
         //         parent: 'otp'
         //     }
         // }
-
-    ];
-
-
-    angular
-            .module('otp')
-            .constant('OTP_ROUTE_MAP', routeMap);
-})();
 
