@@ -148,12 +148,28 @@ mongoose.connection.on('disconnected', function () {
 
 function gracefulExit() {
     mongoose.connection.close(function () {
-        console.log('Mongoose connection closed because of app termination: SIGINT, SIGTERM, or SIGUSR2 (which nodemon sends on restart).');
+        //console.log('Mongoose connection closed because of app termination: SIGINT, SIGTERM, or SIGUSR2 (which nodemon sends on restart).');
+        console.log('Mongoose connection closed because of app termination: SIGINT or SIGTERM.');
         process.exit(0);
     });
 }
-process.on('SIGINT', gracefulExit).on('SIGTERM', gracefulExit).on('SIGUSR2', gracefulExit);  // If the Node process ends, close the Mongoose connection
+//process.on('SIGINT', gracefulExit).on('SIGTERM', gracefulExit).on('SIGUSR2', gracefulExit);  // If the Node process ends, close the Mongoose connection
+process.on('SIGINT', gracefulExit).on('SIGTERM', gracefulExit);  // If the Node process ends, close the Mongoose connection
 
+
+// For nodemon restarts. Sadly this doesn't appear to be working. Despite code coming from here: https://github.com/remy/nodemon/blob/e9d85b2afd55604b416a65eefe2653c7b1af0907/README.md#controlling-shutdown-of-your-script
+process.once('SIGUSR2', function () {
+    gracefulShutdown('nodemon restart', function () {
+        process.kill(process.pid, 'SIGUSR2');
+    });
+});
+// To be called when process is restarted or terminated
+function gracefulShutdown(msg, callback) {
+    mongoose.connection.close(function () {
+        console.log('Mongoose disconnected through: ' + msg);
+        callback();
+    });
+};
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
