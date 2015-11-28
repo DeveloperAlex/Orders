@@ -15,7 +15,8 @@ var app = express();
 app.use(function (req, res, next) {
     var host = req.headers.host;
     if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
-        console.log('Evil request received at ' + host + ' on ' + new Date().toString());
+        var fullUrl = req.method + ' ' + host + req.originalUrl;
+        console.log('Evil request: ' + fullUrl + ' on ' + new Date().toString());
         res.send('');  //Bad request - stop processing it.
     } else {
         next();  //Good request - continue processing.
