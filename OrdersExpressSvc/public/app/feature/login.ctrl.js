@@ -1,7 +1,8 @@
 ﻿(function () {
     "use strict";
-    angular.module('ordersApp').controller('loginController', ['$scope', function ($scope) {
+    angular.module('ordersApp').controller('loginController', ['$scope', 'MongoService', function ($scope, MongoService) {
             $scope.logintest = 'Login test 123';
+            $scope.mongotest = MongoService.testProperty;
         }]);
     
     

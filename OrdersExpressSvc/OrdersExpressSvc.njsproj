@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="public\app\feature\login.ctrl.js" />
+    <Compile Include="public\app\service\mongo.svc.js" />
     <Compile Include="server.js" />
     <Compile Include="models\employeeModel.js" />
     <Compile Include="models\menuModel.js" />
@@ -81,6 +82,7 @@
     <Folder Include="public\app\appConfig\" />
     <Folder Include="public\app\common\" />
     <Folder Include="public\app\feature\" />
+    <Folder Include="public\app\service\" />
     <Folder Include="public\app\test\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
