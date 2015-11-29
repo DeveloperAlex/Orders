@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="public\app\feature\login.ctrl.js" />
     <Compile Include="server.js" />
     <Compile Include="models\employeeModel.js" />
     <Compile Include="models\menuModel.js" />
@@ -43,10 +44,12 @@
     <Content Include="bower.json" />
     <Content Include="nodemon.json.doesntwork" />
     <Content Include="package.json" />
+    <Content Include="public\app\feature\login.html" />
     <Content Include="public\app\test\page2.html" />
     <Content Include="public\app\test\page3.html" />
     <Content Include="public\app\test\page1.html" />
     <Content Include="public\help.html" />
+    <Content Include="public\index_old.html" />
     <Content Include="public\index.html" />
     <Content Include="public\mockScreens\admin\admin.html" />
     <Content Include="public\mockScreens\admin\adminUserAdd.html" />
