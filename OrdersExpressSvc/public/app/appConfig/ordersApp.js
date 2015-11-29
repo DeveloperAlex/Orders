@@ -35,13 +35,21 @@ angular.module("ordersApp")
 angular.module("ordersApp")
 .config(['$stateProvider', function ($stateProvider) {
     $stateProvider
+    .state('login', {
+            url: '/login',
+            controller: 'loginController',
+            templateUrl: 'app/feature/login.html'
+        })
     .state('page1', {
+            url: '/page1',
             templateUrl: 'app/test/page1.html'
         })
     .state('page2', {
+            url: '/page2',
             templateUrl: 'app/test/page2.html'
         })
     .state('page3', {
+            url: '/page3',
             templateUrl: 'app/test/page3.html'
         });
 
@@ -72,11 +80,6 @@ angular.module('ordersApp')
     .controller('testController', ['$scope', function($scope) {
         $scope.name = 'Testing 123';
     }]);
-
-//angular.module("ordersApp")
-//.directive();
-
-
 
 angular.module('ordersApp')
 .directive('myDirective', function() {
