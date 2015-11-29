@@ -34,21 +34,25 @@ angular.module("ordersApp")
 
 angular.module("ordersApp")
 .config(['$stateProvider', function ($stateProvider) {
-
-        $stateProvider.state('page1', {
+    $stateProvider
+    .state('page1', {
             templateUrl: 'app/test/page1.html'
-        });
-        $stateProvider.state('page2', {
+        })
+    .state('page2', {
             templateUrl: 'app/test/page2.html'
-        });
-        $stateProvider.state('page3', {
+        })
+    .state('page3', {
             templateUrl: 'app/test/page3.html'
         });
 
     }]);
 
 
-
+//.state('form', {
+//url: '/form',
+//            templateUrl: 'form.html',
+//controller: 'formController'
+//})
 
 
 
