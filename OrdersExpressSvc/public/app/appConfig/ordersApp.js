@@ -3,23 +3,55 @@
 // references each time - only first time.
 
 //angular.module("ordersApp", ['OTPWeb.Directives', 'ngynSelectKey', 'bento.modern', 'aa.notify', 'ui.router', 'ui.bootstrap', 'angular-data.DSCacheFactory', 'wijmo', 'wijspread']);
-angular.module("ordersApp", ['ui.grid', 'ui.grid.pagination', 'ui.router']);   //['ui.router', 'ui.bootstrap']);
+angular.module("ordersApp", ['ui.grid', 'ui.grid.pagination', 'ui.router']);   //['ui.bootstrap']);
 
+//https://github.com/angular-ui/ui-router/wiki#state-change-events
 angular.module("ordersApp")
     .run(['$rootScope',
-        function ($rootScope) {
-            //Debugging hooks
-            $rootScope.$on('$stateChangeStart',
-                function (event, toState, toParams, fromState, fromParams) {
-                    //console.log("$stateChangeStart fired!");
-                });
-            $rootScope.$on('stateChangeSuccess',
-                function (event, toState, toParams, fromState, fromParams) {
-                    //console.log("stateChangeSuccess fired!");
-                });
-        }
-    ])
+    function ($rootScope) {
+        //Debugging hooks
+        $rootScope.$on('$stateChangeStart',
+        function (event, toState, toParams, fromState, fromParams) {
+            console.log("$stateChangeStart fired!");
+        });
+        $rootScope.$on('$stateNotFound', 
+        function (event, unfoundState, fromState, fromParams) {
+            console.log(unfoundState.to);
+            console.log(unfoundState.toParams);
+            console.log(unfoundState.options);
+        })        
+        $rootScope.$on('$stateChangeSuccess',
+        function (event, toState, toParams, fromState, fromParams) {
+            console.log("$stateChangeSuccess fired!");
+        });
+        $rootScope.$on('$stateChangeError', 
+        function (event, toState, toParams, fromState, fromParams, error) {
+            console.log("$stateChangeError: " + error);
+        });
+    }
+])
 ;
+
+angular.module("ordersApp")
+.config(['$stateProvider', function ($stateProvider) {
+
+        $stateProvider.state('page1', {
+            templateUrl: 'app/test/page1.html'
+        });
+        $stateProvider.state('page2', {
+            templateUrl: 'app/test/page2.html'
+        });
+        $stateProvider.state('page3', {
+            templateUrl: 'app/test/page3.html'
+        });
+
+    }]);
+
+
+
+
+
+
 
 /*
     //Turn off by passing false to debugEnabled.

@@ -43,6 +43,9 @@
     <Content Include="bower.json" />
     <Content Include="nodemon.json.doesntwork" />
     <Content Include="package.json" />
+    <Content Include="public\app\test\page2.html" />
+    <Content Include="public\app\test\page3.html" />
+    <Content Include="public\app\test\page1.html" />
     <Content Include="public\help.html" />
     <Content Include="public\index.html" />
     <Content Include="public\mockScreens\admin\admin.html" />
@@ -75,6 +78,7 @@
     <Folder Include="public\app\appConfig\" />
     <Folder Include="public\app\common\" />
     <Folder Include="public\app\feature\" />
+    <Folder Include="public\app\test\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\mockScreens\" />

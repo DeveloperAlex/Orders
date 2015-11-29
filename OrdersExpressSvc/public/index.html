@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Orders Test Page</title>
-</head>
-<body ng-app="ordersApp">
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -23,7 +21,20 @@
     <link src="stylesheets/style.css" rel="stylesheet" type="text/css" />
 
     <script src="app/appConfig/ordersApp.js"></script>
+</head>
+<body ng-app="ordersApp">
+    <div>
+        <a ui-sref="page1">page1</a>
+        <a ui-sref="page2">page2</a>
+        <a ui-sref="page3">page3</a>
+    </div>
+    <br />
+    <br />
 
+    <div ui-view></div>
+    <br />
+    <br />
+    <br/>
     <div>
         <div ng-controller="testController">
             {{name}}
