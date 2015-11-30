@@ -31,25 +31,3 @@
 
 // Add httpInterceptor to ordersApp.js - with console.log's.  Later we'll add security token thingy - need to research that.
 
-
-
-//myApp.service('dataService', function ($http, $q) {
-//    this.getData = function () {
-//        deferred = $q.defer();
-//        $http({
-//            method: 'GET',
-//            url: 'https://www.example.com/api/v1/page',
-//            params: 'limit=10, sort_by=created:desc',
-//            headers: { 'Authorization': 'Token token=xxxxYYYYZzzz' }
-//        }).success(function (data) {
-//            // With the data succesfully returned, we can resolve promise and we can access it in controller
-//            deferred.resolve();
-//        }).error(function () {
-//            alert("error");
-//            //let the function caller know the error
-//            deferred.reject(error);
-//        });
-//        return deferred.promise;
-//    }
-//});
-

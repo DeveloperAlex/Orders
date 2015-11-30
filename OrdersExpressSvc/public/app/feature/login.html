@@ -1,7 +1,8 @@
 ﻿<div>
     login:<br/>
-    {{logintest}}<br/>
-    {{mongotest}}<br/>
-    {{employees}}
+
+    <list>
+        <ul ng-repeat="emp in employees">{{emp.user}}</ul>
+    </list>
 
 </div>
