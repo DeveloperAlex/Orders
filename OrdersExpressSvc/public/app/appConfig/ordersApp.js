@@ -33,7 +33,7 @@ angular.module("ordersApp")
 ;
 
 angular.module("ordersApp")
-.config(['$stateProvider', function ($stateProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('login', {
             url: '/login',
@@ -52,6 +52,8 @@ angular.module("ordersApp")
             url: '/page3',
             templateUrl: 'app/test/page3.html'
         });
+
+    $urlRouterProvider.otherwise('/login');
 
     }]);
 
