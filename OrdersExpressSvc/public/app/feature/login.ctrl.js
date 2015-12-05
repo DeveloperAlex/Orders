@@ -1,22 +1,20 @@
 ﻿(function () {
     "use strict";
     angular.module('ordersApp').controller('loginController', ['$scope', 'MongoService', function ($scope, MongoService) {
-            $scope.logintest = 'Login test 123';
-            $scope.mongotest = MongoService.testProperty;
+            var self = this;
             
-            $scope.employees = null;
-            //$scope.employees = MongoService.getEmployees();
+            self.logintest = 'Login test 123';
+            self.mongotest = MongoService.testProperty;
+            
+            self.employees = null;
+
             MongoService.getEmployees().then(function (response) {
                 //console.log('MongoService.getEmployees()= ' + response)
-                $scope.employees = response;
+                self.employees = response;
             });
-
-
 
         }]);
     
-
-// ng-repeat
 
     
     //angular.module('ordersApp').directive('myDirective', function () {
@@ -27,13 +25,3 @@
     //});
 
 })();
-
-
-//http://stackoverflow.com/questions/20369377/how-to-use-http-get-in-angularjs-correctly-in-specific-for-an-external-api-cal
-//myApp.controller('AngularJSCtrl', function ($scope, dataService) {
-//    $scope.data = null;
-//    dataService.getData().then(function (response) {
-//        $scope.data = response;
-//    });
-//});
-

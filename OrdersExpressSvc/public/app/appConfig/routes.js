@@ -1,4 +1,6 @@
-﻿(function () {
+﻿/*
+
+(function () {
     var routeMap = [
         {
             state: 'otp',
@@ -54,7 +56,7 @@
             .module('otp')
             .constant('OTP_ROUTE_MAP', routeMap);
 })();
-
+*/
 
 
 

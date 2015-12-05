@@ -37,7 +37,7 @@ angular.module("ordersApp")
     $stateProvider
     .state('login', {
             url: '/login',
-            controller: 'loginController',
+            controller: 'loginController as login',
             templateUrl: 'app/feature/login.html'
         })
     .state('page1', {
@@ -58,13 +58,6 @@ angular.module("ordersApp")
     }]);
 
 
-//.state('form', {
-//url: '/form',
-//            templateUrl: 'form.html',
-//controller: 'formController'
-//})
-
-
 
 
 /*
@@ -78,16 +71,16 @@ angular.module("ordersApp")
 
 
 
-angular.module('ordersApp')
-    .controller('testController', ['$scope', function($scope) {
-        $scope.name = 'Testing 123';
-    }]);
+//angular.module('ordersApp')
+//    .controller('testController', ['$scope', function($scope) {
+//        $scope.name = 'Testing 123';
+//    }]);
 
-angular.module('ordersApp')
-.directive('myDirective', function() {
-    return {
-        restrict: 'E',
-        template: '<div>This is my directive</div>'
-    };
-});
+//angular.module('ordersApp')
+//.directive('myDirective', function() {
+//    return {
+//        restrict: 'E',
+//        template: '<div>This is my directive</div>'
+//    };
+//});
 
