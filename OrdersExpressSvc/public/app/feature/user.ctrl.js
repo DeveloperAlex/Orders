@@ -4,6 +4,7 @@
         function ($scope, MongoService, $state, $stateParams) {
             var self = this;
             
+            //self.username = "username";  //$stateParams.username;
             self.username = $stateParams.username;
             
             //self.logintest = 'User test 123';
