@@ -40,6 +40,19 @@ angular.module("ordersApp")
             controller: 'loginController as login',
             templateUrl: 'app/feature/login.html'
         })
+    .state('user', {
+            url: '/user/:username',
+            controller: 'userController as user',
+            templateUrl: 'app/feature/user.html'
+        })
+    .state('order', {
+            url: '/order',
+            controller: 'orderController as order',
+            templateUrl: 'app/feature/order.html'
+        })
+
+
+
     .state('page1', {
             url: '/page1',
             templateUrl: 'app/test/page1.html'

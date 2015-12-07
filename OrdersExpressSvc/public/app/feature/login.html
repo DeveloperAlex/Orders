@@ -6,8 +6,17 @@
     {{login.mongotest}}<br/>
     <br />
 
+    Click on Employee to login as him/her:</br>
     <list>
-        <ul ng-repeat="emp in login.employees">{{emp.user}}</ul>
+        <!--<ul ng-repeat="emp in login.employees">{{emp.user}}</ul>-->
+
+        <!--<a ui-sref=’user({user:emp.user})’>Click</a>-->
+        <!--<a ui-sref=’user/emp.user’>Click</a>-->
+
+        <ul ng-repeat="emp in login.employees">
+            <a ui-sref="user({ username: emp.user })">{{emp.user}}</a>
+        </ul>
+
     </list>
 
 </div>

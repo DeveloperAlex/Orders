@@ -30,6 +30,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="public\app\feature\order.ctrl.js" />
+    <Compile Include="public\app\feature\user.ctrl.js" />
     <Compile Include="public\app\feature\login.ctrl.js" />
     <Compile Include="public\app\service\mongo.svc.js" />
     <Compile Include="server.js" />
@@ -45,6 +47,8 @@
     <Content Include="bower.json" />
     <Content Include="nodemon.json.doesntwork" />
     <Content Include="package.json" />
+    <Content Include="public\app\feature\order.html" />
+    <Content Include="public\app\feature\user.html" />
     <Content Include="public\app\feature\login.html" />
     <Content Include="public\app\test\page2.html" />
     <Content Include="public\app\test\page3.html" />

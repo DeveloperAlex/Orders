@@ -22,6 +22,8 @@
 
     <script src="app/appConfig/ordersApp.js"></script>
     <script src="app/feature/login.ctrl.js"></script>
+    <script src="app/feature/user.ctrl.js"></script>
+    <script src="app/feature/order.ctrl.js"></script>
     <script src="app/service/mongo.svc.js"></script>
 
 
@@ -29,6 +31,12 @@
 <body ng-app="ordersApp">
     <div>
         <a ui-sref="login">login</a>
+        <a ui-sref="user">user</a>
+        <a ui-sref="user({ username: 'bob' })">user bob</a>
+
+
+
+        <a ui-sref="order">order</a>
         <a ui-sref="page1">page1</a>
         <a ui-sref="page2">page2</a>
         <a ui-sref="page3">page3</a>
