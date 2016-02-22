@@ -16,6 +16,8 @@
 # * This nginx file is located at: /etc/nginx/sites-available/app.da.com
 #
 # Initial (2 main folders: /var/www & /etc/nginx):
+# - git clone https://github.com/DeveloperAlex/Orders.git
+# - git config --list  // Will need to update git config settings.
 # - sudo apt-get update && sudo apt-get upgrade  // Check for o/s updates, then install them.
 # - sudo apt-get install nmap
 # - nmap app.developeralex.com  // Check that only port 80 & 22 (ssh) are open.
