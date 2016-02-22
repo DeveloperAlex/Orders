@@ -1,0 +1,67 @@
+####
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+####
+
+###############################################################################
+# >> nginx/pm2 notes for running node.js in Ubuntu 14.04 (Google Cloud (like AWS)) <<
+# * This nginx file is located at: /etc/nginx/sites-available/app.da.com
+#
+# Initial (2 main folders: /var/www & /etc/nginx):
+# - git clone https://github.com/DeveloperAlex/Orders.git
+# - git config --list  // Will need to update git config settings.
+# - sudo apt-get update && sudo apt-get upgrade  // Check for o/s updates, then install them.
+# - sudo apt-get install nmap
+# - nmap app.developeralex.com  // Check that only port 80 & 22 (ssh) are open.
+# - sudo apt-get install nginx
+# - sudo apt-get install nodejs
+# - sudo npm install gulp -g
+# - sudo npm -g install npm
+# - sudo npm install pm2@latest -g  // Then run: sudo pm2 update
+#
+# Initial setup (so it starts automatically upon boot):
+# - sudo vi passwords.json  // Secret file that sits above the git repo folders (w/ my passwords). Sorry.
+# - sudo npm update && bower update
+# - sudo chown username:username bower_components/  //Was root:root which interfered w/ bower update.
+# - sudo rm /etc/nginx/sites-enabled/default
+# - sudo ln -s /etc/nginx/sites-available/app.da.com /etc/nginx/sites-enabled
+# - pm2 start /var/www/app.da.com/Orders/OrdersExpressSvc/server.js
+# - pm2 list  // list node.js app(s) running.
+# - pm2 list server  // Detailed info about server.js
+# - curl http://localhost:8080  // Check that node.js/pm2 is running.
+# - curl app.developeralex.com   // Check that nginx is running.
+# - sudo pm2 startup -u <username>
+# - sudo pm2 save
+# - sudo shutdown -r now
+#
+# If make change to this file - do the following:
+# - sudo nginx -t   // Test that nginx is okay.
+# - sudo nginx -s reload   // Will tell you if there's an error in this file.
+# - sudo service nginx restart  //upstart instructions (ubuntu 14.04).
+# -   sudo systemctl reload nginx.service  //systemd instructions (ubuntu 16.04).
+# - pm2 restart server
+# - /etc/nginx$  sudo vi sites-available/app.da.com
+#
+###############################################################################
+
+server {
+  listen 80;
+  server_name app.developeralex.com;
+  index index.html;
+  location ~ ^/(bower_components/|images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
+    root /var/www/app.da.com/Orders/OrdersExpressSvc/public;
+    access_log off;
+    expires max;
+  }
+  location / {
+    proxy_pass      http://localhost:8080;
+  }
+}
