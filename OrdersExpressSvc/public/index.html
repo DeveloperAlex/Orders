@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Orders Demo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
     <link src="bower_components/angular-ui-grid/ui-grid.css" rel="stylesheet" type="text/css" />
     <link src="bower_components/angular-ui-grid/ui-grid.svg" rel="image" type="image/svg+xml" />
 
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <link src="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link src="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
     <link src="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" rel="image" type="image/svg+xml" />
+
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+    <script type="text/javascript" src="//cdn.auth0.com/js/lock-7.js"></script>
+    <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
 
     <link src="assets/css/style.css" rel="stylesheet" type="text/css" />
 
@@ -26,10 +31,17 @@
     <script src="app/feature/order.ctrl.js"></script>
     <script src="app/service/mongo.svc.js"></script>
 
+    <script src="app/modules/home/home.html"></script>
+    <script src="app/modules/home/home.css"></script>
+    <script src="app/modules/home/home.js"></script>
+    <script src="app/modules/login/login.html"></script>
+    <script src="app/modules/login/login.css"></script>
+    <script src="app/modules/login/login.js"></script>
+
 
 </head>
 <body ng-app="ordersApp">
-    <div>
+    <div class="container">
         <a ui-sref="login">login</a>
         <a ui-sref="user({ username: 'bob' })">user bob</a>
 
