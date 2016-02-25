@@ -1,4 +1,5 @@
 ﻿"use strict";
+var portNum = require('./server_port');
 var express = require('express');
 var expressJwt = require('express-jwt');
 //var jwt = require('jsonwebtoken');  //npm install jsonwebtoken --save //Auth0 does this part - so its not needed (ie, post to /api/login - jwt.sign({username: postedUsername})).
@@ -119,7 +120,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-app.listen(8080, function () {
+app.listen(portNum, function () {
     console.log('Express listening on port', this.address().port);
 });
 
