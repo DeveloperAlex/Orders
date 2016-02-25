@@ -34,6 +34,7 @@
 # - sudo rm /etc/nginx/sites-enabled/default
 # - sudo ln -s /etc/nginx/sites-available/app.da.com /etc/nginx/sites-enabled
 # - pm2 start /var/www/app.da.com/Orders/OrdersExpressSvc/server.js
+# - pm2 start /var/www/appdev.da.com/Orders/OrdersExpressSvc/server.js
 # - pm2 list  // list node.js app(s) running.
 # - pm2 list server  // Detailed info about server.js
 # - curl http://localhost:8080  // Check that node.js/pm2 is running.
@@ -53,15 +54,15 @@
 ###############################################################################
 
 server {
-  listen 80;
-  server_name app.developeralex.com;
-  index index.html;
+  listen       80;
+  server_name  app.developeralex.com;
+  index        index.html;
   location ~ ^/(bower_components/|images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
-    root /var/www/app.da.com/Orders/OrdersExpressSvc/public;
+    root       /var/www/app.da.com/Orders/OrdersExpressSvc/public;
     access_log off;
-    expires max;
+    expires    1h;
   }
   location / {
-    proxy_pass      http://localhost:8080;
+    proxy_pass http://localhost:8080;  # 127.0.0.1 does not work.
   }
 }
