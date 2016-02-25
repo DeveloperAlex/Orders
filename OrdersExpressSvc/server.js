@@ -18,27 +18,28 @@ var routes = require('./routes/index');
 var api = require('./routes/api');
 //var users = require('./routes/users');
 
-var app = express();
-app.use(function (req, res, next) {
-    //var host = req.headers.host;
-    //if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
-    if (isEvil(req)) {
-        var fullUrl = req.method + ' ' + host + req.originalUrl;
-        console.log('Evil request: ' + fullUrl + ' on ' + new Date().toString());
-        res.send('');  //Bad request - stop processing it.
-    } else {
-        next();  //Good request - continue processing.
-    }
-});
 
-function isEvil(req){
-    var host = req.headers.host;
-    if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
-        return true;
-    } else {
-        return false;
-    }
-}
+var app = express();
+
+// app.use(function (req, res, next) {
+//     var host = req.headers.host;
+//     //if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
+//     if (isEvil(req)) {
+//         var fullUrl = req.method + ' ' + host + req.originalUrl;
+//         console.log('Evil request: ' + fullUrl + ' on ' + new Date().toString());
+//         res.send('');  //Bad request - stop processing it.
+//     } else {
+//         next();  //Good request - continue processing.
+//     }
+// });
+// function isEvil(req){
+//     var host = req.headers.host;
+//     if (host.indexOf('localhost:8080') === -1 && host.indexOf('developeralex.com:8080') === -1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 
 // view engine setup
@@ -97,27 +98,27 @@ app.use('/api', api);
 //}
 
 // production error handler - no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    if (!isEvil(req)) {
-        var err = new Error('Not Found');
-        err.status = 404;
-        //next(err);
-    }
-
-    if (app.get('env') !== 'development' || isEvil(req)) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
-        });
-    } else {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    }
-});
+// app.use(function (err, req, res, next) {
+//     if (!isEvil(req)) {
+//         var err = new Error('Not Found');
+//         err.status = 404;
+//         //next(err);
+//     }
+// 
+//     if (app.get('env') !== 'development' || isEvil(req)) {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: {}
+//         });
+//     } else {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: err
+//         });
+//     }
+// });
 
 
 app.listen(portNum, function () {
