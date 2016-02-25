@@ -111,9 +111,9 @@ function (
         if (token) {
             if (!jwtHelper.isTokenExpired(token)) {
                 return store.get('token');
-            } else {
+            } else {  //https://github.com/auth0/auth0-angular/blob/master/docs/refresh-token.md
                 if (refreshingToken === null) {
-                    refreshingToken = auth.refreshIdToken(refreshToken).then(function (idToken) {
+                    refreshingToken = auth.refreshIdToken(refreshToken).then(function (idToken) {  //TODO: Possible bug w/ "auth".
                         store.set('token', idToken);
                         return idToken;
                     }).finally(function () {
