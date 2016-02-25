@@ -10,8 +10,8 @@ angular.module('orders.home', [
             method: 'GET'
         }).then(function (response) {
             $scope.shipments = response.data;
-        }, function (response) {
-            alert(response.data);
+        }, function (error) {    //TODO: .catch is perhaps a better design pattern.
+            console.log('error', error);
         });
     }
 

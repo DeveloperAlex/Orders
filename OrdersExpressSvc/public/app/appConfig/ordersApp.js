@@ -53,37 +53,46 @@ function (
     .state('/', {
             controller: 'HomeCtrl',
             templateUrl: 'app/modules/home/home.html',
+            pageTitle: 'Homepage',
             requiresLogin: true
         })
     .state('login', {
             controller: 'LoginCtrl',
-            templateUrl: 'app/modules/login/login.html'
+            templateUrl: 'app/modules/login/login.html',
+            pageTitle: 'Login'
         })
     .state('user', {
             url: '/user/:username',
             controller: 'userController as user',
-            templateUrl: 'app/feature/user.html'
+            templateUrl: 'app/feature/user.html',
+            pageTitle: 'User',
+            requiresLogin: true
         })
     .state('order', {
             url: '/order',
             controller: 'orderController as order',
-            templateUrl: 'app/feature/order.html'
+            templateUrl: 'app/feature/order.html',
+            pageTitle: 'Order',
+            requiresLogin: true
         })
 
     .state('page1', {
             url: '/page1',
-            templateUrl: 'app/test/page1.html'
-            //requiresLogin: true  //TODO: Testing if Auth0 code is working.
+            templateUrl: 'app/test/page1.html',
+            pageTitle: 'Page1',
+            requiresLogin: true
         })
     .state('page2', {
             url: '/page2',
-            templateUrl: 'app/test/page2.html'
-            //requiresLogin: true  //TODO: Testing if Auth0 code is working.
+            templateUrl: 'app/test/page2.html',
+            pageTitle: 'Page2',
+            requiresLogin: true
         })
     .state('page3', {
             url: '/page3',
-            templateUrl: 'app/test/page3.html'
-            //requiresLogin: true  //TODO: Testing if Auth0 code is working.
+            templateUrl: 'app/test/page3.html',
+            pageTitle: 'Page3',
+            requiresLogin: true
         });
 
     $urlRouterProvider.otherwise('/');
@@ -156,7 +165,14 @@ angular.module("ordersApp")
 
 
 
-
+angular.module("ordersApp")
+.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {   //TODO: Not minsafe
+  $scope.$on('$routeChangeSuccess', function(e, nextRoute){
+    if ( nextRoute.$$route && angular.isDefined( nextRoute.$$route.pageTitle ) ) {
+      $scope.pageTitle = nextRoute.$$route.pageTitle + ' | Demo App' ;
+    }
+  });
+});
 
 
 

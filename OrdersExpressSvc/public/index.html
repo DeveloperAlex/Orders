@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html ng-app="ordersApp" ng-controller="AppCtrl" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Orders Demo App</title>
+    <title ng-bind="pageTitle"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -40,7 +41,7 @@
 
 
 </head>
-<body ng-app="ordersApp">
+<body>
     <div class="container">
         <a ui-sref="login">login</a>
         <a ui-sref="user({ username: 'bob' })">user bob</a>

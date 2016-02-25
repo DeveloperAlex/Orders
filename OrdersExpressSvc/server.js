@@ -1,7 +1,13 @@
 ﻿"use strict";
 var express = require('express');
+var expressJwt = require('express-jwt');
+//var jwt = require('jsonwebtoken');  //npm install jsonwebtoken --save //Auth0 does this part - so its not needed (ie, post to /api/login - jwt.sign({username: postedUsername})).
+
+var cors = require('cors');
+var passwords = require('./passwords');
 var path = require('path');
 //var favicon = require('serve-favicon');
+//var faker = require('faker'); //var user = faker.Helpers.userCard(); user.avatar = faker.Image.avatar();
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -41,6 +47,16 @@ function isEvil(req){
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
+
+var authenticate = expressJwt({
+  secret: new Buffer(passwords.auth0.client_secret, 'base64'),
+  audience: passwords.auth0.client_id
+});
+//app.use(expressJwt({secret: jwtSecret}).unless({ path:['/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
+//app.use(authenticate.unless({ path:['/api/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
+app.use(authenticate.unless({ path:['/api/SomethingNotNeedingAuth'] }) );
+app.use(cors());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -51,6 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/api', api);
+//app.use('/secured', authenticate);
 //app.use('/users', users);
 
 //// catch 404 and forward to error handler
