@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var portNum = require('./server_port');
 var express = require('express');
 var expressJwt = require('express-jwt');
@@ -56,7 +56,7 @@ var authenticate = expressJwt({
 });
 //app.use(expressJwt({secret: jwtSecret}).unless({ path:['/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
 //app.use(authenticate.unless({ path:['/api/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
-app.use(authenticate.unless({ path:['/api/SomethingNotNeedingAuth'] }) );
+app.use(authenticate.unless({ path: ['/api/SomethingNotNeedingAuth'] }) );
 app.use(cors());
 
 app.use(bodyParser.json());
