@@ -65,7 +65,7 @@ app.use(cookieParser());
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public'));  //Must come before "express.static".
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));  //nginx now handles static files - this could be turned off.
 
 app.use('/', routes);
 app.use('/api', api);
