@@ -14,31 +14,74 @@ gulp.task('style', function () {
         .pipe(jscs());
 });
 
+
 gulp.task('inject', function () {
     var wiredep = require('wiredep').stream;
-    var inject = require('gulp-inject');
-
-    var injectSrc = gulp.src(['./public/css/*.css',
-                              './public/js/*.js'], {
-        read: false
-    });
-    
-    var injectOptions = {
-        ignorePath: '/public'
-    };
 
     var options = {
         bowerJson: require('./bower.json'),
         directory: './public/bower_components',
-        ignorePath: '../../public'
+        ignorePath: '../../XXpublicXX'
     };
-
-    return gulp.src('./src/views/*.jade')
-        .pipe(wiredep(options))
-        .pipe(inject(injectSrc, injectOptions))
-        .pipe(gulp.dest('./src/views'));
-
+    
+    gulp.src('./public/index.html')
+    .pipe(wiredep(options))
+    .pipe(gulp.dest('./dest'));
+    
 });
+
+
+//gulp.task('inject', function () {
+//    var wiredep = require('wiredep').stream;
+//    var inject = require('gulp-inject');
+//
+//    var injectSrc = gulp.src(['./public/css/*.css',
+//                              './public/js/*.js'], {
+//        read: false
+//    });
+//    
+//    var injectOptions = {
+//        ignorePath: '/public'
+//    };
+//
+//    var options = {
+//        bowerJson: require('./bower.json'),
+//        directory: './public/bower_components',
+//        ignorePath: '../../XXpublicXX'
+//    };
+//
+//    return gulp.src('./public/index.html')
+//        .pipe(wiredep(options))
+//        .pipe(inject(injectSrc, injectOptions))
+//        .pipe(gulp.dest('./public'));
+//
+//});
+
+//gulp.task('inject', function () {
+//    var wiredep = require('wiredep').stream;
+//    var inject = require('gulp-inject');
+//
+//    var injectSrc = gulp.src(['./public/css/*.css',
+//                              './public/js/*.js'], {
+//        read: false
+//    });
+//    
+//    var injectOptions = {
+//        ignorePath: '/public'
+//    };
+//
+//    var options = {
+//        bowerJson: require('./bower.json'),
+//        directory: './public/bower_components',
+//        ignorePath: '../../public'
+//    };
+//
+//    return gulp.src('./src/views/*.jade')
+//        .pipe(wiredep(options))
+//        .pipe(inject(injectSrc, injectOptions))
+//        .pipe(gulp.dest('./src/views'));
+//
+//});
 
 gulp.task('serve', ['style', 'inject'], function () {
     var options = {
