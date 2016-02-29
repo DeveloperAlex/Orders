@@ -26,7 +26,7 @@ gulp.task('inject', function () {
     var wdOptions = {
         bowerJson: require('./bower.json'),
         directory: './public/bower_components',
-        ignorePath: '../../XXpublicXX'
+        ignorePath: '../../public'
     };
 
     var inject = require('gulp-inject');
@@ -35,7 +35,8 @@ gulp.task('inject', function () {
         read: false
     });
     var injectOptions = {
-        ignorePath: '/XXpublicXX'
+        ignorePath: '/public/'
+        , relative: true
     };
     
     gulp.src('./public/index.html')
