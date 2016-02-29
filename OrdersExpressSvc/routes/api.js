@@ -1,4 +1,4 @@
-﻿"use strict";
+'use strict';
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -40,7 +40,7 @@ router.get('/me', function(req, res) {  //TODO: Call this endpoint from the fron
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /* GET home page. */
 router.get('/', function (req, res) {
-    var responseJson = { choices: "employee, menu, order" };
+    var responseJson = { choices: 'employee, menu, order' };
     res.json(responseJson);
 });
 
@@ -180,7 +180,7 @@ function gracefulShutdown(msg, callback) {
         console.log('Mongoose disconnected through: ' + msg);
         callback();
     });
-};
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -3,39 +3,39 @@
 // references each time - only first time.
 
 //angular.module("ordersApp", ['OTPWeb.Directives', 'ngynSelectKey', 'bento.modern', 'aa.notify', 'ui.router', 'ui.bootstrap', 'angular-data.DSCacheFactory', 'wijmo', 'wijspread']);
-angular.module("ordersApp", [
+angular.module('ordersApp', [
     'auth0', 'angular-storage', 'angular-jwt',
     'ui.grid', 'ui.grid.pagination', 'ui.router',
     'orders.login', 'orders.home'
 ]);   //['ui.bootstrap']);
 
 //https://github.com/angular-ui/ui-router/wiki#state-change-events
-angular.module("ordersApp")
+angular.module('ordersApp')
     .run(['$rootScope',
     function ($rootScope) {
         //Debugging hooks
         $rootScope.$on('$stateChangeStart',
         function (event, toState, toParams, fromState, fromParams) {
-            console.log("$stateChangeStart fired!");
+            console.log('$stateChangeStart fired!');
         });
         $rootScope.$on('$stateNotFound', 
         function (event, unfoundState, fromState, fromParams) {
             console.log(unfoundState.to);
             console.log(unfoundState.toParams);
             console.log(unfoundState.options);
-        })        
+        });
         $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
-            console.log("$stateChangeSuccess fired!");
+            console.log('$stateChangeSuccess fired!');
         });
         $rootScope.$on('$stateChangeError', 
         function (event, toState, toParams, fromState, fromParams, error) {
-            console.log("$stateChangeError: " + error);
+            console.log('$stateChangeError: ' + error);
         });
     }
 ]);
 
-angular.module("ordersApp")
+angular.module('ordersApp')
 .config([
         '$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider', 
         'jwtInterceptorProvider', 'Auth0Constant',
@@ -123,7 +123,7 @@ function (
                 return refreshingToken;
             }
         }
-    }
+    };
     $httpProvider.interceptors.push('jwtInterceptor');
 
 }]);
@@ -131,7 +131,7 @@ function (
 
 
 
-angular.module("ordersApp")
+angular.module('ordersApp')
 .run(function ($rootScope, auth, store, jwtHelper, $location) {  //TODO: Not minsafe!!
     var refreshingToken = null;
     $rootScope.$on('$locationChangeStart', function () {  //TODO: S/this be $stateChangeStart instead??
@@ -165,7 +165,7 @@ angular.module("ordersApp")
 
 
 
-angular.module("ordersApp")
+angular.module('ordersApp')
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {   //TODO: Not minsafe
   $scope.$on('$routeChangeSuccess', function(e, nextRoute){
     if ( nextRoute.$$route && angular.isDefined( nextRoute.$$route.pageTitle ) ) {

@@ -1,3 +1,4 @@
+'use strict';
 angular.module('orders.login', ['auth0'])
 .controller('LoginCtrl', function ($scope, auth, $location, store) {  //TODO: Not using ControllerAs here.
     
@@ -12,9 +13,9 @@ angular.module('orders.login', ['auth0'])
                 $location.path('/');
             }, 
             function(error) {
-                console.log("There was an error", error);  //TODO: Toast
+                console.log('There was an error', error);  //TODO: Toast
             }
         );
-    }
+    };
     
 });

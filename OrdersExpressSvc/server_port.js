@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //Prod server:
 //var port = 8080;

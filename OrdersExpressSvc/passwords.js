@@ -1,4 +1,4 @@
-﻿"use strict";
+'use strict';
 var fs = require('fs');
 var obj;
 
@@ -23,6 +23,6 @@ try {
     } catch (error2) {
         console.log('Unable to find ' + file2 + '.  Error= ' + error2);
     }
-};
+}
 
 module.exports = obj;

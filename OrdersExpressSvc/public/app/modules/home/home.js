@@ -1,3 +1,4 @@
+'use strict';
 angular.module('orders.home', [
 'auth0'])
 .controller('HomeCtrl', function ($scope, auth, $http, $location, store) {

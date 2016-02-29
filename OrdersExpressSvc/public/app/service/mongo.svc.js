@@ -1,7 +1,7 @@
-﻿(function () { 
-    angular.module("ordersApp").factory('MongoService', ['$http', '$q', function ($http, $q) {
+(function () { 
+    angular.module('ordersApp').factory('MongoService', ['$http', '$q', function ($http, $q) {
         var factory = {};
-        factory.testProperty = "MongoService - testProperty";
+        factory.testProperty = 'MongoService - testProperty';
             
         //http://stackoverflow.com/questions/20369377/how-to-use-http-get-in-angularjs-correctly-in-specific-for-an-external-api-cal        
         factory.getEmployees = function () {
@@ -16,7 +16,7 @@
                     //console.log('data= ' + data);
                     deferred.resolve(data);
                 }).error(function () {
-                    alert("error - getEmployees");
+                    alert('error - getEmployees');
                     deferred.reject(error);
                 });
                 return deferred.promise;

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var portNum = require('./server_port');
 var express = require('express');
 var expressJwt = require('express-jwt');

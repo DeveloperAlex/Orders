@@ -1,5 +1,5 @@
-﻿(function () {
-    "use strict";
+(function () {
+    'use strict';
     angular.module('ordersApp').controller('userController', ['$scope', 'MongoService', '$state', '$stateParams', 
         function ($scope, MongoService, $state, $stateParams) {
             var self = this;
