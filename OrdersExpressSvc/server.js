@@ -1,4 +1,6 @@
 'use strict';
+// process.env.PORT is another way (but we have Prod & Dev both running on the same Ubuntu
+// server - so using this instead (for now)).
 var portNum = require('./server_port');
 var express = require('express');
 var expressJwt = require('express-jwt');
