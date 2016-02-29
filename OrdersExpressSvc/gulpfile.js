@@ -16,23 +16,54 @@ gulp.task('style', function () {
 
 
 
+//Works
 gulp.task('inject', function () {
     //Note: this relies on "overrides" block in bower.json
     //to correct the bower_components own bower.json files which
     //may not have js/css - but instead less, etc.
     //https://www.npmjs.com/package/wiredep
     var wiredep = require('wiredep').stream;
-
-    var options = {
+    var wdOptions = {
         bowerJson: require('./bower.json'),
         directory: './public/bower_components',
         ignorePath: '../../XXpublicXX'
     };
+
+    var inject = require('gulp-inject');
+    var injectSrc = gulp.src(['./public/app/**/*.css',
+                              './public/app/**/*.js'], {
+        read: false
+    });
+    var injectOptions = {
+        ignorePath: '/XXpublicXX'
+    };
     
     gulp.src('./public/index.html')
-    .pipe(wiredep(options))
+    .pipe(wiredep(wdOptions))
+    .pipe(inject(injectSrc, injectOptions))
     .pipe(gulp.dest('./public'));
 });
+
+
+
+////Works
+//gulp.task('inject', function () {
+//    //Note: this relies on "overrides" block in bower.json
+//    //to correct the bower_components own bower.json files which
+//    //may not have js/css - but instead less, etc.
+//    //https://www.npmjs.com/package/wiredep
+//    var wiredep = require('wiredep').stream;
+//
+//    var options = {
+//        bowerJson: require('./bower.json'),
+//        directory: './public/bower_components',
+//        ignorePath: '../../XXpublicXX'
+//    };
+//    
+//    gulp.src('./public/index.html')
+//    .pipe(wiredep(options))
+//    .pipe(gulp.dest('./public'));
+//});
 
 //gulp.task('inject', function () {
 //    var wiredep = require('wiredep').stream;
