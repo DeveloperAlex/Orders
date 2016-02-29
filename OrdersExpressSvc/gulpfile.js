@@ -15,6 +15,7 @@ gulp.task('style', function () {
 });
 
 
+
 gulp.task('inject', function () {
     var wiredep = require('wiredep').stream;
 
@@ -24,11 +25,46 @@ gulp.task('inject', function () {
         ignorePath: '../../XXpublicXX'
     };
     
+    //gulp.src('./public/*.html')
     gulp.src('./public/index.html')
     .pipe(wiredep(options))
-    .pipe(gulp.dest('./dest'));
-    
+    .pipe(gulp.dest('./public'));
+    //.pipe(gulp.dest('./public/index.html'));
 });
+
+
+
+////Works - but touches 2 other html files. Trying to figure out how not to.
+//gulp.task('inject', function () {
+//    var wiredep = require('wiredep').stream;
+//
+//    var options = {
+//        bowerJson: require('./bower.json'),
+//        directory: './public/bower_components',
+//        ignorePath: '../../XXpublicXX'
+//    };
+//    
+//    gulp.src('./public/*.html')
+//    .pipe(wiredep(options))
+//    .pipe(gulp.dest('./public'));
+//    //.pipe(gulp.dest('./public/index.html'));
+//});
+
+
+//gulp.task('inject', function () {
+//    var wiredep = require('wiredep').stream;
+//
+//    var options = {
+//        bowerJson: require('./bower.json'),
+//        directory: './public/bower_components',
+//        ignorePath: '../../XXpublicXX'
+//    };
+//    
+//    gulp.src('./public/index.html')
+//    .pipe(wiredep(options))
+//    .pipe(gulp.dest('./dest'));
+//    //.pipe(gulp.dest('./public/index.html'));
+//});
 
 
 //gulp.task('inject', function () {
