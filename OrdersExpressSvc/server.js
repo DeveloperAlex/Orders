@@ -14,7 +14,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var lessMiddleware = require('less-middleware');  //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
+var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
 
 var routes = require('./routes/index');
 var api = require('./routes/api');
@@ -58,16 +58,20 @@ var authenticate = expressJwt({
 });
 //app.use(expressJwt({secret: jwtSecret}).unless({ path:['/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
 //app.use(authenticate.unless({ path:['/api/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
-app.use(authenticate.unless({ path: ['/api/SomethingNotNeedingAuth'] }) );
+app.use(authenticate.unless({
+  path: ['/api/SomethingNotNeedingAuth']
+}));
 app.use(cors());
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
-app.use(lessMiddleware(__dirname + '/public'));  //Must come before "express.static".
-app.use(express.static(path.join(__dirname, 'public')));  //nginx now handles static files - this could be turned off.
+app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".
+app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles static files - this could be turned off.
 
 app.use('/', routes);
 app.use('/api', api);
@@ -124,7 +128,7 @@ app.use('/api', api);
 
 
 app.listen(portNum, function () {
-    console.log('Express listening on port', this.address().port);
+  console.log('Express listening on port', this.address().port);
 });
 
 module.exports = app;

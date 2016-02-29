@@ -1,16 +1,15 @@
-﻿<div>
-    login:<br/>
-    <br/>
+<div>
+  login:
+  <br/>
+  <br/> {{login.logintest}}
 
-    {{login.logintest}}<br/>
-    {{login.mongotest}}<br/>
-    <br />
-
-    Click on Employee to login as him/her:</br>
-    <list>
-        <ul ng-repeat="emp in login.employees">
-            <a ui-sref="user({ username: emp.user })">{{emp.user}}</a>
-        </ul>
-    </list>
+  <br/> {{login.mongotest}}
+  <br/>
+  <br /> Click on Employee to login as him/her:</br>
+  <list>
+    <ul ng-repeat="emp in login.employees">
+      <a ui-sref="user({ username: emp.user })">{{emp.user}}</a>
+    </ul>
+  </list>
 
 </div>

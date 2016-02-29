@@ -23,18 +23,18 @@
   },
   "overrides": {
     "bootstrap": {
-        "main": [
+      "main": [
             "dist/js/bootstrap.js",
             "dist/css/bootstrap.css",
             "less/bootstrap.less"
         ]
     },
     "font-awesome": {
-        "main": [
+      "main": [
             "less/font-awesome.less",
             "css/font-awesome.css",
             "scss/font-awesome.scss"
         ]
     }
-  }    
+  }
 }

@@ -1,12 +1,23 @@
-﻿"use strict";
+"use strict";
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var menuModel = new Schema({
-    _id: { type: String },
-    mealtime: { type: String },
-    items: { type: { category: String, title: String , price: String , prepTime: String } }
-    //items: { type: Object }
+  _id: {
+    type: String
+  },
+  mealtime: {
+    type: String
+  },
+  items: {
+    type: {
+      category: String,
+      title: String,
+      price: String,
+      prepTime: String
+    }
+  }
+  //items: { type: Object }
 });
 
 module.exports = mongoose.model('Menu', menuModel);
@@ -63,4 +74,3 @@ module.exports = mongoose.model('Menu', menuModel);
 //        }
 //    ]
 //}
-

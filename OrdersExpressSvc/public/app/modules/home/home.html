@@ -6,24 +6,24 @@
 <button class="btn btn-warning" ng-click="logout()">Logout</button>
 <div class="row">&nbsp;</div>
 <table class="table table-striped table-bordered table-hover">
-    <thead>
+  <thead>
     <tr>
-        <th>Shipment ID</th>
-        <th>Origin</th>
-        <th>Destination</th>
+      <th>Shipment ID</th>
+      <th>Origin</th>
+      <th>Destination</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <tr ng-repeat="shipment in shipments">
-        <td>
-            {{shipment.id}}
-        </td>
-        <td>
-            {{shipment.origin}}
-        </td>
-        <td>
-            {{shipment.destination}}
-        </td>
+      <td>
+        {{shipment.id}}
+      </td>
+      <td>
+        {{shipment.origin}}
+      </td>
+      <td>
+        {{shipment.destination}}
+      </td>
     </tr>
-</tbody>
+  </tbody>
 </table>
