@@ -17,6 +17,10 @@ gulp.task('style', function () {
 
 
 gulp.task('inject', function () {
+    //Note: this relies on "overrides" block in bower.json
+    //to correct the bower_components own bower.json files which
+    //may not have js/css - but instead less, etc.
+    //https://www.npmjs.com/package/wiredep
     var wiredep = require('wiredep').stream;
 
     var options = {
@@ -25,73 +29,10 @@ gulp.task('inject', function () {
         ignorePath: '../../XXpublicXX'
     };
     
-    //gulp.src('./public/*.html')
     gulp.src('./public/index.html')
     .pipe(wiredep(options))
     .pipe(gulp.dest('./public'));
-    //.pipe(gulp.dest('./public/index.html'));
 });
-
-
-
-////Works - but touches 2 other html files. Trying to figure out how not to.
-//gulp.task('inject', function () {
-//    var wiredep = require('wiredep').stream;
-//
-//    var options = {
-//        bowerJson: require('./bower.json'),
-//        directory: './public/bower_components',
-//        ignorePath: '../../XXpublicXX'
-//    };
-//    
-//    gulp.src('./public/*.html')
-//    .pipe(wiredep(options))
-//    .pipe(gulp.dest('./public'));
-//    //.pipe(gulp.dest('./public/index.html'));
-//});
-
-
-//gulp.task('inject', function () {
-//    var wiredep = require('wiredep').stream;
-//
-//    var options = {
-//        bowerJson: require('./bower.json'),
-//        directory: './public/bower_components',
-//        ignorePath: '../../XXpublicXX'
-//    };
-//    
-//    gulp.src('./public/index.html')
-//    .pipe(wiredep(options))
-//    .pipe(gulp.dest('./dest'));
-//    //.pipe(gulp.dest('./public/index.html'));
-//});
-
-
-//gulp.task('inject', function () {
-//    var wiredep = require('wiredep').stream;
-//    var inject = require('gulp-inject');
-//
-//    var injectSrc = gulp.src(['./public/css/*.css',
-//                              './public/js/*.js'], {
-//        read: false
-//    });
-//    
-//    var injectOptions = {
-//        ignorePath: '/public'
-//    };
-//
-//    var options = {
-//        bowerJson: require('./bower.json'),
-//        directory: './public/bower_components',
-//        ignorePath: '../../XXpublicXX'
-//    };
-//
-//    return gulp.src('./public/index.html')
-//        .pipe(wiredep(options))
-//        .pipe(inject(injectSrc, injectOptions))
-//        .pipe(gulp.dest('./public'));
-//
-//});
 
 //gulp.task('inject', function () {
 //    var wiredep = require('wiredep').stream;
