@@ -29,7 +29,7 @@ gulp.task('inject', function () {
 
     var options = {
         bowerJson: require('./bower.json'),
-        directory: './public/lib',
+        directory: './public/bower_components',
         ignorePath: '../../public'
     };
 
