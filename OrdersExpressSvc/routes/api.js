@@ -1,11 +1,11 @@
 'use strict';
 var express = require('express');
-var bodyParser = require('body-parser');
 var app = express();
+var bodyParser = require('body-parser'); //Middleware that creates req.body from either json or url.
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(bodyParser.json());
 
 var router = express.Router();
 var passwords = require('../passwords');

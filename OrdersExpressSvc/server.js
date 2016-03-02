@@ -1,4 +1,6 @@
 'use strict';
+// Any memory leaks? https://egghead.io/lessons/node-js-managing-memory-and-garbage-collection-in-node-js
+//var heapdump = require('heapdump');
 // process.env.PORT is another way (but we have Prod & Dev both running on the same Ubuntu
 // server - so using this instead (for now)).
 var portNum = require('./server_port');
@@ -45,7 +47,7 @@ var app = express();
 
 
 // view engine setup
-//app.set('views', path.join(__dirname, 'views'));
+//app.set('views', './views');    //path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
@@ -71,7 +73,7 @@ app.use(cookieParser());
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".
-app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles static files - this could be turned off.
+app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles static files - this could be turned off (but I still need it for my local dev box - unless I setup nginx on it too). //TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
 
 app.use('/', routes);
 app.use('/api', api);

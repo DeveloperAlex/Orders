@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "nodemon server.js",
     "runme": "echo \"These scripts can be run by: npm runme\" && exit 1 ",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
