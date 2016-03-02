@@ -1,4 +1,8 @@
 'use strict';
+
+//TODO: Move code out of routes into controller.
+//var apiController = require('./src/controllers/apiController'); //This is relative path to file.
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser'); //Middleware that creates req.body from either json or url.

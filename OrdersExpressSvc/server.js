@@ -71,6 +71,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 
+//var passport = require('passport');
+//var session = require('express-session');
+//app.use(session({secret: 'library'}));
+//require('./src/config/passport')(app);
+
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".
 app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles static files - this could be turned off (but I still need it for my local dev box - unless I setup nginx on it too). //TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
