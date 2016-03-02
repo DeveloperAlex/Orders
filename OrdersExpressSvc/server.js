@@ -19,7 +19,7 @@ var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
 
 var routes = require('./routes/index');
-var api = require('./routes/api');
+var apiRoutes = require('./routes/apiRoutes');
 //var users = require('./routes/users');
 
 
@@ -76,7 +76,7 @@ app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.stat
 app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles static files - this could be turned off (but I still need it for my local dev box - unless I setup nginx on it too). //TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
 
 app.use('/', routes);
-app.use('/api', api);
+app.use('/api', apiRoutes);
 //app.use('/secured', authenticate);
 //app.use('/users', users);
 

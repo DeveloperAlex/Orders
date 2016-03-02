@@ -7,7 +7,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-var router = express.Router();
+//var router = express.Router();
+var router = express.Router({
+  mergeParams: true
+});
+
 var passwords = require('../passwords');
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 mongoose.set('debug', true);
