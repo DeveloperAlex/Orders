@@ -16,6 +16,14 @@ var router = express.Router({
   mergeParams: true
 });
 
+////Check if user is logged in
+//router.use(function(req, res, next){
+//  if (!req.user) {
+//    res.redirect('/login');
+//  }
+//  next();
+//});
+
 var passwords = require('../passwords');
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 mongoose.set('debug', true);

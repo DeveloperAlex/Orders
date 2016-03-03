@@ -20,6 +20,7 @@ var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package
 
 var routes = require('./routes/index');
 var apiRoutes = require('./routes/apiRoutes');
+//var authRouter = require('./src/routes/authRoutes')(nav);
 //var users = require('./routes/users');
 
 
@@ -52,6 +53,8 @@ var app = express();
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+
+//Middleware (app.use):
 app.use(logger('dev'));
 
 var authenticate = expressJwt({
@@ -74,7 +77,9 @@ app.use(cookieParser());
 //var passport = require('passport');
 //var session = require('express-session');
 //app.use(session({secret: 'library'}));
-//require('./src/config/passport')(app);
+////app.use(passport.initialize());
+////app.use(passport.session());
+//require('./src/config/passport')(app); //Instead of 2 above passport lines.
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".
@@ -82,6 +87,7 @@ app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles sta
 
 app.use('/', routes);
 app.use('/api', apiRoutes);
+//app.use('/Auth', authRouter);
 //app.use('/secured', authenticate);
 //app.use('/users', users);
 

@@ -4,6 +4,7 @@ var mongodb = require('mongodb').MongoClient;
 var passport = require('passport');
 
 var router = function () {
+  
   authRouter.route('/signUp')
     .post(function (req, res) {
       console.log(req.body);
@@ -23,14 +24,15 @@ var router = function () {
             });
           });
       });
-
     });
+  
   authRouter.route('/signIn')
     .post(passport.authenticate('local', {
       failureRedirect: '/'
     }), function (req, res) {
       res.redirect('/auth/profile');
     });
+  
   authRouter.route('/profile')
     .all(function (req, res, next) {
       if (!req.user) {
@@ -41,6 +43,7 @@ var router = function () {
     .get(function (req, res) {
       res.json(req.user);
     });
+  
   return authRouter;
 };
 
