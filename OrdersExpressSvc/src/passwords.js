@@ -6,6 +6,7 @@ try {
   var dir = __dirname;
   dir = dir.substr(0, dir.lastIndexOf('/'));
   dir = dir.substr(0, dir.lastIndexOf('/'));
+  dir = dir.substr(0, dir.lastIndexOf('/'));
   var file = dir + '/passwords.json';
   console.log(new Date().toString());
   console.log('Using passwords file= ' + file);
@@ -14,6 +15,7 @@ try {
   //Try again - perhaps we're running on a microsoft box.
   try {
     var dir2 = __dirname;
+    dir2 = dir2.substr(0, dir2.lastIndexOf('\\'));
     dir2 = dir2.substr(0, dir2.lastIndexOf('\\'));
     dir2 = dir2.substr(0, dir2.lastIndexOf('\\'));
     var file2 = dir2 + '\\passwords.json';

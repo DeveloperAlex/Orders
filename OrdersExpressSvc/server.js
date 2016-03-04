@@ -9,7 +9,7 @@ var expressJwt = require('express-jwt');
 //var jwt = require('jsonwebtoken');  //npm install jsonwebtoken --save //Auth0 does this part - so its not needed (ie, post to /api/login - jwt.sign({username: postedUsername})).
 
 var cors = require('cors');
-var passwords = require('./passwords');
+var passwords = require('./src/passwords');
 var path = require('path');
 //var favicon = require('serve-favicon');
 //var faker = require('faker'); //var user = faker.Helpers.userCard(); user.avatar = faker.Image.avatar();
@@ -18,8 +18,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
 
-var routes = require('./routes/index');
-var apiRoutes = require('./routes/apiRoutes');
+var routes = require('./src/routes/index');
+var apiRoutes = require('./src/routes/apiRoutes');
 //var authRouter = require('./src/routes/authRoutes')(nav);
 //var users = require('./routes/users');
 
