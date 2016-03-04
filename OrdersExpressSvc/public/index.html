@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ordersApp" ng-controller="AppCtrl" lang="en">
+<html ng-app="ordersApp" ng-controller="AppCtrl as vm" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Orders Demo App</title>
@@ -87,15 +87,21 @@
     <ul class="nav navbar-left nav-pills">
         <li class="active"><a ui-sref="login">Login</a></li>
         <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
-        <li><a ui-sref="order">Order</a></li>
+        <li ng-click="vm.orderClicked = !vm.orderClicked;" ng-class="{'active':vm.orderClicked}"><a ui-sref="order">Order</a></li>
     </ul>
     <ul class="nav navbar-right nav-pills">
-        <li><a ui-sref="page1">page1</a></li>
-        <li><a ui-sref="page2">page2</a></li>
-        <li><a ui-sref="page3">page3</a></li>
+        <li><a ui-sref="page1"><i class="fa fa-user"></i>Login</a></li>
+        <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
+        <li><a ui-sref="page3"><i class="fa fa-gear"></i>Setting</a></li>
     </ul>
 </nav>
 
+<br/>
+<br/>
+Debugging scope<br/>
+{{vm}}
+<br/>
+<br/>
 <br/>
 <br/>
 

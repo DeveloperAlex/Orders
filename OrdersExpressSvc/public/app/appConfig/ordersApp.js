@@ -180,11 +180,20 @@ angular.module('ordersApp')
 
 angular.module('ordersApp')
   .controller('AppCtrl', function AppCtrl($scope, $location) { //TODO: Not minsafe
+    var vm = this;
+    //$scope.test01 = "testing test01";
+    vm.test01 = 'testing test01';
+
     $scope.$on('$routeChangeSuccess', function (e, nextRoute) {
       if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
         $scope.pageTitle = nextRoute.$$route.pageTitle + ' | Demo App';
       }
     });
+    //$rootScope.$on('$routeChangeSuccess', function (e, nextRoute) {
+    //  if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
+    //    vm.pageTitle = nextRoute.$$route.pageTitle + ' | Demo App';
+    //  }
+    //});
   });
 
 
