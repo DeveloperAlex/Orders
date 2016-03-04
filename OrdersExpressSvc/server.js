@@ -57,15 +57,18 @@ var app = express();
 //Middleware (app.use):
 app.use(logger('dev'));
 
-var authenticate = expressJwt({
-  secret: new Buffer(passwords.auth0.client_secret, 'base64'),
-  audience: passwords.auth0.client_id
-});
-//app.use(expressJwt({secret: jwtSecret}).unless({ path:['/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
-//app.use(authenticate.unless({ path:['/api/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
-app.use(authenticate.unless({
-  path: ['/api/SomethingNotNeedingAuth']
-}));
+
+//var authenticate = expressJwt({
+//  secret: new Buffer(passwords.auth0.client_secret, 'base64'),
+//  audience: passwords.auth0.client_id
+//});
+////app.use(expressJwt({secret: jwtSecret}).unless({ path:['/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
+////app.use(authenticate.unless({ path:['/api/login'] }) );  //TODO: I think I like this better. //Adds user object if it can decode.
+//app.use(authenticate.unless({
+//  path: ['/api/SomethingNotNeedingAuth']
+//}));
+
+
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -83,7 +86,10 @@ app.use(cookieParser());
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".
-app.use(express.static(path.join(__dirname, 'public'))); //nginx now handles static files - this could be turned off (but I still need it for my local dev box - unless I setup nginx on it too). //TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
+
+//nginx now handles static files - this could be turned off (but I still need it for my local dev box - unless I setup nginx on it too).
+//TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/api', apiRoutes);

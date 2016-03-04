@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 var Schema = mongoose.Schema;
 

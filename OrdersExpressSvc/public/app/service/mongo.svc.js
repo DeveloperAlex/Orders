@@ -5,7 +5,7 @@
 
     //http://stackoverflow.com/questions/20369377/how-to-use-http-get-in-angularjs-correctly-in-specific-for-an-external-api-cal        
     factory.getEmployees = function () {
-      deferred = $q.defer();
+      var deferred = $q.defer();
       $http({
         method: 'GET',
         url: 'api/employee'
