@@ -6,97 +6,102 @@
     <title ng-bind="pageTitle"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Gulp Inject works now (just gotta test it - before deleting these commented out lines)    
+    <!-- Gulp Inject works now (just gotta test it - before deleting these commented out lines)
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+        <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+        <link src="bower_components/angular-ui-grid/ui-grid.css" rel="stylesheet" type="text/css" />
+        <link src="bower_components/angular-ui-grid/ui-grid.svg" rel="image" type="image/svg+xml" />
+
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <link src="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link src="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
+        <link src="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" rel="image" type="image/svg+xml" />
+
+        <link src="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+        <script src="app/appConfig/ordersApp.js"></script>
+        <script src="app/appConfig/constants.js"></script>
+
+        <script src="app/feature/login.ctrl.js"></script>
+        <script src="app/feature/user.ctrl.js"></script>
+        <script src="app/feature/order.ctrl.js"></script>
+        <script src="app/service/mongo.svc.js"></script>
+
+        <link src="app/modules/home/home.css" rel="stylesheet" type="text/css" ></link>
+        <script src="app/modules/home/home.js"></script>
+
+        <link src="app/modules/login/login.css" rel="stylesheet" type="text/css" ></link>
+        <script src="app/modules/login/login.js"></script>
+    -->
+
+
+    <!-- Run "gulp inject" to refresh 4 sections below -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
-    <link src="bower_components/angular-ui-grid/ui-grid.css" rel="stylesheet" type="text/css" />
-    <link src="bower_components/angular-ui-grid/ui-grid.svg" rel="image" type="image/svg+xml" />
-
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <link src="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link src="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" />
-    <link src="bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" rel="image" type="image/svg+xml" />
+    <!-- endbower -->
 
-    <link src="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+    <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+    <script type="text/javascript" src="//cdn.auth0.com/js/lock-7.js"></script>
+    <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
 
-    <script src="app/appConfig/ordersApp.js"></script>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="app/modules/home/home.css">
+    <link rel="stylesheet" href="app/modules/login/login.css">
+    <!-- endinject -->
+
+    <!-- inject:js -->
     <script src="app/appConfig/constants.js"></script>
-    
+    <script src="app/appConfig/ordersApp.js"></script>
+    <script src="app/appConfig/routes.js"></script>
+    <script src="app/common/rest.svc.js"></script>
     <script src="app/feature/login.ctrl.js"></script>
-    <script src="app/feature/user.ctrl.js"></script>
     <script src="app/feature/order.ctrl.js"></script>
+    <script src="app/feature/user.ctrl.js"></script>
     <script src="app/service/mongo.svc.js"></script>
-
-    <link src="app/modules/home/home.css" rel="stylesheet" type="text/css" ></link>
     <script src="app/modules/home/home.js"></script>
-    
-    <link src="app/modules/login/login.css" rel="stylesheet" type="text/css" ></link>
     <script src="app/modules/login/login.js"></script>
--->
-
-
-<!-- Run "gulp inject" to refresh 4 sections below -->
-<!-- bower:css -->
-<link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-<!-- endbower -->
-
-<script src="bower_components/jquery/dist/jquery.js"></script>
-
-<!-- bower:js -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<!-- endbower -->
-
-<script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
-<script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
-<script type="text/javascript" src="//cdn.auth0.com/js/lock-7.js"></script>
-<script type="text/javascript" src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
-
-<!-- inject:css -->
-<link rel="stylesheet" href="app/modules/home/home.css">
-<link rel="stylesheet" href="app/modules/login/login.css">
-<!-- endinject -->
-
-<!-- inject:js -->
-<script src="app/appConfig/constants.js"></script>
-<script src="app/appConfig/ordersApp.js"></script>
-<script src="app/appConfig/routes.js"></script>
-<script src="app/common/rest.svc.js"></script>
-<script src="app/feature/login.ctrl.js"></script>
-<script src="app/feature/order.ctrl.js"></script>
-<script src="app/feature/user.ctrl.js"></script>
-<script src="app/service/mongo.svc.js"></script>
-<script src="app/modules/home/home.js"></script>
-<script src="app/modules/login/login.js"></script>
-<!-- endinject -->
+    <!-- endinject -->
 
 
 </head>
 <body>
-    <div class="container">
-        <a ui-sref="login">loginDev</a>
-        <a ui-sref="user({ username: 'bob' })">user bob</a>
 
-        <a ui-sref="order">order</a>
+<nav class="navbar navbar-toolbar navbar-default navbar-static-top">
+    <ul class="nav navbar-left nav-pills">
+        <li class="active"><a ui-sref="login">Login</a></li>
+        <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
+        <li><a ui-sref="order">Order</a></li>
+    </ul>
+    <ul class="nav navbar-right nav-pills">
+        <li><a ui-sref="page1">page1</a></li>
+        <li><a ui-sref="page2">page2</a></li>
+        <li><a ui-sref="page3">page3</a></li>
+    </ul>
+</nav>
 
-        <a ui-sref="page1">page1</a>
-        <a ui-sref="page2">page2</a>
-        <a ui-sref="page3">page3</a>
-    </div>
-    <br />
-    <br />
+<br/>
+<br/>
 
-    <div class="container">
-        <div ui-view></div>
-    </div>
+<div class="container">
+    <div ui-view></div>
+</div>
 
 </body>
 </html>

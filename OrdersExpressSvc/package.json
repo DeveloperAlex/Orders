@@ -24,6 +24,7 @@
     "express-jwt": "~3.3.0",
     "express-session": "^1.13.0",
     "jade": "~1.6.0",
+    "less": "^2.6.0",
     "less-middleware": "^2.0.1",
     "mongodb": "^2.1.7",
     "mongoose": "^4.2.7",
