@@ -5,6 +5,7 @@
 // server - so using this instead (for now)).
 var portNum = require('./server_port');
 var express = require('express');
+var app = express();
 var expressJwt = require('express-jwt');
 //var jwt = require('jsonwebtoken');  //npm install jsonwebtoken --save //Auth0 does this part - so its not needed (ie, post to /api/login - jwt.sign({username: postedUsername})).
 
@@ -23,8 +24,6 @@ var apiRoutes = require('./src/routes/apiRoutes');
 //var authRouter = require('./src/routes/authRoutes')(nav);
 //var users = require('./routes/users');
 
-
-var app = express();
 
 // app.use(function (req, res, next) {
 //     var host = req.headers.host;
@@ -73,7 +72,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 }));
 app.use(cookieParser());
 
