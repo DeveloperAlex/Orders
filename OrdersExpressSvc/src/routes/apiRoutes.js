@@ -16,6 +16,8 @@ var router = express.Router({
   mergeParams: true
 });
 
+var _ = require('lodash');
+
 ////Check if user is logged in
 //router.use(function(req, res, next){
 //  if (!req.user) {
@@ -69,9 +71,15 @@ router.get('/', function (req, res) {
 router.route('/employee')
   .post(function (req, res) {
     var employee = new Employee(req.body);
-    console.log(employee);
-    res.send(employee);
-
+    employee.save(function(err){  //TODO: .save is new mongoose code - need to test it.
+      if (err) {
+        console.log('error', employee, err);
+        res.sendStatus(500).send("error " + err);
+      } else {
+        console.log(employee);
+        res.send(employee);
+      }
+    });
   })
   .get(function (req, res) {
     var query = req.query; //Works: http://localhost:8080/api/employee?user=Anne
@@ -88,11 +96,37 @@ router.route('/employee/:employeeId').get(function (req, res) {
   Employee.findById(req.params.employeeId, function (err, employee) {
     if (err) {
       res.status(500).send(err);
-    } else {
+    }
+    if (employee) {
       res.json(employee);
+    } {
+      res.status(404).json({info: 'employee not found'});
     }
   });
 });
+
+
+router.route('/employee/:employeeId').put(function (req, res) {
+  Employee.findById(req.params.employeeId, function(err, employee) {
+    if (err) {
+      res.json({info: 'error during find employee', error: err});
+    };
+    if (employee) {
+      _.merge(employee, req.body);
+      employee.save(function(err) {
+        if (err) {
+          res.json({info: 'error during employee update', error: err});
+        };
+        res.json({info: 'employee updated successfully'});
+      });
+    } else {
+      res.json({info: 'employee not found'});
+    }
+
+  });
+});
+
+;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
