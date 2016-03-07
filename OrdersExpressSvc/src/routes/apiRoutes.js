@@ -30,6 +30,11 @@ var passwords = require('../passwords');
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 mongoose.set('debug', true);
 var db = mongoose.connect(passwords.mongolab_com_orders); //https://mongolab.com/databases/orders
+//db.on('error', console.error.bind(console, 'mongoose connection error:'));
+//db.once('open', function() {
+//  console.log('mongoose connected (says apiRoutes.js)!');
+//});
+
 
 var Employee = require('../models/employeeModel.js');
 var Menu = require('../models/menuModel.js');
@@ -56,6 +61,9 @@ router.get('/me', function (req, res) { //TODO: Call this endpoint from the fron
   res.send(req.user); //user object is added to request by server.js's "app.use(authenticate.unless ..." (ie, expressJwt).
 });
 
+router.get('/ping', function(req, res) {
+  res.json({pong: Date.now()});
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /* GET home page. */
@@ -82,31 +90,34 @@ router.route('/employee')
     });
   })
   .get(function (req, res) {
-    var query = req.query; //Works: http://localhost:8080/api/employee?user=Anne
+    var query = req.query;  // || {}; //Works: http://localhost:8181/api/employee?user=Anne
     Employee.find(query, function (err, employee) {
       if (err) {
         res.status(500).send(err);
       } else {
-        res.json(employee);
+        res.json(employee[0]._doc);
       }
     });
   });
 
-router.route('/employee/:employeeId').get(function (req, res) {
+//Works: http://localhost:8181/api/employee/2
+router.route('/employee/:employeeId')
+  .get(function (req, res) {
   Employee.findById(req.params.employeeId, function (err, employee) {
     if (err) {
       res.status(500).send(err);
     }
     if (employee) {
-      res.json(employee);
-    } {
+      res.json(employee._doc);
+    } else {
       res.status(404).json({info: 'employee not found'});
     }
   });
 });
 
 
-router.route('/employee/:employeeId').put(function (req, res) {
+router.route('/employee/:employeeId')
+  .put(function (req, res) {
   Employee.findById(req.params.employeeId, function(err, employee) {
     if (err) {
       res.json({info: 'error during find employee', error: err});
@@ -122,9 +133,21 @@ router.route('/employee/:employeeId').put(function (req, res) {
     } else {
       res.json({info: 'employee not found'});
     }
-
   });
-});
+  });
+
+
+router.route('/employee/:employeeId')
+  .delete(function (req, res) {
+    Employee.findByIdAndRemove(req.params.id, function(err) {
+      if (err) {
+        res.json({info: 'error during remove employee', error: err});
+      };
+      res.json({info: 'employee removed successfully'}); //In real life we would never actually delete an employee.
+    });
+  });
+
+
 
 ;
 

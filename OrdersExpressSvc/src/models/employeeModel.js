@@ -6,8 +6,8 @@ var employeeModel = new Schema({
   _id: {
     type: String
   }
-  //,user: { type: String }
-  //,pw: { type: String }
+  ,user: { type: String }
+  ,pw: { type: String }
   //,admin: { type: Boolean, default: false }
 });
 
