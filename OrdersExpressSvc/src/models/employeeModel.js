@@ -2,16 +2,16 @@
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 var Schema = mongoose.Schema;
 
-var employeeModel = new Schema({
-  _id: {
-    type: String
-  }
-  ,user: { type: String }
+var employeeSchema = new Schema({
+  //_id: { type: String }
+  user: { type: String }
   ,pw: { type: String }
+  ,createdOn: {type: Date, default: Date.now}
+
   //,admin: { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Employee', employeeModel);
+module.exports = mongoose.model('Employee', employeeSchema);
 
 
 //{

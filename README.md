@@ -13,7 +13,7 @@
 * Webstorm - great IDE for Node and Angular development.
 * Sublime - good too
 * MongoChef for MongoDB - http://3t.io/mongochef/
-* Postman (though I like Fiddler too)
+* Postman (Fiddler is good too)
 
 ### Cloud Services:
 * Google Cloud (similar to AWS) - https://cloud.google.com/
@@ -24,6 +24,19 @@
 * Ubuntu 14.04
 * bash scripts
 * nginx
-* pm2 = npm package to keep node.js running forever. https://www.npmjs.com/package/pm2  https://github.com/Unitech/pm2
+* pm2 = npm package to keep node.js running forever.
+  - https://www.npmjs.com/package/pm2  https://github.com/Unitech/pm2
 * node.js
 * express
+
+### Webstorm Plugins:
+* LESS CSS Compiler
+  - Screenshots - http://plugins.jetbrains.com/plugin?pr=&pluginId=7059
+
+* Bootstrap 3
+  - http://plugins.jetbrains.com/plugin/7572
+  - "bs3-" screenshots - https://github.com/bodiam/intellij-bootstrap3
+
+* Plus my own Gulp task to inject js and css into the html (both bower and project level files)
+  - See my gulpfile.js for more info.
+
