@@ -78,7 +78,12 @@ router.get('/', function (req, res) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 router.route('/employee')
   .post(function (req, res) {
-    var employee = new Employee(req.body);
+    //var employee = new Employee(req.body);
+    var employee = new Employee({
+      user: req.body.user || 'user was na',
+      pw: req.body.pw || 'pw was na'
+    });
+
     employee.save(function(err){  //TODO: .save is new mongoose code - need to test it.
       if (err) {
         console.log('error', employee, err);
@@ -86,6 +91,7 @@ router.route('/employee')
       } else {
         console.log(employee);
         res.send(employee);
+        //res.redirect(301, '/');  //We could redirect to the homepage. Yeah, but we're a restful service - so no.
       }
     });
   })

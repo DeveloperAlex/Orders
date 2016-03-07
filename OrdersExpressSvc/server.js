@@ -19,7 +19,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
 
-var routes = require('./src/routes/index');
+//var routes = require('./src/routes/index');
 var apiRoutes = require('./src/routes/apiRoutes');
 //var authRouter = require('./src/routes/authRoutes')(nav);
 //var users = require('./routes/users');
@@ -90,7 +90,7 @@ app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.stat
 //TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+//app.use('/', routes);
 app.use('/api', apiRoutes);
 //app.use('/Auth', authRouter);
 //app.use('/secured', authenticate);
