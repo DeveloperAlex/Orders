@@ -11,7 +11,10 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+//var router = app.router;  //Deprecated
+
 //var router = express.Router();
+//var router = app.Routerrrr({
 var router = express.Router({
   mergeParams: true
 });

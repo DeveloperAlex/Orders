@@ -32,6 +32,7 @@
 ### Webstorm Plugins:
 * LESS CSS Compiler
   - Screenshots - http://plugins.jetbrains.com/plugin?pr=&pluginId=7059
+  - https://github.com/acdvorak/intellij-lessc-plugin
 
 * Bootstrap 3
   - http://plugins.jetbrains.com/plugin/7572
