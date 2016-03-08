@@ -87,7 +87,7 @@ router.route('/employee')
       pw: req.body.pw || 'pw was na'
     });
 
-    employee.save(function(err){  //TODO: .save is new mongoose code - need to test it.
+    employee.save(function(err){  //TODO: .save is new mongoose code - need to test it. Yes, it works.
       if (err) {
         console.log('error', employee, err);
         res.sendStatus(500).send("error " + err);
@@ -127,7 +127,7 @@ router.route('/employee/:employeeId')
 
 router.route('/employee/:employeeId')
   .put(function (req, res) {
-  Employee.findById(req.params.employeeId, function(err, employee) {
+  Employee.findById(req.params.employeeId, function(err, employee) { //TODO: Use .findByIdAndUpdate instead (faster).
     if (err) {
       res.json({info: 'error during find employee', error: err});
     };
@@ -162,9 +162,23 @@ router.route('/employee/:employeeId')
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+//router.route('/menu').get(function (req, res) {
+//  var query = req.query;
+//  Menu.find(query, function (err, menu) {
+//    if (err) {
+//      res.status(500).send(err);
+//    } else {
+//      res.json(menu);
+//    }
+//  });
+//});
+
+//Much better than above Menu getter.
 router.route('/menu').get(function (req, res) {
-  var query = req.query;
-  Menu.find(query, function (err, menu) {
+  var query = Menu.find();
+  query.sort({ category: 'asc', title: 'asc' }).limit(100);
+
+  query.exec(function(err, menu){
     if (err) {
       res.status(500).send(err);
     } else {

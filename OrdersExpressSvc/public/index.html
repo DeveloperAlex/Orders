@@ -79,11 +79,28 @@
     <script src="app/modules/login/login.js"></script>
     <!-- endinject -->
 
+<script type="application/javascript">
+    //Needed for: "navbar-fixed-top".
+    var onResize = function() {
+        // apply dynamic padding at the top of the body according to the fixed navbar height
+        $("body").css("padding-top", $(".navbar-fixed-top").height());
+    };
+
+    // attach the function to the window resize event
+    $(window).resize(onResize);
+
+    // call it also when the page is ready after load or reload
+    $(function() {
+        onResize();
+    });
+</script>
 
 </head>
 <body>
 
-<nav class="navbar navbar-toolbar navbar-default navbar-static-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+
     <ul class="nav navbar-left nav-pills">
         <li class="active"><a ui-sref="login">Login</a></li>
         <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
@@ -94,16 +111,19 @@
         <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
         <li><a ui-sref="page3"><i class="fa fa-gear"></i>Setting</a></li>
     </ul>
-</nav>
+    </div>
+</div>
 
-<br/>
-<br/>
-Debugging scope<br/>
-{{vm}}
-<br/>
-<br/>
-<br/>
-<br/>
+<div class="container">
+    <br/>
+    <br/>
+    Debugging scope<br/>
+    {{vm}}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
 
 <div class="container">
     <div ui-view></div>
