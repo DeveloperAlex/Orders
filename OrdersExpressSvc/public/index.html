@@ -100,17 +100,17 @@
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-
-    <ul class="nav navbar-left nav-pills">
-        <li class="active"><a ui-sref="login">Login</a></li>
-        <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
-        <li ng-click="vm.orderClicked = !vm.orderClicked;" ng-class="{'active':vm.orderClicked}"><a ui-sref="order">Order</a></li>
-    </ul>
-    <ul class="nav navbar-right nav-pills">
-        <li><a ui-sref="page1"><i class="fa fa-user"></i>Login</a></li>
-        <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
-        <li><a ui-sref="page3"><i class="fa fa-gear"></i>Setting</a></li>
-    </ul>
+        <div class="nav navbar-header navbar-left navbar-brand">Orders App</div>
+        <ul class="nav navbar-left nav-pills">
+            <li class="active"><a ui-sref="login">Login</a></li>
+            <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
+            <li ng-click="vm.orderClicked = !vm.orderClicked;" ng-class="{'active':vm.orderClicked}"><a ui-sref="order">Order</a></li>
+        </ul>
+        <ul class="nav navbar-right nav-pills">
+            <li><a ui-sref="page1"><i class="fa fa-user"></i>Login</a></li>
+            <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
+            <li><a ui-sref="page3"><i class="fa fa-gear"></i>Setting</a></li>
+        </ul>
     </div>
 </div>
 
