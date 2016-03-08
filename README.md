@@ -41,3 +41,27 @@
 * Plus my own Gulp task to inject js and css into the html (both bower and project level files)
   - See my gulpfile.js for more info.
 
+
+### Useful Links:
+* Mongo
+  - http://mongoosejs.com/docs/guide.html
+  - https://app.pluralsight.com/library/courses/mongoose-for-nodejs-mongodb/
+  - https://mlab.com
+
+* Express
+  - http://loopback.io/resources/#compare
+
+* Bootstap
+  - http://getbootstrap.com/components/
+
+* Swagger
+  - http://swagger.io/
+  - https://github.com/OAI/OpenAPI-Specification
+
+* Other
+  - https://auth0.com
+  - http://meanjs.org/
+  - http://www.haproxy.org/
+
+* Webstorm
+  - https://www.youtube.com/user/JetBrainsTV/about
