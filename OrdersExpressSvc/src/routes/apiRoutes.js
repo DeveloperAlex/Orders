@@ -53,7 +53,8 @@ router.use(function (req, res, next) {
     console.log('%s %s %s', req.method, req.url, req.path);
     next();
   } else {
-    next();
+    //next();
+    ;  //Stop don't continue - if its not /api.
   }
 });
 

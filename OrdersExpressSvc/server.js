@@ -54,7 +54,7 @@ var apiRoutes = require('./src/routes/apiRoutes');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //Middleware (app.use):
-app.use(logger('dev'));
+//app.use(logger('dev'));  //TODO: Turn back on. Was too noisy in console.
 
 
 //var authenticate = expressJwt({
@@ -87,7 +87,7 @@ app.use(cookieParser());
 app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".
 
 //nginx now handles static files - this could be turned off (but I still need it for my local dev box - unless I setup nginx on it too).
-//TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps.
+//TODO: What happens to the LESS css files? Hmm - need Gulp to fix that perhaps. Fixed w/ Webstorm addin.
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use('/', routes);
