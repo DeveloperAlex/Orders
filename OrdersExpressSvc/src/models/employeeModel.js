@@ -2,10 +2,17 @@
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 var Schema = mongoose.Schema;
 
+var passwordValidator = [
+  function(val){
+    return (val.length >= 3);  //We can add a regex later.
+  },
+'Password must be at least 3 characters long'
+];
+
 var employeeSchema = new Schema({
   //_id: { type: String }
   user: { type: String, required: true }
-  ,pw: { type: String, required: true }
+  ,pw: { type: String, required: true, validate: passwordValidator }
   //,createdOn: {type: Date, required: true, default: Date.now}  //Really should be UTC date.
 
   //,admin: { type: Boolean, default: false }

@@ -63,6 +63,7 @@
   - https://auth0.com
   - http://meanjs.org/
   - http://www.haproxy.org/
+  - https://www.getpostman.com/docs/collections
 
 * Webstorm
   - https://www.youtube.com/user/JetBrainsTV/about

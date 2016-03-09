@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var menuSchema = new Schema({
   //_id: {type: String},
-  mealtime: { type: String, required: true, default: 'lunch' },
+  mealtime: { type: String, required: true, default: 'lunch', enum: ['breakfast', 'lunch', 'dinner'] },
   items: {
     type: {
       category: { type: String, required: true, default: 'food'},
