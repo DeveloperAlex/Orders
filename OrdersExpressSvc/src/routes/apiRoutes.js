@@ -111,7 +111,8 @@ router.route('/employee')
       if (err) {
         res.status(500).send(err);
       } else {
-        res.json(employee[0]._doc);
+        //res.json(employee[0]._doc);
+
       }
     });
   });

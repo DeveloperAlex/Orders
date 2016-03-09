@@ -59,6 +59,7 @@
   - https://github.com/OAI/OpenAPI-Specification
 
 * Other
+  - https://lodash.com/docs
   - https://auth0.com
   - http://meanjs.org/
   - http://www.haproxy.org/
