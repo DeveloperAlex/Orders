@@ -3,6 +3,7 @@
 //TODO: Move code out of routes into controller.
 //var apiController = require('./src/controllers/apiController'); //This is relative path to file.
 
+var _ = require('lodash');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser'); //Middleware that creates req.body from either json or url.
@@ -107,12 +108,16 @@ router.route('/employee')
   })
   .get(function (req, res) {
     var query = req.query;  // || {}; //Works: http://localhost:8181/api/employee?user=Anne
-    Employee.find(query, function (err, employee) {
+    Employee.find(query, function (err, employees) {
       if (err) {
         res.status(500).send(err);
       } else {
-        //res.json(employee[0]._doc);
-
+        //res.json(employees[0]._doc);
+        var result = [];
+        _.forEach(employees, function(value, key) {
+          result.push(value._doc);
+        });
+        res.json(result);
       }
     });
   });
