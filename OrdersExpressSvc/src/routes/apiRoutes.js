@@ -48,8 +48,13 @@ var Order = require('../models/orderModel.js');
 // simple logger for this router's requests
 // all requests to this router will first hit this middleware
 router.use(function (req, res, next) {
-  console.log('%s %s %s', req.method, req.url, req.path);
-  next();
+  //if (true) {  //(‌‌req.originalUrl.indexOf('/api') > -1) {
+  if (req.originalUrl.indexOf('/api') > -1) {
+    console.log('%s %s %s', req.method, req.url, req.path);
+    next();
+  } else {
+    next();
+  }
 });
 
 
@@ -82,6 +87,7 @@ router.get('/', function (req, res) {
 router.route('/employee')
   .post(function (req, res) {
     //var employee = new Employee(req.body);
+    //Create a Document instance of a Model (which was created from a Schema).
     var employee = new Employee({
       user: req.body.user || 'user was na',
       pw: req.body.pw || 'pw was na'
@@ -238,6 +244,8 @@ mongoose.connection.on('error', function (err) {
 mongoose.connection.on('disconnected', function () {
   console.log('Mongoose connection disconnected');
 });
+
+//TODO: http://mongoosejs.com/docs/guide.html#indexes  //Improve indexing
 
 //// If the Node process ends, close the Mongoose connection
 //process.on('SIGINT', function () {

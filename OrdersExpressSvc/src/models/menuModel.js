@@ -2,25 +2,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var menuModel = new Schema({
-  _id: {
-    type: String
-  },
-  mealtime: {
-    type: String
-  },
+var menuSchema = new Schema({
+  //_id: {type: String},
+  mealtime: { type: String, required: true, default: 'lunch' },
   items: {
     type: {
-      category: String,
-      title: String,
-      price: String,
-      prepTime: String
+      category: { type: String, required: true, default: 'food'},
+      title: { type: String, required: true },
+      price: { type: Number, required: true , min: 0 },
+      prepTimeInSec: { type: Number, default: 10 }  //Prep time is in seconds
     }
   }
   //items: { type: Object }
 });
 
-module.exports = mongoose.model('Menu', menuModel);
+module.exports = mongoose.model('Menu', menuSchema);
 
 
 

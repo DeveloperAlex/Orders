@@ -2,29 +2,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var orderModel = new Schema({
-  _id: {
-    type: String
-  },
-  server: {
-    type: String
-  },
-  orderNum: {
-    type: String
-  },
-  orderTime: {
-    type: Date
-  },
+var orderSchema = new Schema({
+  //_id: {type: String},
+  server: { type: String },
+  orderNum: { type: Number },
+  orderTime: { type: Date },
   items: {
     type: {
-      food: String,
-      quantity: String
+      food: { type: String },  //What about Title?
+      quantity: { type: Number }
     }
   }
 });
 
 
-module.exports = mongoose.model('Order', orderModel);
+module.exports = mongoose.model('Order', orderSchema);
 
 
 
