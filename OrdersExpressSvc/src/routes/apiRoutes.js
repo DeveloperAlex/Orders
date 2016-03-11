@@ -223,6 +223,9 @@ router.route('/menu/:menuId').get(function (req, res) {
 router.route('/order').get(function (req, res) {
   var query = req.query;
   //Order.find(query, function (err, order) {
+  //.select({ name: 1, occupation: 1 })  //This will cause mongoose to rtn a subset of all of the fields available.
+  //query.select('name occupation');  //Another mongoose docs example of how to rtn a subset of columns.
+  //http://stackoverflow.com/questions/5825520/in-mongoose-how-do-i-sort-by-date-node-js //Nice explanation of choices.
   Order.find(query).sort({orderNum: 'desc'}).limit(100).exec(function (err, order) {
     //Employee.find(query).sort({user: 'asc'}).limit(100).exec(function (err, employees) {
     if (err) {
