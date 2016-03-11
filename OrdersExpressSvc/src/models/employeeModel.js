@@ -4,20 +4,39 @@ var Schema = mongoose.Schema;
 
 var passwordValidator = [
   function(val){
-    return (val.length >= 3);  //We can add a regex later.
+    return (val.trim().length >= 3);  //We can add a regex later.
   },
-'Password must be at least 3 characters long'
+  'Password must be at least 3 characters long'
 ];
+
+//var requiredStringValidator = [   //trim: true takes care of this.
+//  function(val) {
+//    return (val.trim().length > 0)
+//  },
+//  '{PATH} cannot be empty'
+//];
 
 var employeeSchema = new Schema({
   //_id: { type: String }
-  user: { type: String, required: true }
-  ,pw: { type: String, required: true, validate: passwordValidator }
+  user: { type: String, trim: true, required: true, validate: requiredStringValidator }
+  ,pw: { type: String, trim: true, required: true, validate: passwordValidator }
   //,createdOn: {type: Date, required: true, default: Date.now}  //Really should be UTC date.
 
   //,admin: { type: Boolean, default: false }
-}, {timestamps: true});
+}, {timestamps: true, capped: 1024});
 //employeeSchema.set('timestamps', true);
+//https://www.npmjs.com/package/mongoose-timestamp
+
+employeeSchema.pre('validate', function(next) {  //http://mongoosejs.com/docs/api.html#model_Model-save
+  console.log('About to save employee');  //Added in case I want to debug/inspect "this".
+  next();
+});
+
+employeeSchema.pre('save', function(next) {  //http://mongoosejs.com/docs/middleware.html
+  console.log('About to save employee');  //Added in case I want to debug/inspect "this".
+  next();
+});
+
 
 
 //module.exports = mongoose.model('Employee', employeeSchema);

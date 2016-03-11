@@ -38,6 +38,7 @@
     "stylus": "0.42.3"
   },
   "devDependencies": {
+    "frisby": "^0.8.5",
     "gulp": "^3.9.1",
     "gulp-inject": "^3.0.0",
     "gulp-jscs": "^3.0.2",

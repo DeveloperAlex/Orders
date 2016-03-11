@@ -33,7 +33,13 @@ var _ = require('lodash');
 var passwords = require('../passwords');
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 mongoose.set('debug', true);
-var db = mongoose.connect(passwords.mongolab_com_orders); //https://mongolab.com/databases/orders
+var db = mongoose.connect(passwords.mongolab_com_orders, function(err) {  //https://mongolab.com/databases/orders
+  if (err) {
+    console.log('Mongoose connect failed. err= ' + err);
+  }
+});
+
+
 //db.on('error', console.error.bind(console, 'mongoose connection error:'));
 //db.once('open', function() {
 //  console.log('mongoose connected (says apiRoutes.js)!');
@@ -91,8 +97,8 @@ router.route('/employee')
     //var employee = new Employee(req.body);
     //Create a Document instance of a Model (which was created from a Schema).
     var employee = new Employee({
-      user: req.body.user || 'user was na',
-      pw: req.body.pw || 'pw was na'
+      user: req.body.user,  //|| 'user was na',
+      pw: req.body.pw  //|| 'pw was na'
     });
 
     employee.save(function(err){  //TODO: .save is new mongoose code - need to test it. Yes, it works.

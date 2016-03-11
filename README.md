@@ -9,6 +9,11 @@
 * Dev - http://appdev.developeralex.com/
 * Prod - http://app.developeralex.com/
 
+### Training:
+* https://pluralsight.com
+* https://egghead.io
+* https://www.udemy.com/
+
 ### Tools:
 * Webstorm - great IDE for Node and Angular development.
 * Sublime - good too
