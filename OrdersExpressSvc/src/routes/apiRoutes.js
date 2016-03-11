@@ -112,9 +112,11 @@ router.route('/employee')
       }
     });
   })
+
   .get(function (req, res) {
     var query = req.query;  // || {}; //Works: http://localhost:8181/api/employee?user=Anne
-    Employee.find(query, function (err, employees) {
+    //Employee.find(query, function (err, employees) {
+    Employee.find(query).sort({user: 'asc'}).limit(100).exec(function (err, employees) {
       if (err) {
         res.status(500).send(err);
       } else {
@@ -220,7 +222,9 @@ router.route('/menu/:menuId').get(function (req, res) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 router.route('/order').get(function (req, res) {
   var query = req.query;
-  Order.find(query, function (err, order) {
+  //Order.find(query, function (err, order) {
+  Order.find(query).sort({orderNum: 'desc'}).limit(100).exec(function (err, order) {
+    //Employee.find(query).sort({user: 'asc'}).limit(100).exec(function (err, employees) {
     if (err) {
       res.status(500).send(err);
     } else {
