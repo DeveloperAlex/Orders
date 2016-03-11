@@ -18,12 +18,12 @@ var passwordValidator = [
 
 var employeeSchema = new Schema({
   //_id: { type: String }
-  user: { type: String, trim: true, required: true, validate: requiredStringValidator }
+  user: { type: String, trim: true, required: true }
   ,pw: { type: String, trim: true, required: true, validate: passwordValidator }
   //,createdOn: {type: Date, required: true, default: Date.now}  //Really should be UTC date.
 
   //,admin: { type: Boolean, default: false }
-}, {timestamps: true, capped: 1024});
+}, {timestamps: true});  //capped: 1024 = https://docs.mongodb.org/manual/core/capped-collections/#CappedCollections-Convertingacollectiontocapped
 //employeeSchema.set('timestamps', true);
 //https://www.npmjs.com/package/mongoose-timestamp
 

@@ -14,7 +14,7 @@ var menuSchema = new Schema({
     }
   }
   //items: { type: Object }
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model('Menu', menuSchema);
 

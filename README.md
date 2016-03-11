@@ -34,7 +34,7 @@
 * node.js
 * express
 
-### Webstorm Plugins:
+### Webstorm Plugins (https://plugins.jetbrains.com/?webStorm):
 * LESS CSS Compiler
   - Screenshots - http://plugins.jetbrains.com/plugin?pr=&pluginId=7059
   - https://github.com/acdvorak/intellij-lessc-plugin
@@ -42,6 +42,10 @@
 * Bootstrap 3
   - http://plugins.jetbrains.com/plugin/7572
   - "bs3-" screenshots - https://github.com/bodiam/intellij-bootstrap3
+
+* CodeGlance
+  - https://plugins.jetbrains.com/plugin/7275?pr=clion
+  - https://github.com/Vektah/CodeGlance
 
 * Plus my own Gulp task to inject js and css into the html (both bower and project level files)
   - See my gulpfile.js for more info.

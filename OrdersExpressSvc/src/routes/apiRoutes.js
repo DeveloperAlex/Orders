@@ -1,6 +1,6 @@
 'use strict';
 
-//TODO: Move code out of routes into controller.
+//TODO: Move code out of routes into controller. Or refactor this into separate api files for each endpoint grouping.
 //var apiController = require('./src/controllers/apiController'); //This is relative path to file.
 
 var _ = require('lodash');
