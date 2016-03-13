@@ -16,6 +16,14 @@ var passwordValidator = [
 //  '{PATH} cannot be empty'
 //];
 
+
+
+
+
+
+
+
+
 var employeeSchema = new Schema({
   //_id: { type: String }
   user: { type: String, trim: true, required: true }
