@@ -36,6 +36,7 @@ angular.module('ordersApp')
 ]);
 
 
+//TODO: Move secret keys out of my code (& reset them to different values - obviously).
 angular.module('ordersApp')
   .constant('Auth0Constant', {
     AUTH0_DOMAIN: 'developeralex.auth0.com',
@@ -88,6 +89,12 @@ function (
           pageTitle: 'Order',
           requiresLogin: true
         })
+        //resolve: {  //TODO: Add resolve to each of these - for any Mongo calls (that might take time).
+        //  event: function($route, eventData){
+        //    //$route.current.locals.event = use in controller to read below promise.
+        //    return eventData.getEvent($route.current.pathParams.eventId).$promise;
+        //  }
+        //}
 
       .state('page1', {
           url: '/page1',
@@ -187,6 +194,8 @@ angular.module('ordersApp')
     $scope.$on('$routeChangeSuccess', function (e, nextRoute) {
       if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
         $scope.pageTitle = nextRoute.$$route.pageTitle + ' | Demo App';
+        //$route.current.pageTitle is typical way.
+        //$route.current.params.foo if ?foo=123 is in querystring (params does either). pathParams...
       }
     });
     //$rootScope.$on('$routeChangeSuccess', function (e, nextRoute) {
