@@ -6,7 +6,8 @@
 angular.module('ordersApp', [
     'auth0', 'angular-storage', 'angular-jwt',
     'ui.grid', 'ui.grid.pagination', 'ui.router',
-    'orders.login', 'orders.home'
+    'orders.login', 'orders.home',
+    'oa-common', 'oa-employee'
 ]); //['ui.bootstrap']);
 
 //https://github.com/angular-ui/ui-router/wiki#state-change-events
@@ -96,7 +97,7 @@ function (
         //  }
         //}
 
-      .state('page1', {
+        .state('page1', {
           url: '/page1',
           templateUrl: 'app/test/page1.html',
           pageTitle: 'Page1',
@@ -113,7 +114,15 @@ function (
           templateUrl: 'app/test/page3.html',
           pageTitle: 'Page3',
           requiresLogin: true
-        });
+        })
+        .state('employees', {
+          url: '/employees,',
+          controller: 'employeesController as employees',
+          templateUrl: 'app/modules/employee/employees.html',
+          pageTitle: 'Employee Listing',
+          requiresLogin: true
+        })
+        ;
 
       $urlRouterProvider.otherwise('/');
 

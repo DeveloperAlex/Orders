@@ -71,8 +71,11 @@
     <script src="app/feature/login.ctrl.js"></script>
     <script src="app/feature/order.ctrl.js"></script>
     <script src="app/feature/user.ctrl.js"></script>
-    <script src="app/common/rest.svc.js"></script>
     <script src="app/service/mongo.svc.js"></script>
+    <script src="app/modules/common/common.module.js"></script>
+    <script src="app/modules/common/rest.svc.js"></script>
+    <script src="app/modules/employee/employee.module.js"></script>
+    <script src="app/modules/employee/employees.ctrl.js"></script>
     <script src="app/modules/home/home.js"></script>
     <script src="app/modules/login/login.js"></script>
     <!-- endinject -->
@@ -105,7 +108,7 @@
         <ul class="nav navbar-right nav-pills">
             <li><a ui-sref="page1"><i class="fa fa-user"></i>Login</a></li>
             <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
-            <li><a ui-sref="page3"><i class="fa fa-gear"></i>Setting</a></li>
+            <li><a ui-sref="employees"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
     </div>
 </div>

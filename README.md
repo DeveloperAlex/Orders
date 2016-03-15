@@ -35,6 +35,12 @@
 * express
 
 ### Webstorm Plugins (https://plugins.jetbrains.com/?webStorm):
+* Webstorm Live Templates
+  - https://github.com/johnpapa/angular-styleguide/tree/master/a1/assets/webstorm-angular-live-templates
+  - https://github.com/johnpapa/angular-styleguide/tree/master/a1#webstorm
+  - Put above file here and restart Webstorm:
+  - C:\Users\username\.WebStorm11\config\templates\webstorm-angular-live-templates.xml
+
 * LESS CSS Compiler
   - Screenshots - http://plugins.jetbrains.com/plugin?pr=&pluginId=7059
   - https://github.com/acdvorak/intellij-lessc-plugin
