@@ -37,6 +37,7 @@ angular.module('ordersApp')
 ]);
 
 
+//TODO: Move Constants to a separate file - so its easier to modify them for different environments.
 //TODO: Move secret keys out of my code (& reset them to different values - obviously).
 angular.module('ordersApp')
   .constant('Auth0Constant', {
@@ -47,7 +48,8 @@ angular.module('ordersApp')
     // restfulUrl: 'http://apitrans.thomsonreuters.com/api/', //Suffix url w/ a "/".
     // restfulVersion: 'v1',
     // webAppUrl: 'http://otptrans.thomsonreuters.com/' //Suffix url w/ a "/".
-  });
+  })
+  .constant('restfulUrl', 'http://asdf/api');  //TODO: Refactor constants to be 1 json object.
 
 
 angular.module('ordersApp')
@@ -116,11 +118,17 @@ function (
           requiresLogin: true
         })
         .state('employees', {
-          url: '/employees,',
+          url: '/employees',
           controller: 'employeesController as employees',
           templateUrl: 'app/modules/employee/employees.html',
           pageTitle: 'Employee Listing',
-          requiresLogin: true
+          requiresLogin: true,
+          resolve: {
+            employeeslist: function(restSvc){
+              //return restSvc.getEmployees().$promise;  //$route.current.locals.employeeslist
+              return restSvc.getEmployees();  //$route.current.locals.employeeslist
+            }
+          }
         })
         ;
 

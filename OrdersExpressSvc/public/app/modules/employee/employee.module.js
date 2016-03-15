@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var employeeModule = angular.module('oa-employee', []);
+  var employeeModule = angular.module('oa-employee', ['ui.router']);
 
 
 }());
