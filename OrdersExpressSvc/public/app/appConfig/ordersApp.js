@@ -152,6 +152,9 @@ function (
           resolve: {
             resolveduser: function($stateParams){
               return $stateParams.user;  //Later hit restSvc.getUser('user...')
+            },
+            mongoUser: function($stateParams, restSvc){
+              return restSvc.getEmployee($stateParams.user);
             }
           }
         })

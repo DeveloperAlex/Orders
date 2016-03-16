@@ -15,7 +15,8 @@
     //vm.user = 'blahblahuser';   //$stateParams.user;
     vm.stateParamsUser = $stateParams.user;
 
-    vm.resolveduser = $state.$current.locals.globals.resolveduser
+    vm.resolveduser = $state.$current.locals.globals.resolveduser;
+    vm.mongoUser = $state.$current.locals.globals.mongoUser;
 
   }
 

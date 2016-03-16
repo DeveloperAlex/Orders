@@ -11,10 +11,29 @@
   function restSvc($http, $q) {
     var vm = this;
     return {
+      getEmployee: getEmployee,
       getEmployees: getEmployees
     };
 
+    //TODO: RESTful service has no versioning.
     vm.restfulUrl = 'http://localhost:8181/api/'; //Always end url with "/".  //TODO: Refactor - inject constants.
+
+
+    function getEmployee(user) {
+      vm.deferredGetEmployee = $q.defer();
+      $http({
+        method: 'GET',
+        //url: vm.restfulUrl + 'employee'
+        url: 'http://localhost:8181/api/employee?user=' + user
+      }).success(function (data) {
+        vm.deferredGetEmployee.resolve(data);
+      }).error(function (err) {
+        console.log('deferredGetEmployees err', err);
+        //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
+        vm.deferredGetEmployee.reject('There was an error with common rest.svc.js :: getEmployee.');
+      });
+      return vm.deferredGetEmployee.promise;
+    }
 
 
     function getEmployees() {
