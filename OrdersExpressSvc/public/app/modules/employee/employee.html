@@ -1,0 +1,18 @@
+<div class="container">
+    employee listing will go here<br/>
+    {{employeedetail.title}}
+    <br/><br/><br/>
+
+
+    <div ng-repeat="emp in employeedetail.employeelist">
+        <a ui-sref="employee.detail({user: emp.user})" >{{emp.user}}</a>
+        <div>{{emp}}</div>
+    </div>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+{{employeedetail.employeelist | json}}
+

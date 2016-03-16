@@ -117,21 +117,30 @@ function (
           pageTitle: 'Page3',
           requiresLogin: true
         })
-        .state('employees', {
-          url: '/employees',
-          controller: 'employeesController as employees',
-          templateUrl: 'app/modules/employee/employees.html',
+        .state('employee', {
+          url: '/employee',
+          controller: 'employeeController as employeedetail',
+          templateUrl: 'app/modules/employee/employee.html',
           pageTitle: 'Employee Listing',
           requiresLogin: true,
           resolve: {
-            employeeslist: function(restSvc){
+            employeelist: function(restSvc){
               //return restSvc.getEmployees().$promise;  //$route.current.locals.employeeslist
               return restSvc.getEmployees();  //$route.current.locals.employeeslist
             }
           }
         })
         .state('employee.detail', {
-
+          url: '/:user',
+          controller: 'employeeDetailController as employeedetail',
+          templateUrl: 'app/modules/employee/employeeDetail.html',
+          pageTitle: 'Employee Detail',
+          requiresLogin: true,
+          resolve: {
+            employeedetail: function($stateParams){
+              return $stateParams.user;  //Later hit restSvc.getUser('user...')
+            }
+          }
         })
         ;
 
