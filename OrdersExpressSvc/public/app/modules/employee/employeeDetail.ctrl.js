@@ -11,7 +11,7 @@
   function employeeDetailController($state, $stateParams) {
   //function employeeDetailController() {
     var vm = this;
-    vm.title = 'employee detail is the title of this';
+    //vm.title = 'employee detail is the title of this';
     //vm.user = 'blahblahuser';   //$stateParams.user;
     vm.stateParamsUser = $stateParams.user;
 

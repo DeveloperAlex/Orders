@@ -26,7 +26,8 @@
         //url: vm.restfulUrl + 'employee'
         url: 'http://localhost:8181/api/employee?user=' + user
       }).success(function (data) {
-        vm.deferredGetEmployee.resolve(data);
+        vm.deferredGetEmployee.resolve(data[0]);
+        //vm.deferredGetEmployee.resolve(data);
       }).error(function (err) {
         console.log('deferredGetEmployees err', err);
         //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
