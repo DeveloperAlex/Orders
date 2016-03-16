@@ -151,7 +151,7 @@ function (
           requiresLogin: true,
           resolve: {
             resolveduser: function($stateParams){
-              return 'resolveduser123';  //$stateParams.user;  //Later hit restSvc.getUser('user...')
+              return $stateParams.user;  //Later hit restSvc.getUser('user...')
             }
           }
         })
