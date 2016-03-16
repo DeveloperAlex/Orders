@@ -143,15 +143,15 @@ function (
             }
           }
         })
-        .state('employee.user', {
-          url: '/:user',
+        .state('employee_detail', {
+          url: '/employee/:user',
           controller: 'employeeDetailController as employeedetail',
           templateUrl: 'app/modules/employee/employeeDetail.html',
           pageTitle: 'Employee Detail',
           requiresLogin: true,
           resolve: {
-            employeedetail: function($stateParams){
-              return $stateParams.user;  //Later hit restSvc.getUser('user...')
+            resolveduser: function($stateParams){
+              return 'blahuser';  //$stateParams.user;  //Later hit restSvc.getUser('user...')
             }
           }
         })
