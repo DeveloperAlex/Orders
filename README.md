@@ -79,6 +79,7 @@
   - http://meanjs.org/
   - http://www.haproxy.org/
   - https://www.getpostman.com/docs/collections
+  - http://angular-ui.github.io/ui-router/site
 
 * Webstorm
   - https://www.youtube.com/user/JetBrainsTV/about

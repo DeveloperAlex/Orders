@@ -130,6 +130,9 @@ function (
             }
           }
         })
+        .state('employee.detail', {
+
+        })
         ;
 
       $urlRouterProvider.otherwise('/');
