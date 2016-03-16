@@ -130,7 +130,7 @@ function (
             }
           }
         })
-        .state('employee.detail', {
+        .state('employee.user', {
           url: '/:user',
           controller: 'employeeDetailController as employeedetail',
           templateUrl: 'app/modules/employee/employeeDetail.html',
