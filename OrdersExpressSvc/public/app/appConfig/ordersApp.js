@@ -55,11 +55,14 @@ angular.module('ordersApp')
 angular.module('ordersApp')
   .config([
         '$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider',
-        'jwtInterceptorProvider', 'Auth0Constant',
+        'jwtInterceptorProvider', 'Auth0Constant', '$logProvider',
 function (
       $stateProvider, $urlRouterProvider, authProvider, $httpProvider,
-      jwtInterceptorProvider, Auth0Constant
+      jwtInterceptorProvider, Auth0Constant, $logProvider
     ) {
+
+  $logProvider.debugEnabled(true);
+
       $stateProvider
       // .state('login', {
       //         url: '/login',
@@ -67,12 +70,22 @@ function (
       //         templateUrl: 'app/feature/login.html'
       //     })
 
-        .state('/', {
+        //.state('/', {
+        //  controller: 'HomeCtrl',
+        //  templateUrl: 'app/modules/home/home.html',
+        //  pageTitle: 'Homepage',
+        //  requiresLogin: true
+        //})
+        .state('home', {
+          url: '/',
           controller: 'HomeCtrl',
+          controllerAs: 'home',
           templateUrl: 'app/modules/home/home.html',
           pageTitle: 'Homepage',
           requiresLogin: true
         })
+
+
         .state('login', {
           controller: 'LoginCtrl',
           templateUrl: 'app/modules/login/login.html',
@@ -220,6 +233,7 @@ angular.module('ordersApp')
     //$scope.test01 = "testing test01";
     vm.test01 = 'testing test01';
 
+    //TODO: Fix pageTitle - used to work. S/b @stateChangeSuccess now.
     $scope.$on('$routeChangeSuccess', function (e, nextRoute) {
       if (nextRoute.$$route && angular.isDefined(nextRoute.$$route.pageTitle)) {
         $scope.pageTitle = nextRoute.$$route.pageTitle + ' | Demo App';
