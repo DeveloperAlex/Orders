@@ -1,19 +1,19 @@
 <div class="container">
-    employee listing will go here<br/>
-    {{employees.title}}
-    <br/><br/><br/>
-
+    <h3>Employee Listing</h3>
+    <button class="btn btn-primary btn-sm" ng-click="employees.reload()">Reload page</button>
+    <br/>
+    <br/>
 
     <div ng-repeat="emp in employees.employeelist">
-        <a ui-sref="employee_detail({user: emp.user})" >{{emp.user}}</a>
+        <a ui-sref="employee.detail({user: emp.user})" >{{emp.user}}</a>
         <div>{{emp}}</div>
     </div>
 
 </div>
 
 <br/>
-<br/>
-<br/>
+
+<ui-view/>
 
 <!--{{employeedetail.employeelist | json}}-->
 

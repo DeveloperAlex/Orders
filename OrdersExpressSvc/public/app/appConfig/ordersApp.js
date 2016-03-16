@@ -143,8 +143,23 @@ function (
             }
           }
         })
-        .state('employee_detail', {
-          url: '/employee/:user',
+        //.state('employee_detail', {
+        //  url: '/employee/:user',
+        //  controller: 'employeeDetailController as employeedetail',
+        //  templateUrl: 'app/modules/employee/employeeDetail.html',
+        //  pageTitle: 'Employee Detail',
+        //  requiresLogin: true,
+        //  resolve: {
+        //    resolveduser: function($stateParams){
+        //      return $stateParams.user;  //Later hit restSvc.getUser('user...')
+        //    },
+        //    mongoUser: function($stateParams, restSvc){
+        //      return restSvc.getEmployee($stateParams.user);
+        //    }
+        //  }
+        //})
+        .state('employee.detail', {
+          url: '/detail/:user',
           controller: 'employeeDetailController as employeedetail',
           templateUrl: 'app/modules/employee/employeeDetail.html',
           pageTitle: 'Employee Detail',
@@ -158,6 +173,9 @@ function (
             }
           }
         })
+
+
+
         ;
 
       $urlRouterProvider.otherwise('/');
