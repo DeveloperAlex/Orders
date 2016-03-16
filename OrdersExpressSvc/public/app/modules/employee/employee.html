@@ -1,10 +1,10 @@
 <div class="container">
     employee listing will go here<br/>
-    {{employeedetail.title}}
+    {{employees.title}}
     <br/><br/><br/>
 
 
-    <div ng-repeat="emp in employeedetail.employeelist">
+    <div ng-repeat="emp in employees.employeelist">
         <a ui-sref="employee.user({user: emp.user})" >{{emp.user}}</a>
         <div>{{emp}}</div>
     </div>

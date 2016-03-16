@@ -132,7 +132,7 @@ function (
         })
         .state('employee', {
           url: '/employee',
-          controller: 'employeeController as employeedetail',
+          controller: 'employeeController as employees',
           templateUrl: 'app/modules/employee/employee.html',
           pageTitle: 'Employee Listing',
           requiresLogin: true,
