@@ -12,13 +12,13 @@ module.exports = function(config){
     },
 
     files : [
+      '../bower_components/jquery/dist/jquery.js',
       '../bower_components/angular/angular.js',
       '../bower_components/angular-ui-router/release/angular-ui-router.js',
-      '../bower_components/jquery/dist/jquery.js',
-      '../../test/lib/angular-mocks.js',
-      '../../test/lib/sinon-1.15.0.js',
+      '../bower_components/angular-mocks/angular-mocks.js',
+      '../bower_components/sinon/lib/sinon.js',
       './**/*.js',
-      '**/*.html',
+      './**/*.html',
       '../../test/unit/**/*.js'
     ],
 
@@ -26,7 +26,7 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['Chrome', 'ChromeCanary'],
 
     plugins : [
       'karma-chrome-launcher',
