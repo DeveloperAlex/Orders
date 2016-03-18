@@ -12,11 +12,17 @@
     var vm = this;
     return {
       getEmployee: getEmployee,
-      getEmployees: getEmployees
+      getEmployees: getEmployees,
+      test01: test01
     };
 
     //TODO: RESTful service has no versioning.
-    vm.restfulUrl = 'http://localhost:8181/api/'; //Always end url with "/".  //TODO: Refactor - inject constants.
+    //vm.restfulUrl = 'http://localhost:8181/api/'; //Always end url with "/".  //TODO: Refactor - inject constants.
+
+
+    function test01(){
+      return 72;
+    }
 
 
     function getEmployee(user) {

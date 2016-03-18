@@ -1,6 +1,6 @@
 'use strict';
 
-describe('durations', function() {
+xdescribe('durations', function() {
 
   beforeEach(module('eventsApp'));
 

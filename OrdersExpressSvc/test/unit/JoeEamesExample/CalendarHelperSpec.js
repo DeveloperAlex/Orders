@@ -1,6 +1,6 @@
 'use strict';
 
-describe('calendarHelper', function() {
+xdescribe('calendarHelper', function() {
 
   beforeEach(module('eventsApp'));
 

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('EditProfileControllerSpec', function() {
+xdescribe('EditProfileControllerSpec', function() {
   var $controllerConstructor, scope, mockGravatarUrlBuilder;
 
   beforeEach(module("eventsApp"));

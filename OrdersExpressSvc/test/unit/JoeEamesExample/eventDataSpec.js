@@ -1,6 +1,6 @@
 'use strict';
 
-describe('eventData', function() {
+xdescribe('eventData', function() {
 
   beforeEach(module('eventsApp'));
 

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('eventThumbnail', function() {
+xdescribe('eventThumbnail', function() {
   var el;
   beforeEach(module('eventsApp'));
   beforeEach(module('/templates/directives/eventThumbnail.html'));
