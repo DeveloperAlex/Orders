@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c4501a9-96a0-4ca7-a9eb-4173b72f6aa9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/run_karma.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/unit/JoeEamesExample/CalendarHelperSpec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/unit/JoeEamesExample/EditProfileControllerSpec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/unit/JoeEamesExample/EventListControllerSpec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/unit/JoeEamesExample/EventThumbnailSpec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/unit/JoeEamesExample/durationsSpec.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/unit/JoeEamesExample/eventDataSpec.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OrdersExpressSvc/test/lib/angular-mocks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/OrdersExpressSvc/test/lib/sinon-1.15.0.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Orders.time" afterPath="$PROJECT_DIR$/.idea/Orders.time" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/package.json" afterPath="$PROJECT_DIR$/OrdersExpressSvc/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/test/karma.conf.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/test/karma.conf.js" />
     </list>
     <ignored path="Orders.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -538,7 +530,7 @@
       <option name="presentableId" value="Default" />
       <updated>1457031719781</updated>
       <workItem from="1458229564751" duration="711000" />
-      <workItem from="1458230729122" duration="7651000" />
+      <workItem from="1458230729122" duration="7751000" />
     </task>
     <servers />
   </component>
@@ -551,7 +543,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8362000" />
+    <option name="totallyTimeSpent" value="8462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -564,10 +556,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986793" sideWeight="0.50711745" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19978859" sideWeight="0.49288255" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19978859" sideWeight="0.49288255" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
