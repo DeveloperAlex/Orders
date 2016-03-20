@@ -188,7 +188,7 @@ function (
       });
 
       var refreshingToken = null;
-      jwtInterceptorProvider.tokenGetter = function (store, jwtHelper) {
+      jwtInterceptorProvider.tokenGetter = ['store', 'jwtHelper', function (store, jwtHelper) {
         var token = store.get('token');
         var refreshToken = store.get('refreshToken');
         if (token) {
@@ -206,7 +206,7 @@ function (
             return refreshingToken;
           }
         }
-      };
+      }];
       $httpProvider.interceptors.push('jwtInterceptor');
 
 }]);
@@ -215,7 +215,8 @@ function (
 
 
 angular.module('ordersApp')
-  .run(function ($rootScope, auth, store, jwtHelper, $location) { //TODO: Not minsafe!!
+  .run( ['$rootScope', 'auth', 'store', 'jwtHelper', '$location',
+    function ($rootScope, auth, store, jwtHelper, $location) {
     var refreshingToken = null;
     $rootScope.$on('$locationChangeStart', function () { //TODO: S/this be $stateChangeStart instead??
       var token = store.get('token');
@@ -244,12 +245,12 @@ angular.module('ordersApp')
       }
     });
     auth.hookEvents();
-  });
+  } ] );
 
 
 
 angular.module('ordersApp')
-  .controller('AppCtrl', function AppCtrl($scope, $location) { //TODO: Not minsafe
+  .controller('AppCtrl', ['$scope', '$location' , function AppCtrl($scope, $location) {
     var vm = this;
     //$scope.test01 = "testing test01";
     vm.test01 = 'testing test01';
@@ -267,7 +268,7 @@ angular.module('ordersApp')
     //    vm.pageTitle = nextRoute.$$route.pageTitle + ' | Demo App';
     //  }
     //});
-  });
+  } ] );
 
 
 

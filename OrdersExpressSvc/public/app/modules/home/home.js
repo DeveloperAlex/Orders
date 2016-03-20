@@ -1,13 +1,14 @@
 'use strict';
 angular.module('orders.home', [
 'auth0'])
-  .controller('HomeCtrl', function ($scope, auth, $http, $location, store) {
+  .controller('HomeCtrl', ['$scope', 'auth', '$http', '$location', 'store' , function ($scope, auth, $http, $location, store) {
     $scope.shipments = [];
     $scope.auth = auth;
 
     function viewShipment() {
       $http({
-        url: SERVICE_BASE + '/api/shipments', //TODO: SERVICE_BASE is supposed to be part of appConfig.js constant.
+        //url: SERVICE_BASE + '/api/shipments', //TODO: SERVICE_BASE is supposed to be part of appConfig.js constant.
+        url: 'FixMe_SERVICE_BASE/' + '/api/shipments', //TODO: SERVICE_BASE is supposed to be part of appConfig.js constant.
         method: 'GET'
       }).then(function (response) {
         $scope.shipments = response.data;
@@ -27,4 +28,4 @@ angular.module('orders.home', [
     };
 
     viewShipment();
-  });
+  } ] );
