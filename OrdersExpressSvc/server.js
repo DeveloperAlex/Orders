@@ -98,6 +98,8 @@ app.use('/api', apiRoutes);
 
 
 
+
+/*
 // ### START STANDARD ERROR HANDLING ###
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -107,7 +109,6 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -130,6 +131,7 @@ app.use(function(err, req, res, next) {
   });
 });
 // ### STOP STANDARD ERROR HANDLING ###
+*/
 
 
 

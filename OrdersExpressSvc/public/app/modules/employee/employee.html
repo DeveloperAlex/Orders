@@ -1,6 +1,14 @@
 <div class="container">
     <h3>Employee Listing</h3>
     <button class="btn btn-primary btn-sm" ng-click="employees.reload()">Reload page</button>
+
+
+    <i class="glyphicon glyphicon-search" ng-click="shown=!shown"></i>
+    <span ng-show="shown">
+        <input type="text" ng-model="thetext" required minlength="4" placeholder="Search box (not yet coded)" />
+    </span>
+
+
     <br/>
     <br/>
 

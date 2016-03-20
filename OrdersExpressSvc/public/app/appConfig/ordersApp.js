@@ -279,7 +279,11 @@ angular.module('ordersApp')
     }])
 */
 
-
+/*
+  .config(function($compileProvider){
+    $compileProvider.debugInfoEnabled(false);  //Perhaps turn this off in Prod (slight performance improvement).
+})
+*/
 
 
 //angular.module('ordersApp')
