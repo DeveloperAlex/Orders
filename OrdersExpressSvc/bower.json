@@ -20,7 +20,8 @@
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.6",
     "font-awesome": "^4.5.0",
-    "jquery": "^2.2.1"
+    "jquery": "^2.2.1",
+    "AngularJS-Toaster": "angularjs-toaster#^1.2.0"
   },
   "overrides": {
     "bootstrap": {
