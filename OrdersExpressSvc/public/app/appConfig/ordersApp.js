@@ -174,6 +174,13 @@ function (
           }
         })
 
+        .state('employeeCreate', {
+          url: '/employeeCreate',
+          controller: 'employeeCreateController as employeeCreate',
+          templateUrl: 'app/modules/employee/employeeCreate.html',
+          pageTitle: 'Employee Create',
+          requiresLogin: true
+        })
 
 
         ;
