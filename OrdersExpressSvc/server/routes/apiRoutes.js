@@ -112,7 +112,7 @@ router.route('/employee')
       }
     });
   })
-
+ 
   .get(function (req, res) {
     var query = req.query;  // || {}; //Works: http://localhost:8181/api/employee?user=Anne
     //Employee.find(query, function (err, employees) {
