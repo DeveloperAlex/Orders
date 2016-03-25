@@ -1,6 +1,38 @@
-employee create template
-
 <br/>
+
+<div class="container-fluid">
+    <div class="row" style="text-align: left">
+        <div class="col-md-6">
+            <form name="createForm" ng-submit="employeeCreate.submit(createForm)" novalidate>
+                <h2>Create new employee</h2>
+                <div forminput>
+                    <label for="user" class="control-label">Your user name:</label>
+                    <input type="text" id="user" name="user" class="form-control" required minlength="3" maxlength="20"
+                           placeholder="User name" ng-model="employeeCreate.emp.user">
+                </div>
+
+                <div forminput>
+                    <label for="pw" class="control-label">Your pw:</label>
+                    <input type="text" id="pw" name="pw" class="form-control" required minlength="3" maxlength="20"
+                           placeholder="Password (plz don't enter a real p/w)" ng-model="employeeCreate.emp.pw">
+                </div>
+
+                <div forminput>
+                    <label for="email" class="control-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required
+                           placeholder="Email address" ng-model="employeeCreate.emp.email">
+                </div>
+
+                <input class="btn btn-lg btn-primary" type="submit" value="Submit" ng-disabled="createForm.$invalid" />
+            </form>
+        </div>
+        <div class="col-md-6">
+            <pre>{{createForm | json}}</pre>
+        </div>
+    </div>
+</div>
+
+
 <br/>
 <br/>
 

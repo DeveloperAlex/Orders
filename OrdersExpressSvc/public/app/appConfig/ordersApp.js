@@ -175,7 +175,7 @@ function (
         })
 
         .state('employeeCreate', {
-          url: '/employeeCreate',
+          url: '/employee/create',
           controller: 'employeeCreateController as employeeCreate',
           templateUrl: 'app/modules/employee/employeeCreate.html',
           pageTitle: 'Employee Create',

@@ -1,4 +1,5 @@
 'use strict';
+//Angular has a similarly named file.
 var mongoose = require('mongoose'); //http://mongoosejs.com/docs/api.html
 var Schema = mongoose.Schema;
 
