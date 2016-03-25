@@ -67,7 +67,7 @@
     function createEmployee(emp) {
       vm.deferredCreateEmployee = $q.defer();
 
-      debugger;
+      //debugger;
       console.log('START restSvc.createEmployee');
 
       $http({

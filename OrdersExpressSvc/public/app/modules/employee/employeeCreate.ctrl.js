@@ -11,12 +11,11 @@
   function employeeCreateController($state, $location, restSvc, employeeModel) {
     var vm = this;
     vm.emp = {};
-
-    vm.newemployee = 'testing new employee';
+    //vm.newemployee = 'testing new employee';
 
     vm.submit = function(data){
       console.log('data', data);
-      debugger;
+      //debugger;
       
       var emp = employeeModel.getEmployeeModel(data);
 
