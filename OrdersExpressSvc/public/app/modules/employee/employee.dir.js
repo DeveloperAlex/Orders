@@ -12,10 +12,15 @@
     return {
       restrict: 'E',
       //template: 'User: {{emp.user}} &nbsp; Pw: {{emp.pw}}',
-      template: '<div class="row"><span class="col-sm-2">User: {{emp.user}}</span><span class="col-sm-2">Pw: {{emp.pw}}</span></div>',
+      template: '<div class="row"><button class="btn btn-xs col-sm-1" ng-click="employeeDelete(emp)">Delete</button><span class="col-sm-2">User: {{emp.user}}</span><span class="col-sm-2">Pw: {{emp.pw}}</span></div>',
       scope: {
         emp: '='
       },
+      controller: ['$scope', function($scope){
+        $scope.employeeDelete = function(emp){
+          alert("Deleting emp user= " + emp.user);
+        };
+      }],
       link: function($scope, element, attrs) {
         element.bind('click', function () {
           $state.go('employee.detail', {user: $scope.emp.user});
