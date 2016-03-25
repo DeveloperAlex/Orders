@@ -5,22 +5,26 @@
         <div class="col-md-6">
             <form name="createForm" ng-submit="employeeCreate.submit(createForm)" novalidate>
                 <h2>Create new employee</h2>
-                <div forminput>
+                <div forminput class="form-group">
                     <label for="user" class="control-label">Your user name:</label>
                     <input type="text" id="user" name="user" class="form-control" required minlength="3" maxlength="20"
-                           placeholder="User name" ng-model="employeeCreate.emp.user">
+                           placeholder="User name"
+                           ng-model="employeeCreate.emp.user"
+                           ng-model-options="{debounce: {'default':500, 'blur':0}}">
                 </div>
 
-                <div forminput>
+                <div forminput class="form-group">
                     <label for="pw" class="control-label">Your pw:</label>
                     <input type="text" id="pw" name="pw" class="form-control" required minlength="3" maxlength="20"
-                           placeholder="Password (plz don't enter a real p/w)" ng-model="employeeCreate.emp.pw">
+                           placeholder="Password (plz don't enter a real p/w)"
+                           ng-model="employeeCreate.emp.pw" ng-model-options="{updateOn:'blur'}">
                 </div>
 
-                <div forminput>
+                <div forminput class="form-group">
                     <label for="email" class="control-label">Email:</label>
                     <input type="email" id="email" name="email" class="form-control" required
-                           placeholder="Email address" ng-model="employeeCreate.emp.email">
+                           placeholder="Email address"
+                           ng-model="employeeCreate.emp.email" ng-model-options="{updateOn:'blur'}">
                 </div>
 
                 <input class="btn btn-lg btn-primary" type="submit" value="Submit" ng-disabled="createForm.$invalid" />

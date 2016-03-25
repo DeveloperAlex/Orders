@@ -80,14 +80,14 @@
 
         console.log('SUCCESS restSvc.createEmployee');
 
-        vm.deferredGetEmployees.resolve(data);
+        vm.deferredCreateEmployee.resolve(data);
       }).catch(function (err) {
 
         console.log('ERROR restSvc.createEmployee');
 
         console.log('deferredGetEmployees err', err);
         //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
-        vm.deferredGetEmployees.reject('There was an error with common rest.svc.js :: getEmployees.');
+        vm.deferredCreateEmployee.reject('There was an error with common rest.svc.js :: getEmployees.');
       });
       return vm.deferredCreateEmployee.promise;
     }
