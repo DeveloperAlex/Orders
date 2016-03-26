@@ -2,6 +2,7 @@
   <dictionary name="devel_000">
     <words>
       <w>debounce</w>
+      <w>sudo</w>
     </words>
   </dictionary>
 </component>
