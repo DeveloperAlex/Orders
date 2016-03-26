@@ -16,15 +16,21 @@
       scope: {
         emp: '='
       },
-      controller: ['$scope', 'restSvc', '$state', function($scope, restSvc, $state){
+      controller: ['$scope', 'restSvc', '$state', '$location', function($scope, restSvc, $state, $location){
         $scope.employeeDelete = function(emp){
           //alert("Deleting emp user= " + emp.user);
           //debugger;
-          restSvc.deleteEmployee(emp);
-          //$state.go('employee');
-          //$state.go('employee',"{}","{reload :true}");
-          //$state.go($state.current, {}, {reload: true});
-          $state.go('employee', {}, {reload: true});
+          restSvc.deleteEmployee(emp)
+            .then(function(data){
+              //TODO: Toastr data.
+              //$state.go('employee');
+              //$state.go('employee',"{}","{reload :true}");
+              //$state.go($state.current, {}, {reload: true});
+              // $state.go('employee', {}, {reload: true});
+              //debugger;
+              //$location.path('/employee');
+              $state.go("employee", {}, {reload: true});
+            });
         };
       }],
       link: function($scope, element, attrs) {

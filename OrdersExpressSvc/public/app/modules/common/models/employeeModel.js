@@ -17,8 +17,8 @@
       if (!data) throw new Error('No data to create employee model.');
 
       return {
-        user: data.user.$modelValue || "",
-        pw: data.pw.$modelValue || ""
+        user: data.user.$modelValue.trim() || "",
+        pw: data.pw.$modelValue.trim() || ""
       };
     }
 
