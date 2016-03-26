@@ -16,9 +16,15 @@
       scope: {
         emp: '='
       },
-      controller: ['$scope', function($scope){
+      controller: ['$scope', 'restSvc', '$state', function($scope, restSvc, $state){
         $scope.employeeDelete = function(emp){
-          alert("Deleting emp user= " + emp.user);
+          //alert("Deleting emp user= " + emp.user);
+          //debugger;
+          restSvc.deleteEmployee(emp);
+          //$state.go('employee');
+          //$state.go('employee',"{}","{reload :true}");
+          //$state.go($state.current, {}, {reload: true});
+          $state.go('employee', {}, {reload: true});
         };
       }],
       link: function($scope, element, attrs) {

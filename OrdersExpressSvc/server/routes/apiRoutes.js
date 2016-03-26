@@ -112,7 +112,7 @@ router.route('/employee')
       }
     });
   })
- 
+
   .get(function (req, res) {
     var query = req.query;  // || {}; //Works: http://localhost:8181/api/employee?user=Anne
     //Employee.find(query, function (err, employees) {
@@ -167,9 +167,9 @@ router.route('/employee/:employeeId')
   });
 
 
-router.route('/employee/:employeeId')
+router.route('/employee/:_id')
   .delete(function (req, res) {
-    Employee.findByIdAndRemove(req.params.id, function(err) {
+    Employee.findByIdAndRemove(req.params._id, function(err) {
       if (err) {
         res.json({info: 'error during remove employee', error: err});
       };
