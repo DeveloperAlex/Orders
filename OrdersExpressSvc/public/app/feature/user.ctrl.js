@@ -1,6 +1,7 @@
 (function () {
   'use strict';
-  angular.module('ordersApp').controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
+  angular.module('ordersApp')
+    .controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
         function ($scope, MongoService, $state, $stateParams) {
       var self = this;
 
@@ -15,7 +16,7 @@
       //    self.employees = response;
       //});
 
-        }]);
+  } ] );
 
 
 

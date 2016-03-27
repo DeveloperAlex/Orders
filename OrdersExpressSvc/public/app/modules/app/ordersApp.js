@@ -1,14 +1,3 @@
-// Create empty modules so that we could attach things to them later
-// This is needed because Angular doesn't allow you to specify module
-// references each time - only first time.
-
-//angular.module("ordersApp", ['OTPWeb.Directives', 'ngynSelectKey', 'bento.modern', 'aa.notify', 'ui.router', 'ui.bootstrap', 'angular-data.DSCacheFactory', 'wijmo', 'wijspread']);
-angular.module('ordersApp', [
-    'auth0', 'angular-storage', 'angular-jwt',
-    'ui.grid', 'ui.grid.pagination', 'ui.router',
-    'orders.login', 'orders.home',
-    'oa-common', 'oa-employee'
-]); //['ui.bootstrap']);
 
 //https://github.com/angular-ui/ui-router/wiki#state-change-events
 angular.module('ordersApp')

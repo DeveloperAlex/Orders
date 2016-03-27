@@ -11,7 +11,7 @@
     var factory = {};
     factory.testProperty = 'MongoService - testProperty';
 
-    //http://stackoverflow.com/questions/20369377/how-to-use-http-get-in-angularjs-correctly-in-specific-for-an-external-api-cal        
+    //http://stackoverflow.com/questions/20369377/how-to-use-http-get-in-angularjs-correctly-in-specific-for-an-external-api-cal
     var getEmployees = function () {
       var deferred = $q.defer();
       $http({

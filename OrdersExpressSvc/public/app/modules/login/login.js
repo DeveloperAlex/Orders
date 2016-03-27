@@ -1,6 +1,6 @@
 'use strict';
 angular.module('orders.login', ['auth0'])
-.controller('LoginCtrl', function ($scope, auth, $location, store) {  //TODO: Not using ControllerAs here.
+.controller('LoginCtrl', ['$scope', 'auth', '$location', 'store', function ($scope, auth, $location, store) {  //TODO: Not using ControllerAs here.
     
     $scope.login = function() {
         auth.signin({
@@ -18,4 +18,4 @@ angular.module('orders.login', ['auth0'])
         );
     };
     
-});
+} ] );
