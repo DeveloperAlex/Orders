@@ -36,7 +36,7 @@ gulp.task('injectCss', function () {
   };
 
   var inject = require('gulp-inject');
-  var injectSrc = gulp.src(['./public/app/**/*.css'], {read: false});
+  var injectSrc = gulp.src(['./public/assets/css/*.css', './public/app/**/*.css'], {read: false});
 
   var injectOptions = {
     ignorePath: '/public/',

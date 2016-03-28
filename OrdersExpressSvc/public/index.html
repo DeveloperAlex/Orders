@@ -47,7 +47,13 @@
     <!-- endbower -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
 
+
+    <!--For some reason Gulp-InjectCss wasn't adding these 3 in (but works if I manually run "gulp injectCss").-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="app/modules/home/home.css">
+    <link rel="stylesheet" href="app/modules/login/login.css">
     <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="app/modules/home/home.css">
     <link rel="stylesheet" href="app/modules/login/login.css">
     <!-- endinject -->
@@ -99,11 +105,6 @@
 
 
 
-<!--<script src="app/modules/app/_module.js"></script>-->
-<!--<script src="app/modules/app/ordersApp.js"></script>-->
-
-<!--<script src="app/modules/common/_module.js"></script>-->
-<!--<script src="app/modules/common/rest.svc.js"></script>-->
 <!-- inject:js -->
 <script src="app/modules/common/_module.js"></script>
 <script src="app/modules/common/models/employeeModel.js"></script>
@@ -125,6 +126,7 @@
 <script src="app/feature/order.ctrl.js"></script>
 <script src="app/feature/login.ctrl.js"></script>
 <!-- endinject -->
+
 
 <script type="application/javascript">
     //Needed for: "navbar-fixed-top" css.
