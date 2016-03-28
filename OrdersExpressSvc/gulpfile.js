@@ -43,7 +43,7 @@ gulp.task('injectCss', function () {
     relative: true
   };
 
-  gulp.src('./public/index.html')
+  return gulp.src('./public/index.html')
     .pipe(wiredep(wdOptions))
     //.pipe(inject(injectSrc, injectOptions))
     .pipe(
@@ -86,7 +86,7 @@ gulp.task('inject', ['injectCss'], function () {
     relative: true
   };
 
-  gulp.src('./public/index.html')
+  return gulp.src('./public/index.html')
     .pipe(wiredep(wdOptions))
     //.pipe(inject(injectSrc, injectOptions))
     .pipe(

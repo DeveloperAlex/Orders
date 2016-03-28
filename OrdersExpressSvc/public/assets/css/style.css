@@ -1,14 +1,1 @@
-/* http://lesscss.org/less-preview/ */
-.ng-cloak {
-  display: none;
-}
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-a {
-  color: #00b7ff;
-}
-input.ng-touched.ng-invalid {
-  border: 2px #ff0000 solid;
-}
+.ng-cloak{display:none}body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif;background-color:#EEEEEE}a{color:#00b7ff}input.ng-touched.ng-invalid{border:2px #ff0000 solid}
