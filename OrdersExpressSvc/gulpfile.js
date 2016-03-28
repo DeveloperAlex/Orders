@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
-var nodemon = require('gulp-nodemon'); //Note: we're using pm2 on our Ubuntu box.
+var nodemon = require('gulp-nodemon'); //Note: we're using pm2 on our Ubuntu Server in the Google Cloud.
 
 var jsFiles = ['*.js', 'models/**/*.js', 'routes/**/*.js', 'public/app/**/*.js'];
 
@@ -15,27 +15,18 @@ gulp.task('style', function () {
 });
 
 
-
-
-
-
-
-
-
-
 gulp.task('injectCss', function () {
   //Note: this relies on "overrides" block in bower.json
   //to correct the bower_components own bower.json files which
   //may not have js/css - but instead less, etc.
-  //https://www.npmjs.com/package/wiredep
-  var wiredep = require('wiredep').stream;
+  var wiredep = require('wiredep').stream;  //https://www.npmjs.com/package/wiredep
   var wdOptions = {
     bowerJson: require('./bower.json'),
     directory: './public/bower_components',
     ignorePath: '../../public'
   };
 
-  var inject = require('gulp-inject');
+  var inject = require('gulp-inject');  //https://www.npmjs.com/package/gulp-inject
   var injectSrc = gulp.src(['./public/assets/css/*.css', './public/app/**/*.css'], {read: false});
 
   var injectOptions = {
@@ -45,42 +36,30 @@ gulp.task('injectCss', function () {
 
   return gulp.src('./public/index.html')
     .pipe(wiredep(wdOptions))
-    //.pipe(inject(injectSrc, injectOptions))
     .pipe(
-      //inject(injectSrc.pipe(angularFilesort()), injectOptions)
       inject(injectSrc, injectOptions)
     )
     .pipe(gulp.dest('./public'));
 }); //injectCss
 
 
-
+//TODO: In Prod we'll want to Concat & Uglify too.
+//  Great docs on how to do this at: https://www.npmjs.com/package/gulp-inject#injecting-files-from-multiple-source-streams
 gulp.task('inject', ['injectCss'], function () {
   //Note: this relies on "overrides" block in bower.json
   //to correct the bower_components own bower.json files which
   //may not have js/css - but instead less, etc.
-  //https://www.npmjs.com/package/wiredep
-  var wiredep = require('wiredep').stream;
+  var wiredep = require('wiredep').stream;  //https://www.npmjs.com/package/wiredep
   var wdOptions = {
     bowerJson: require('./bower.json'),
     directory: './public/bower_components',
     ignorePath: '../../public'
   };
 
-  var inject = require('gulp-inject'),
-      angularFilesort = require('gulp-angular-filesort');
+  var inject = require('gulp-inject'),  //https://www.npmjs.com/package/gulp-inject
+      angularFilesort = require('gulp-angular-filesort');  //https://www.npmjs.com/package/gulp-angular-filesort
 
-  // var injectSrc = gulp.src(['./public/app/**/*.css',
-  //                             './public/app/**/*.js'], {
-  //   read: false
-  // });
-  // var injectSrc = gulp.src(['./public/app/**/*.js'], {
-  //   read: false
-  // });
-  var injectSrc = gulp.src(['./public/app/**/*.js'], {
-    read: true
-  });
-
+  var injectSrc = gulp.src(['./public/app/**/*.js'], {read: true});
   var injectOptions = {
     ignorePath: '/public/',
     relative: true
@@ -88,14 +67,11 @@ gulp.task('inject', ['injectCss'], function () {
 
   return gulp.src('./public/index.html')
     .pipe(wiredep(wdOptions))
-    //.pipe(inject(injectSrc, injectOptions))
     .pipe(
       inject(injectSrc.pipe(angularFilesort()), injectOptions)
-      //inject(injectSrc, injectOptions)
     )
     .pipe(gulp.dest('./public'));
 });
-
 
 
 gulp.task('serve', ['style', 'inject'], function () {
