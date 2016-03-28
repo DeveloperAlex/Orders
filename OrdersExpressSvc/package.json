@@ -40,6 +40,7 @@
   "devDependencies": {
     "frisby": "^0.8.5",
     "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
     "gulp-inject": "^3.0.0",
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^2.0.0",

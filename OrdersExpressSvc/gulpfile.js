@@ -27,11 +27,22 @@ gulp.task('inject', function () {
     ignorePath: '../../public'
   };
 
-  var inject = require('gulp-inject');
-  var injectSrc = gulp.src(['./public/app/**/*.css',
-                              './public/app/**/*.js'], {
-    read: false
+  var inject = require('gulp-inject'),
+      angularFilesort = require('gulp-angular-filesort');
+
+  // var injectSrc = gulp.src(['./public/app/**/*.css',
+  //                             './public/app/**/*.js'], {
+  //   read: false
+  // });
+  // var injectSrc = gulp.src(['./public/app/**/*.js'], {
+  //   read: false
+  // });
+  var injectSrc = gulp.src(['./public/app/**/*.js'], {
+    read: true
   });
+
+
+
   var injectOptions = {
     ignorePath: '/public/',
     relative: true
@@ -39,7 +50,11 @@ gulp.task('inject', function () {
 
   gulp.src('./public/index.html')
     .pipe(wiredep(wdOptions))
-    .pipe(inject(injectSrc, injectOptions))
+    //.pipe(inject(injectSrc, injectOptions))
+    .pipe(
+      inject(injectSrc.pipe(angularFilesort()), injectOptions)
+      //inject(injectSrc, injectOptions)
+    )
     .pipe(gulp.dest('./public'));
 });
 

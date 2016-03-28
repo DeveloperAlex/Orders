@@ -27,6 +27,7 @@
 
 debugger;
 
+//Note: Its possible that Gulp Inject could order the files incorrectly - this fixes that.
 var ordersApp = ordersApp;  //|| {};
 
 if (!ordersApp) {
