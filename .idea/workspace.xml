@@ -5,8 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Orders.time" afterPath="$PROJECT_DIR$/.idea/Orders.time" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/gulpfile.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/package.json" afterPath="$PROJECT_DIR$/OrdersExpressSvc/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/_module.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/_module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" />
     </list>
     <ignored path="Orders.iws" />
@@ -34,8 +32,8 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -196,8 +194,8 @@
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/app._module.js" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/feature/user.ctrl.js" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/_module.js" />
-        <option value="$PROJECT_DIR$/OrdersExpressSvc/gulpfile.js" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" />
+        <option value="$PROJECT_DIR$/OrdersExpressSvc/gulpfile.js" />
       </list>
     </option>
   </component>
@@ -594,7 +592,7 @@
       <workItem from="1458230729122" duration="15469000" />
       <workItem from="1458275980617" duration="12001000" />
       <workItem from="1458406587908" duration="18196000" />
-      <workItem from="1458529719056" duration="63162000" />
+      <workItem from="1458529719056" duration="64070000" />
     </task>
     <servers />
   </component>
@@ -631,7 +629,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109539000" />
+    <option name="totallyTimeSpent" value="110447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -656,7 +654,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986793" sideWeight="0.49288255" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18425606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.50711745" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20242214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20242214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1172,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>

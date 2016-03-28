@@ -15,7 +15,47 @@ gulp.task('style', function () {
 });
 
 
-gulp.task('inject', function () {
+
+
+
+
+
+
+
+
+gulp.task('injectCss', function () {
+  //Note: this relies on "overrides" block in bower.json
+  //to correct the bower_components own bower.json files which
+  //may not have js/css - but instead less, etc.
+  //https://www.npmjs.com/package/wiredep
+  var wiredep = require('wiredep').stream;
+  var wdOptions = {
+    bowerJson: require('./bower.json'),
+    directory: './public/bower_components',
+    ignorePath: '../../public'
+  };
+
+  var inject = require('gulp-inject');
+  var injectSrc = gulp.src(['./public/app/**/*.css'], {read: false});
+
+  var injectOptions = {
+    ignorePath: '/public/',
+    relative: true
+  };
+
+  gulp.src('./public/index.html')
+    .pipe(wiredep(wdOptions))
+    //.pipe(inject(injectSrc, injectOptions))
+    .pipe(
+      //inject(injectSrc.pipe(angularFilesort()), injectOptions)
+      inject(injectSrc, injectOptions)
+    )
+    .pipe(gulp.dest('./public'));
+}); //injectCss
+
+
+
+gulp.task('inject', ['injectCss'], function () {
   //Note: this relies on "overrides" block in bower.json
   //to correct the bower_components own bower.json files which
   //may not have js/css - but instead less, etc.
@@ -40,8 +80,6 @@ gulp.task('inject', function () {
   var injectSrc = gulp.src(['./public/app/**/*.js'], {
     read: true
   });
-
-
 
   var injectOptions = {
     ignorePath: '/public/',
