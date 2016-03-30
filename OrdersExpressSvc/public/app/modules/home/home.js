@@ -1,5 +1,5 @@
 'use strict';
-angular.module('orders.home', [
+angular.module('oa-home', [
 'auth0'])
   .controller('HomeCtrl', ['$scope', 'auth', '$http', '$location', 'store' , function ($scope, auth, $http, $location, store) {
     $scope.shipments = [];
