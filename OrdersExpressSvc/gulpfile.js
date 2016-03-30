@@ -45,6 +45,7 @@ gulp.task('injectCss', function () {
 
 //TODO: In Prod we'll want to Concat & Uglify too.
 //  Great docs on how to do this at: https://www.npmjs.com/package/gulp-inject#injecting-files-from-multiple-source-streams
+//TODO: Future, look into webpack.github.io/browserify.org.
 gulp.task('inject', ['injectCss'], function () {
   //Note: this relies on "overrides" block in bower.json
   //to correct the bower_components own bower.json files which
