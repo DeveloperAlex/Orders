@@ -7,7 +7,7 @@
   //TODO: Dead code - rest.svc.js has replaced this.
   //TODO: Dead code - rest.svc.js has replaced this.
   //TODO: Dead code - rest.svc.js has replaced this.
-  angular.module('ordersApp').factory('MongoService', ['$http', '$q', function ($http, $q) {
+  angular.module('oa-order').factory('MongoService', ['$http', '$q', function ($http, $q) {
     var factory = {};
     factory.testProperty = 'MongoService - testProperty';
 
