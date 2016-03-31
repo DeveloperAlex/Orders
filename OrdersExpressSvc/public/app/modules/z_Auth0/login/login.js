@@ -1,5 +1,5 @@
 'use strict';
-angular.module('oa-login', ['auth0'])
+angular.module('oa-login-auth0', ['auth0'])
 .controller('LoginCtrl', ['$scope', 'auth', '$location', 'store', 
     function ($scope, auth, $location, store) {  //TODO: Not using ControllerAs here.
     
