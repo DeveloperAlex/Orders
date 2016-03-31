@@ -35,6 +35,7 @@
 
 
           .state('login', {
+            url: '/login',
             controller: 'loginController',
             controllerAs: 'login',
             templateUrl: 'app/modules/loginPassport/login.html',
@@ -62,12 +63,17 @@
           //  }
           //}
 
-          .state('page1', {
-            url: '/page1',
-            templateUrl: 'app/test/page1.html',
-            pageTitle: 'Page1',
-            requiresLogin: true
+          .state('loginPassport', {
+            url: '/login',
+            controller: 'loginController',
+            controllerAs: 'login',
+            templateUrl: 'app/modules/loginPassport/login.html',
+            pageTitle: 'Login using Passport.js'
           })
+            // url: '/page1',
+            // templateUrl: 'app/test/page1.html',
+            // pageTitle: 'Page1',
+            // requiresLogin: true
           .state('page2', {
             url: '/page2',
             templateUrl: 'app/test/page2.html',

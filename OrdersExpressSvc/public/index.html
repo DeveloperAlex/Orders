@@ -66,7 +66,7 @@
             <li ng-click="vm.orderClicked = !vm.orderClicked;" ng-class="{'active':vm.orderClicked}"><a ui-sref="order">Order</a></li>
         </ul>
         <ul class="nav navbar-right nav-pills">
-            <li><a ui-sref="page1"><i class="fa fa-user"></i>Login</a></li>
+            <li><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login</a></li>
             <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
             <li><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
@@ -106,15 +106,17 @@
 <script src="app/modules/z_Auth0/home/home.js"></script>
 <script src="app/modules/common/_module.js"></script>
 <script src="app/modules/common/models/employeeModel.js"></script>
+<script src="app/modules/loginPassport/_module.js"></script>
+<script src="app/modules/loginPassport/login.ctrl.js"></script>
+<script src="app/modules/home/_module.js"></script>
+<script src="app/modules/home/home.ctrl.js"></script>
+<script src="app/modules/common/rest.svc.js"></script>
 <script src="app/modules/employee/_module.js"></script>
 <script src="app/modules/employee/employeeDetail.ctrl.js"></script>
 <script src="app/modules/employee/employeeCreate.ctrl.js"></script>
 <script src="app/modules/employee/employee.dir.js"></script>
 <script src="app/modules/employee/employee.dir.forminput.js"></script>
 <script src="app/modules/employee/employee.ctrl.js"></script>
-<script src="app/modules/loginPassport/_module.js"></script>
-<script src="app/modules/loginPassport/login.ctrl.js"></script>
-<script src="app/modules/common/rest.svc.js"></script>
 <script src="app/modules/app/_module.js"></script>
 <script src="app/modules/app/routes.js"></script>
 <script src="app/modules/app/routes.OLD.js"></script>
