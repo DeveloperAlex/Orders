@@ -1,3 +1,5 @@
+/*
+
 (function () {
   'use strict';
   angular.module('ordersApp').controller('loginController', ['$scope', 'MongoService', function ($scope, MongoService) {
@@ -25,3 +27,5 @@
   //});
 
 })();
+
+*/

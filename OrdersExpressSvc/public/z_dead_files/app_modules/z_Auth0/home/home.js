@@ -1,3 +1,5 @@
+/*
+
 'use strict';
 angular.module('oa-home-auth0', [
 'auth0'])
@@ -29,3 +31,5 @@ angular.module('oa-home-auth0', [
 
     viewShipment();
   } ] );
+
+*/

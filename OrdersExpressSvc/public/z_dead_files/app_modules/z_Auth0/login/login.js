@@ -1,3 +1,5 @@
+/*
+
 'use strict';
 angular.module('oa-login-auth0', ['auth0'])
 .controller('LoginCtrl', ['$scope', 'auth', '$location', 'store', 
@@ -20,3 +22,5 @@ angular.module('oa-login-auth0', ['auth0'])
     };
     
 } ] );
+
+*/
