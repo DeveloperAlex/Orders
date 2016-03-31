@@ -26,7 +26,7 @@
         //})
           .state('home', {
             url: '/',
-            controller: 'HomeCtrl',
+            controller: 'homeController',
             controllerAs: 'home',
             templateUrl: 'app/modules/home/home.html',
             pageTitle: 'Homepage',
