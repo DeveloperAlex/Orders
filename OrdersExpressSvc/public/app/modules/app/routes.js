@@ -45,14 +45,14 @@
           .state('user', {
             url: '/user/:username',
             controller: 'userController as user',
-            templateUrl: 'app/feature/user.html',
+            templateUrl: 'app/modules/user/user.html',
             pageTitle: 'User',
             requiresLogin: true
           })
           .state('order', {
             url: '/order',
             controller: 'orderController as order',
-            templateUrl: 'app/feature/order.html',
+            templateUrl: 'app/modules/order/order.html',
             pageTitle: 'Order',
             requiresLogin: true
           })
