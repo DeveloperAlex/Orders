@@ -1,10 +1,14 @@
-
+/*
 
 (function () {
   'use strict';
-  angular.module('ordersApp')
-    .controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
-        function ($scope, MongoService, $state, $stateParams) {
+  angular.module('oa-user')
+    // .controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
+    //     function ($scope, MongoService, $state, $stateParams) {
+    .controller('userController',
+      function () {
+
+
       var self = this;
 
       self.username = $stateParams.username;
@@ -18,7 +22,7 @@
       //    self.employees = response;
       //});
 
-  } ] );
+  }  );
 
 
 
@@ -31,4 +35,4 @@
 
 })();
 
-
+*/

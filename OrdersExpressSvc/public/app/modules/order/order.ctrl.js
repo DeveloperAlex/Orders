@@ -1,8 +1,9 @@
-
+/*
 
 (function () {
   'use strict';
-  angular.module('ordersApp').controller('orderController', ['$scope', 'MongoService', function ($scope, MongoService) {
+  angular.module('oa-order')
+    .controller('orderController', ['$scope', 'MongoService', function ($scope, MongoService) {
     var self = this;
 
     self.logintest = 'Login test 123';
@@ -28,3 +29,4 @@
 
 })();
 
+*/

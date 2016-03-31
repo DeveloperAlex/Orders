@@ -6,7 +6,8 @@ angular.module('ordersApp', [
   'auth0', 'angular-storage', 'angular-jwt',
   'ui.grid', 'ui.grid.pagination', 'ui.router',
   'oa-login-passport', 'oa-home',
-  'oa-common', 'oa-employee'
+  'oa-common', 'oa-employee',
+  'oa-order', 'oa-user'
 ]); //['ui.bootstrap']);
 
 
