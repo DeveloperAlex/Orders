@@ -81,7 +81,7 @@ app.use(cookieParser());
 //app.use(session({secret: 'library'}));
 ////app.use(passport.initialize());
 ////app.use(passport.session());
-//require('./src/config/passport')(app); //Instead of 2 above passport lines.
+//require('./server/config/passport')(app); //Instead of 2 above passport lines.
 
 //app.use(require('stylus').middleware(path.join(__dirname, 'public')));  //https://github.com/stylus/stylus/blob/master/docs/compare.md
 app.use(lessMiddleware(__dirname + '/public')); //Must come before "express.static".

@@ -116,17 +116,3 @@ angular.module('ordersApp')
     $compileProvider.debugInfoEnabled(false);  //Perhaps turn this off in Prod (slight performance improvement).
 })
 */
-
-
-//angular.module('ordersApp')
-//    .controller('testController', ['$scope', function($scope) {
-//        $scope.name = 'Testing 123';
-//    }]);
-
-//angular.module('ordersApp')
-//.directive('myDirective', function() {
-//    return {
-//        restrict: 'E',
-//        template: '<div>This is my directive</div>'
-//    };
-//});
