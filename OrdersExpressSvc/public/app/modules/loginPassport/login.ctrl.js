@@ -7,7 +7,7 @@
 
   //loginController.$inject = ['$state'];
 
-   / * @ngInject * /
+  // / * @ngInject * /
   function loginPassportController() {   //($state) {
     var vm = this;
 

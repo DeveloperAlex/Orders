@@ -36,7 +36,7 @@
 
           .state('login', {
             url: '/login',
-            controller: 'loginController',
+            controller: 'loginPassportController',
             controllerAs: 'login',
             templateUrl: 'app/modules/loginPassport/login.html',
             pageTitle: 'Login using Passport.js'
@@ -65,7 +65,7 @@
 
           .state('loginPassport', {
             url: '/login',
-            controller: 'loginController',
+            controller: 'loginPassportController',
             controllerAs: 'login',
             templateUrl: 'app/modules/loginPassport/login.html',
             pageTitle: 'Login using Passport.js'

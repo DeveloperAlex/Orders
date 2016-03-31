@@ -1,12 +1,12 @@
-/*
+
 
 (function () {
   'use strict';
   angular.module('oa-user')
     // .controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
     //     function ($scope, MongoService, $state, $stateParams) {
-    .controller('userController',
-      function () {
+    .controller('userController', ['$scope', '$state', '$stateParams',
+      function ($scope, $state, $stateParams) {
 
 
       var self = this;
@@ -22,7 +22,7 @@
       //    self.employees = response;
       //});
 
-  }  );
+  } ] );
 
 
 
@@ -35,4 +35,4 @@
 
 })();
 
-*/
+
