@@ -6,16 +6,21 @@
       $httpProvider.interceptors.push('oaHttpInterceptor');
     }]);
 
-  angular.module('ordersApp').factory('oaHttpInterceptor', ['$q', function ($q) {
+  angular.module('ordersApp')
+    .factory('oaHttpInterceptor', ['$q', '$location', function ($q, $location) {
     return {
-      request: function (config) {
+      request: function (req) {
         //TODO: Add token here:
-        // if(token is truthy ...) { config.headers['x-session-token'] = SessionService.token; }
+        // if(token is truthy ...)
+        // {
+        //   req.headers['x-session-token'] = SessionService.token;
+        //   req.headers.Authorization = userService.getAuthorization();
+        // }
 
-        if (config.url.indexOf('/api/') > -1) {
-          console.log('restful request', config);
+        if (req.url.indexOf('/api/') > -1) {
+          console.log('restful request', req);
         }
-        return config;
+        return req;
       },
 
       response: function (result) {
@@ -27,12 +32,19 @@
 
       responseError: function (rejection) {
         //TODO: Show Toastr notification.
-        if (rejection.status == 401) {
-          ;  //Redirect to Login page.
+        if (rejection.status == 401 || rejection.status == 403) {
+          $location.url('/login');  //Redirect to Login page.  //TODO: $state.go instead?
         }
         return $q.reject(rejection);
+
+        // // Return a new promise
+        // return userService.authenticate().then(function() {
+        //   return $injector.get('$http')(rejection.config);
+        // });
       }
     };
   }]);
 
 }());
+
+//Retry example= https://github.com/witoldsz/angular-http-auth/blob/master/src/http-auth-interceptor.js
