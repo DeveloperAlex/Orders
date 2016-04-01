@@ -18,14 +18,16 @@
         // }
 
         if (req.url.indexOf('/api/') > -1) {
-          console.log('restful request', req);
+          req.timestamp = Date.now();
+          //console.log('restful request', req);
         }
         return req;
       },
 
       response: function (result) {
         if (result.config.url.indexOf('/api/') > -1) {
-          console.log('restful response', result);
+          console.log('restful round trip took (msec)= ' + (Date.now() - result.config.timestamp));
+          //console.log('restful response', result);
         }
         return result;
       },
