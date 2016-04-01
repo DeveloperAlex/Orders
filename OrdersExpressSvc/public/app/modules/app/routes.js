@@ -84,6 +84,13 @@
               }
             }
           })
+          .state('signupPassport', {
+            url: '/signup',
+            // controller: 'signupPassportController',
+            // controllerAs: 'signup',
+            templateUrl: 'app/modules/loginPassport/signup.html',
+            pageTitle: 'SignUp using Passport.js',
+          })
 
 
 
