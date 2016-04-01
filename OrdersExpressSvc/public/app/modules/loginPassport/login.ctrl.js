@@ -13,6 +13,10 @@
 
     vm.test01 = "testing that test01 works";
 
+    vm.login = function() {
+      console.log('Congrats - you are now logged in');
+    };
+
     // vm.employeelist = $state.$current.locals.globals.employeelist;
 
     // vm.reload = function(){
