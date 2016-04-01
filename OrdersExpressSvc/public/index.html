@@ -55,7 +55,7 @@
 </head>
 <body><!--<body ng-cloak>-->
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="nav navbar-header navbar-left navbar-brand">Orders App</div>
         <ul class="nav navbar-left nav-pills">
@@ -70,16 +70,15 @@
             <li><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
     </div>
-</div>
+</nav>
 <!--<div class="container">Debugging scope<br/>{{vm | json}}</div>-->
 
 
 
-<div class="container">
-    --aabboovvee--
-    <div ui-view></div>
-    <br/>
-    --bbeellooww--
+<div class="container-fluid">
+    <div class="row">
+        <div ui-view></div>
+    </div>
 </div>
 
 
