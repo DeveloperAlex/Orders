@@ -7,7 +7,7 @@
     }]);
 
   angular.module('ordersApp')
-    .factory('oaHttpInterceptor', ['$q', '$location', function ($q, $location) {
+    .factory('oaHttpInterceptor', ['$q', '$location', function ($q, $location, $state) {
     return {
       request: function (req) {
         //TODO: Add token here:
@@ -34,8 +34,9 @@
 
       responseError: function (rejection) {
         //TODO: Show Toastr notification.
-        if (rejection.status == 401 || rejection.status == 403) {
-          $location.url('/login');  //Redirect to Login page.  //TODO: $state.go instead?
+        if (rejection.status == 401 || rejection.status == 403 || rejection.status == 419) {
+          //$location.url('/login');  //Redirect to Login page.  //TODO: $state.go instead?
+          $state.go('login');
         }
         return $q.reject(rejection);
 

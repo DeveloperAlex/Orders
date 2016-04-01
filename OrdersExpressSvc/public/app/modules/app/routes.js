@@ -34,13 +34,15 @@
           })
 
 
-          .state('login', {
-            url: '/login',
-            controller: 'loginPassportController',
-            controllerAs: 'login',
-            templateUrl: 'app/modules/loginPassport/login.html',
-            pageTitle: 'Login using Passport.js'
-          })
+          // .state('login', {
+          //   url: '/login',
+          //   controller: 'loginPassportController',
+          //   controllerAs: 'login',
+          //   templateUrl: 'app/modules/loginPassport/login.html',
+          //   pageTitle: 'Login using Passport.js'
+          // })
+
+
 
           .state('user', {
             url: '/user/:username',
@@ -70,6 +72,21 @@
             templateUrl: 'app/modules/loginPassport/login.html',
             pageTitle: 'Login using Passport.js'
           })
+          .state('logoutPassport', {
+            url: '/logout',
+            // controller: 'logoutPassportController',
+            // controllerAs: 'logout',
+            templateUrl: 'app/modules/loginPassport/logout.html',
+            pageTitle: 'Logout using Passport.js',
+            resolve: {
+              loggedout: function () {
+                return true;  //TODO: Have this expire the token.
+              }
+            }
+          })
+
+
+
             // url: '/page1',
             // templateUrl: 'app/test/page1.html',
             // pageTitle: 'Page1',
