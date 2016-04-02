@@ -13,8 +13,18 @@
 
     vm.test01 = "testing that test01 works";
 
+    vm.userLogin = {};
+    vm.userLogin.username = "login user";
+    vm.userLogin.password = "login password";
     vm.login = function() {
       console.log('Congrats - you are now logged in');
+    };
+
+    vm.userSignup = {};
+    vm.userSignup.username = "signup user";
+    vm.userSignup.password = "signup password";
+    vm.signup = function() {
+      console.log('You just signed up');
     };
 
     // vm.employeelist = $state.$current.locals.globals.employeelist;

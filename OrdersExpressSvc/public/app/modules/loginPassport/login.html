@@ -1,12 +1,14 @@
 <div class="container">
+
+    <h3>Login</h3>
     <form ng-submit="login.login()">
         <div>
             <label class="control-label">Username</label>
-            <input type="text" placeholder="Username" ng-model="user.username" required />
+            <input type="text" placeholder="Username" ng-model="login.userLogin.username" required minlength="3" maxlength="20" />
         </div>
         <div>
             <label class="control-label">Password</label>
-            <input type="password" placeholder="Password" ng-model="user.password" required /><br/>
+            <input type="password" placeholder="Password" ng-model="login.userLogin.password" required minlength="3" maxlength="20" /><br/>
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Login</button>
@@ -17,6 +19,25 @@
             <i>password:</i> admin
         </div>
     </form>
+
+    <br/>
+    <br/>
+
+    <h3>Sign Up</h3>
+    <form ng-submit="login.signup()">
+        <div>
+            <label class="control-label">Username</label>
+            <input type="text" placeholder="Username" ng-model="login.userSignup.username" required minlength="3" maxlength="20" />
+        </div>
+        <div>
+            <label class="control-label">Password</label>
+            <input type="password" placeholder="Password" ng-model="login.userSignup.password" required minlength="3" maxlength="20" /><br/>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+    </form>
+
 </div>
 
 <!--TODO: Maybe do the login screen as a Modal - plus it'd show off doing Modals in angular-->
