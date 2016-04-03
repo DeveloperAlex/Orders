@@ -9,12 +9,13 @@ var app = express();
 var expressJwt = require('express-jwt');
 //var jwt = require('jsonwebtoken');  //npm install jsonwebtoken --save //Auth0 does this part - so its not needed (ie, post to /api/login - jwt.sign({username: postedUsername})).
 
-var cors = require('cors');
+var cors = require('cors');  //https://github.com/expressjs/cors
 var passwords = require('./server/passwords');
 var path = require('path');
 //var favicon = require('serve-favicon');
 //var faker = require('faker'); //var user = faker.Helpers.userCard(); user.avatar = faker.Image.avatar();
-var morgan = require('morgan');
+var morgan = require('morgan');  //https://www.npmjs.com/package/morgan
+var errorhandler = require('errorhandler');  //https://www.npmjs.com/package/errorhandler  //https://github.com/expressjs/errorhandler
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
@@ -68,13 +69,19 @@ var apiRoutes = require('./server/routes/apiRoutes');
 //}));
 
 
+//TODO: nginx needs to handle CORS/preflight requests for Public folder (on the Ubuntu server in the Cloud).
+//nginx is taking care of Public folder - so we're not hitting this code. But we are on my laptop.
 app.use(cors());  //In a real Prod scenario - we'd have the RESTful service on a different url than the front-end files.
-// OPTIONS verb needs to be handled too (for CORS).
+// OPTIONS verb needs to be handled too (for CORS - preflight requests).
 // app.use(function(req, res, next) {  //Perhaps this would be better - than adding a cors npm module (above).
 //   res.setHeader('Access-Control-Allow-Origin', '*');
 //   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-//   next();
+//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type, Authorization');
+//   if (req.method === 'OPTIONS') {
+//     return res.send(200);
+//   } else {
+//     return next();
+//   }
 // });
 
 
@@ -196,6 +203,9 @@ app.use(function(err, req, res, next) {
 //     }
 // });
 
+if (true || 'development' == app.get('env')) {
+  app.use(errorhandler());
+}
 
 app.listen(portNum, function () {
   console.log('Express listening on port', this.address().port);

@@ -6,17 +6,20 @@ angular.module('oa-login-auth0')
       
       vm.login = function () {
         //debugger;
+        //To get a "refresh token" need "offline_access".
         auth.signin({
-            authParams: {scope: 'openid offline_access'}  //To get a "refresh token" need "offline_access".
+            authParams: {scope: 'openid offline_access'}
           },
           function (profile, token, access_token, state, refresh_token) {
+            //debugger;
             store.set('profile', profile);
             store.set('token', token);
             store.set('refreshToken', refresh_token);
             $location.path('/');
           },
           function (error) {
-            console.log('There was an error', error);  //TODO: Toast
+            //debugger;
+            console.log('There was an error in loginAuth0Controller', error);  //TODO: Toast
           }
         );
       };
