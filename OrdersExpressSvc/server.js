@@ -14,7 +14,7 @@ var passwords = require('./server/passwords');
 var path = require('path');
 //var favicon = require('serve-favicon');
 //var faker = require('faker'); //var user = faker.Helpers.userCard(); user.avatar = faker.Image.avatar();
-var logger = require('morgan');
+var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware'); //https://www.npmjs.com/package/less-middleware  https://github.com/emberfeather/less.js-middleware
@@ -54,7 +54,7 @@ var apiRoutes = require('./server/routes/apiRoutes');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //Middleware (app.use):
-//app.use(logger('dev'));  //TODO: Turn back on. Was too noisy in console.
+//app.use(morgan('dev'));  //TODO: Turn back on. Was too noisy in console.
 
 
 //var authenticate = expressJwt({
@@ -68,7 +68,19 @@ var apiRoutes = require('./server/routes/apiRoutes');
 //}));
 
 
-app.use(cors());
+app.use(cors());  //In a real Prod scenario - we'd have the RESTful service on a different url than the front-end files.
+// OPTIONS verb needs to be handled too (for CORS).
+// app.use(function(req, res, next) {  //Perhaps this would be better - than adding a cors npm module (above).
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+//   next();
+// });
+
+
+
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

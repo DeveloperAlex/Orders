@@ -70,6 +70,18 @@ router.use(function (req, res, next) {
 // /api/login
 // Not needed - isn't this done by Auth0?
 //
+;  //TODO: Add /api/auth/login POST endpoint to return token.  Or /api/token
+; //Then check the token passed in & error out - if an invalid token passed in. To block any paths below getting hit.
+
+
+
+
+
+
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

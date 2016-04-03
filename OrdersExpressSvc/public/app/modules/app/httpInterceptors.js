@@ -10,11 +10,14 @@
     .factory('oaHttpInterceptor', ['$q', '$location', function ($q, $location, $state) {
     return {
       request: function (req) {
+        req.headers = req.headers || {};
+
         //TODO: Add token here:
-        // if(token is truthy ...)
+        // if(token is truthy
+        // && req.url.substr(req.url.length - 5) != '.html')  //No need to send token in ng template requests.
         // {
-        //   req.headers['x-session-token'] = SessionService.token;
-        //   req.headers.Authorization = userService.getAuthorization();
+        //   //req.headers['x-session-token'] = SessionService.token;
+        //   req.headers.Authorization = 'Bearer ' + token;
         // }
 
         if (req.url.indexOf('/api/') > -1) {
