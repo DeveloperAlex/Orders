@@ -16,12 +16,14 @@
   ],
   "dependencies": {
     "angular": "~1.4.8",
+    "angular-jwt": "^0.0.9",
+    "angular-storage": "^0.5.0",
     "angular-ui-grid": "~3.0.7",
     "angular-ui-router": "~0.2.15",
+    "AngularJS-Toaster": "angularjs-toaster#^1.2.0",
     "bootstrap": "~3.3.6",
     "font-awesome": "^4.5.0",
-    "jquery": "^2.2.1",
-    "AngularJS-Toaster": "angularjs-toaster#^1.2.0"
+    "jquery": "^2.2.1"
   },
   "overrides": {
     "bootstrap": {

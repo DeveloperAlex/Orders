@@ -1,15 +1,8 @@
-<div>
-  login:
-  <br/>
-  <br/> {{login.logintest}}
-
-  <br/> {{login.mongotest}}
-  <br/>
-  <br /> Click on Employee to login as him/her:</br>
-  <list>
-    <ul ng-repeat="emp in login.employees">
-      <a ui-sref="user({ username: emp.user })">{{emp.user}}</a>
-    </ul>
-  </list>
-
+<div class="login-page clearfix">
+    <div class="login-box">
+        <img src="/assets/img/logo.png" />
+        <h3>Orders</h3>
+        <p>Sign in to track your Orders</p>
+        <a ng-click="loginAuth0.login()" class="btn btn-primary btn-lg">Login Auth0</a>
+    </div>
 </div>
