@@ -12,11 +12,11 @@
         $logProvider.debugEnabled(true);
 
         $stateProvider
-        // .state('login', {
-        //         url: '/login',
-        //         controller: 'loginController as login',
-        //         templateUrl: 'app/feature/login.html'
-        //     })
+        .state('loginAuth0', {
+                url: '/loginAuth0',
+                //controller: 'loginController as login',
+                templateUrl: 'app/modules/loginAuth0/login.html'
+            })
 
         //.state('/', {
         //  controller: 'HomeCtrl',
