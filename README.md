@@ -19,11 +19,13 @@
 * Sublime - good too
 * MongoChef for MongoDB - http://3t.io/mongochef/
 * Postman (Fiddler is good too)
+* JWT Debugger: https://jwt.io/
+* http://editor.swagger.io/
 
 ### Cloud Services:
 * Google Cloud (similar to AWS) - https://cloud.google.com/
 * https://mlab.com (previously called MongoLab.com)
-* https://auth0.com
+* https://auth0.com  https://ask.auth0.com/
 
 ### Uses:
 * Ubuntu 14.04
