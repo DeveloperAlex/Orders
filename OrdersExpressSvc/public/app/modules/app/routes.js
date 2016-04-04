@@ -169,10 +169,21 @@
             requiresLogin: true
           })
 
-
         ;
 
         $urlRouterProvider.otherwise('/');
+
+
+        //TODO: Move the secret info here to my non-Git file. Obviously refresh the keys to something different.
+        authProvider.init({
+          domain: 'developeralex.auth0.com',
+          clientID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH',
+          callbackURL: location.href,
+          // Here include the URL to redirect to if the user tries to access a resource when not authenticated.
+          //loginUrl: '/login'
+          loginState: 'loginAuth0'
+        });
+
 
 
         // authProvider.init({

@@ -2,9 +2,16 @@
   'use strict';
 
   angular.module('ordersApp')
-    .config(['$httpProvider', function ($httpProvider) {
+    .config(['$httpProvider', 'jwtInterceptorProvider', function ($httpProvider, jwtInterceptorProvider) {
       $httpProvider.interceptors.push('oaHttpInterceptor');
+      $httpProvider.interceptors.push('jwtInterceptor');
+
+      jwtInterceptorProvider.tokenGetter = ['store', function(store) {
+        return store.get('token');
+      }];
+
     }]);
+
 
   angular.module('ordersApp')
     .factory('oaHttpInterceptor', ['$q', '$location', function ($q, $location, $state) {
@@ -13,10 +20,10 @@
         req.headers = req.headers || {};
 
         //TODO: Add token here:
-        // if(token is truthy
+        // var token = "token123";
+        // if(token
         // && req.url.substr(req.url.length - 5) != '.html')  //No need to send token in ng template requests.
         // {
-        //   //req.headers['x-session-token'] = SessionService.token;
         //   req.headers.Authorization = 'Bearer ' + token;
         // }
 
