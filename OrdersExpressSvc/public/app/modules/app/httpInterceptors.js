@@ -4,17 +4,18 @@
   angular.module('ordersApp')
     .config(['$httpProvider', 'jwtInterceptorProvider', function ($httpProvider, jwtInterceptorProvider) {
       $httpProvider.interceptors.push('oaHttpInterceptor');
-      $httpProvider.interceptors.push('jwtInterceptor');
+      //$httpProvider.interceptors.push('jwtInterceptor');
 
-      jwtInterceptorProvider.tokenGetter = ['store', function(store) {
-        return store.get('token');
-      }];
+      // jwtInterceptorProvider.tokenGetter = ['store', function(store) {
+      //   return store.get('token');
+      // }];
 
     }]);
 
 
   angular.module('ordersApp')
-    .factory('oaHttpInterceptor', ['$q', '$location', function ($q, $location, $state) {
+  //.factory('oaHttpInterceptor', ['$q', '$location', 'store', '$state', function ($q, $location, store, $state) {
+  .factory('oaHttpInterceptor', ['$q', '$location', 'store', function ($q, $location, store) {
     return {
       request: function (req) {
         req.headers = req.headers || {};
@@ -26,6 +27,9 @@
         // {
         //   req.headers.Authorization = 'Bearer ' + token;
         // }
+
+        var token = store.get('token');
+        req.headers.Authorization = 'Bearer ' + token;
 
         if (req.url.indexOf('/api/') > -1) {
           req.timestamp = Date.now();
@@ -45,8 +49,8 @@
       responseError: function (rejection) {
         //TODO: Show Toastr notification.
         if (rejection.status == 401 || rejection.status == 403 || rejection.status == 419) {
-          //$location.url('/login');  //Redirect to Login page.  //TODO: $state.go instead?
-          $state.go('login');
+          $location.url('/login');  //Redirect to Login page.  //TODO: $state.go instead?
+          //$state.go('login');
         }
         return $q.reject(rejection);
 

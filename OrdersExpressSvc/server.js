@@ -6,7 +6,7 @@
 var portNum = require('./server_port');
 var express = require('express');
 var app = express();
-var expressJwt = require('express-jwt');
+var expressJwt = require('express-jwt');  //https://github.com/auth0/express-jwt
 //var jwt = require('jsonwebtoken');  //npm install jsonwebtoken --save //Auth0 does this part - so its not needed (ie, post to /api/login - jwt.sign({username: postedUsername})).
 
 var cors = require('cors');  //https://github.com/expressjs/cors
