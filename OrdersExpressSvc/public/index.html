@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ordersApp" ng-controller="AppCtrl as vm" ng-strict-di lang="en">
+<html ng-app="ordersApp" ng-controller="AppCtrl as app" ng-strict-di lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Orders Demo App</title>
@@ -54,7 +54,7 @@
     <!-- endinject -->
 
 </head>
-<body><!--<body ng-cloak>-->
+<!--<body ng-cloak>-->
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -63,7 +63,7 @@
             <li class="active"><a ui-sref="loginAuth0">Login Auth0</a></li>
             <li class="active"><a ui-sref="logoutAuth0">Logout Auth0</a></li>
             <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
-            <li ng-click="vm.orderClicked = !vm.orderClicked;" ng-class="{'active':vm.orderClicked}"><a ui-sref="order">Order</a></li>
+            <li ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>
         </ul>
         <ul class="nav navbar-right nav-pills">
             <li><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login</a></li>
@@ -74,7 +74,7 @@
         </ul>
     </div>
 </nav>
-<!--<div class="container">Debugging scope<br/>{{vm | json}}</div>-->
+<!--<div class="container">Debugging scope<br/>{{app | json}}</div>-->
 
 
 <br/>
@@ -84,15 +84,21 @@
     </div>
 </div>
 
+<br/>
+<br/>
+<button ng-click="app.testToast()">Test Toast</button>
+<toaster-container></toaster-container>
+
+
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
 <script src="bower_components/angular-storage/dist/angular-storage.js"></script>
 <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -111,28 +117,29 @@
 <script src="app/modules/common/models/employeeModel.js"></script>
 <script src="app/modules/app/z_old/routes.OLD.js"></script>
 <script src="app/modules/app/z_old/constants.js"></script>
-<script src="app/modules/user/_module.js"></script>
-<script src="app/modules/user/user.ctrl.js"></script>
 <script src="app/modules/order/_module.js"></script>
 <script src="app/modules/order/order.ctrl.js"></script>
 <script src="app/modules/order/mongo.svc.js"></script>
-<script src="app/modules/loginPassport/_module.js"></script>
-<script src="app/modules/loginPassport/login.ctrl.js"></script>
+<script src="app/modules/user/_module.js"></script>
+<script src="app/modules/user/user.ctrl.js"></script>
 <script src="app/modules/loginAuth0/_module.js"></script>
 <script src="app/modules/loginAuth0/logout.ctrl.js"></script>
 <script src="app/modules/loginAuth0/login.ctrl.js"></script>
-<script src="app/modules/home/_module.js"></script>
-<script src="app/modules/home/home.ctrl.js"></script>
+<script src="app/modules/loginPassport/_module.js"></script>
+<script src="app/modules/loginPassport/login.ctrl.js"></script>
 <script src="app/modules/employee/_module.js"></script>
 <script src="app/modules/employee/employeeDetail.ctrl.js"></script>
 <script src="app/modules/employee/employeeCreate.ctrl.js"></script>
 <script src="app/modules/employee/employee.dir.js"></script>
 <script src="app/modules/employee/employee.dir.forminput.js"></script>
 <script src="app/modules/employee/employee.ctrl.js"></script>
+<script src="app/modules/home/_module.js"></script>
+<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/common/rest.svc.js"></script>
 <script src="app/modules/app/_module.js"></script>
 <script src="app/modules/app/routes.js"></script>
 <script src="app/modules/app/ordersApp.js"></script>
+<script src="app/modules/app/ordersApp.ctrl.js"></script>
 <script src="app/modules/app/httpInterceptors.js"></script>
 <!-- endinject -->
 

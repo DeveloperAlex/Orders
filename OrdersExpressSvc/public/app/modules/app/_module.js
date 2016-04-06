@@ -7,6 +7,7 @@
   angular.module('ordersApp', [
     'auth0', 'angular-storage', 'angular-jwt',
     'ui.grid', 'ui.grid.pagination', 'ui.router',
+    'toaster', 'ngAnimate',
     'oa-login-passport', 'oa-home',
     'oa-login-auth0',
     'oa-common', 'oa-employee',
