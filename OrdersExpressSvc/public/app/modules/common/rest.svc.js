@@ -5,10 +5,10 @@
     .module('oa-common')
     .factory('restSvc', restSvc);
 
-  restSvc.$inject = ['$http', '$q', '$httpParamSerializer'];
+  restSvc.$inject = ['$http', '$q', '$httpParamSerializer', 'notification'];
 
   /* @ngInject */
-  function restSvc($http, $q, $httpParamSerializer) {
+  function restSvc($http, $q, $httpParamSerializer, notification) {
     var vm = this;
     return {
       test01: test01,
@@ -50,6 +50,14 @@
       //http://localhost:8181/api/employee  //This is the endpoint we want.
       //return list of all employees from node.js restful service (as a promise).
 
+      notification.notify();
+      notification.success();
+      notification.info();
+      notification.warning();
+      notification.error();
+      
+      
+      
       vm.deferredGetEmployees = $q.defer();
       $http({
         method: 'GET',
