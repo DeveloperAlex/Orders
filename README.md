@@ -89,6 +89,7 @@
   - http://www.haproxy.org/
   - https://www.getpostman.com/docs/collections
   - http://angular-ui.github.io/ui-router/site
+  - https://github.com/jirikavi/AngularJS-Toaster
 
 * Webstorm
   - https://www.youtube.com/user/JetBrainsTV/about

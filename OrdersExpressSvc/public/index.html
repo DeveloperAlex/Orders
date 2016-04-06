@@ -66,9 +66,9 @@
             <li ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>
         </ul>
         <ul class="nav navbar-right nav-pills">
-            <li><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login</a></li>
-            <li><a ui-sref="logoutPassport"><i class="fa fa-user"></i>Logout</a></li>
-            <li><a ui-sref="signupPassport"><i class="fa fa-user"></i>SignUp</a></li>
+            <li ng-hide="true"><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login</a></li>
+            <li ng-hide="true"><a ui-sref="logoutPassport"><i class="fa fa-user"></i>Logout</a></li>
+            <li ng-hide="true"><a ui-sref="signupPassport"><i class="fa fa-user"></i>SignUp</a></li>
             <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
             <li><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
@@ -84,10 +84,12 @@
     </div>
 </div>
 
+
 <br/>
 <br/>
 <button ng-click="app.testToast()">Test Toast</button>
-<toaster-container></toaster-container>
+<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+<!--https://github.com/jirikavi/AngularJS-Toaster-->
 
 
 
