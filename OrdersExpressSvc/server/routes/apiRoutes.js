@@ -74,13 +74,13 @@ var expressJwt = require('express-jwt');  //https://github.com/auth0/express-jwt
 /*
 app.use(
   expressJwt({
-    secret: new Buffer('J25N8B6armBpIXmrTfXJv_x8tjF6Qky19jsJew5Y4XUlftdkTDZD4RggObS0mQyI', 'base64'),
+    secret: new Buffer('passwords.auth0.client_secret', 'base64'),
     getToken: function fromHeaderOrQuerystring (req) {
       var token;
       if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
         token = req.headers.authorization.split(' ')[1];
         try {
-          jwt.verify(token, new Buffer('J25N8B6armBpIXmrTfXJv_x8tjF6Qky19jsJew5Y4XUlftdkTDZD4RggObS0mQyI', 'base64'));
+          jwt.verify(token, new Buffer('passwords.auth0.client_secret', 'base64'));
         } catch(err) {
           res.send(401, 'bad token');
         }
@@ -98,15 +98,16 @@ app.use(
 
 /*
 app.use(
-  expressJwt({ secret: new Buffer('J25N8B6armBpIXmrTfXJv_x8tjF6Qky19jsJew5Y4XUlftdkTDZD4RggObS0mQyI', 'base64') })
+  expressJwt({ secret: new Buffer('passwords.auth0.client_secret', 'base64') })
   .unless({path: ['/ping']}));
 */
 
 
 router.all('/*',
-  expressJwt({ secret: new Buffer('J25N8B6armBpIXmrTfXJv_x8tjF6Qky19jsJew5Y4XUlftdkTDZD4RggObS0mQyI', 'base64') })
+  expressJwt({ secret: new Buffer(passwords.auth0.client_secret, 'base64') })
     .unless({path: ['/ping']})
 );
+
 
 
 

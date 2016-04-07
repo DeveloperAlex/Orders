@@ -54,14 +54,14 @@
     }
 
     function warning(title, text) {
-      title = title || 'Warning';
+      title = 'PLEASE LOGIN - ' + (title || 'Warning');
       text = text || 'text';
 
       notify('warning', title, text);
     }
 
     function error(title, text) {
-      title = title || 'Error';
+      title = 'PLEASE LOGIN - ' + (title || 'Error');
       text = text || 'text';
 
       notify('error', title, text);
