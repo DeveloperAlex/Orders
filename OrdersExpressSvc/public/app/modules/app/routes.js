@@ -5,9 +5,9 @@
   angular.module('ordersApp')
     .config([
       '$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider',
-      'jwtInterceptorProvider', '$logProvider',
+      'jwtInterceptorProvider', '$logProvider', 'constants',
       function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider,
-                jwtInterceptorProvider, $logProvider) {
+                jwtInterceptorProvider, $logProvider, constants) {
 
         $logProvider.debugEnabled(true);
 
@@ -174,15 +174,25 @@
         $urlRouterProvider.otherwise('/');
 
 
-        //TODO: Move the secret info here to my non-Git file. Obviously refresh the keys to something different.
+
+        // authProvider.init({
+        //   domain: 'developeralex.auth0.com',
+        //   clientID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH',
+        //   callbackURL: location.href,
+        //   // Here include the URL to redirect to if the user tries to access a resource when not authenticated.
+        //   //loginUrl: '/login'
+        //   loginState: 'loginAuth0'
+        // });
+
         authProvider.init({
-          domain: 'developeralex.auth0.com',
-          clientID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH',
+          domain: constants.auth0.domain,
+          clientID: constants.auth0.clientID,
           callbackURL: location.href,
-          // Here include the URL to redirect to if the user tries to access a resource when not authenticated.
-          //loginUrl: '/login'
-          loginState: 'loginAuth0'
+          //loginUrl: '/login'  //redirect url if not authenticated.
+          loginState: 'loginAuth0'  //redirect url if not authenticated.
         });
+
+
 
 
 
