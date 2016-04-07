@@ -15,7 +15,8 @@
 
   angular.module('ordersApp')
   //.factory('oaHttpInterceptor', ['$q', '$location', 'store', '$state', function ($q, $location, store, $state) {
-  .factory('oaHttpInterceptor', ['$q', '$location', 'store', function ($q, $location, store) {
+  .factory('oaHttpInterceptor', ['$q', '$location', 'store', 'notification',
+    function ($q, $location, store, notification) {
     return {
       request: function (req) {
         req.headers = req.headers || {};
@@ -49,9 +50,13 @@
       responseError: function (rejection) {
         //TODO: Show Toastr notification.
         if (rejection.status == 401 || rejection.status == 403 || rejection.status == 419) {
+          notification.info(rejection.status, 'Token expired. Please login again.');
           $location.url('/login');  //Redirect to Login page.  //TODO: $state.go instead?
           //$state.go('login');
+        } else {
+          notification.error('http response error', rejection);
         }
+        
         return $q.reject(rejection);
 
         // // Return a new promise

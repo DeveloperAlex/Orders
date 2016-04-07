@@ -15,6 +15,7 @@
       notify: notify,
       success: success,
       info: info,
+      warn: warning,
       warning: warning,
       error: error
     };

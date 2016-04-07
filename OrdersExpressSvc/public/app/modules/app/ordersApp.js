@@ -1,8 +1,8 @@
 
 //https://github.com/angular-ui/ui-router/wiki#state-change-events
 angular.module('ordersApp')
-  .run(['$rootScope',
-    function ($rootScope) {
+  .run(['$rootScope', 'notification',
+    function ($rootScope, notification) {
       //Debugging hooks
       $rootScope.$on('$stateChangeStart',
         function (event, toState, toParams, fromState, fromParams) {
@@ -13,6 +13,7 @@ angular.module('ordersApp')
           console.log(unfoundState.to);
           console.log(unfoundState.toParams);
           console.log(unfoundState.options);
+          notification.error('$stateNotFound', 'ugh');
         });
       $rootScope.$on('$stateChangeSuccess',
         function (event, toState, toParams, fromState, fromParams) {
@@ -21,6 +22,7 @@ angular.module('ordersApp')
       $rootScope.$on('$stateChangeError',
         function (event, toState, toParams, fromState, fromParams, error) {
           console.log('$stateChangeError: ' + error);
+          notification.error('$stateChangeError', error);
         });
     }
 ]);
@@ -46,8 +48,8 @@ angular.module('ordersApp')
 
 
 angular.module('ordersApp')
-  .run( ['$rootScope', 'auth', 'store', 'jwtHelper', '$location',
-    function ($rootScope, auth, store, jwtHelper, $location) {
+  .run( ['$rootScope', 'auth', 'store', 'jwtHelper', '$location', 'notification',
+    function ($rootScope, auth, store, jwtHelper, $location, notification) {
     var refreshingToken = null;
     $rootScope.$on('$locationChangeStart', function () { //TODO: S/this be $stateChangeStart instead??
       var token = store.get('token');
@@ -70,7 +72,8 @@ angular.module('ordersApp')
             }
             return refreshingToken;
           } else {
-            $location.path('/login');
+            notification.info('Please login', ' ');
+            $location.path('/loginAuth0');
           }
         }
       }

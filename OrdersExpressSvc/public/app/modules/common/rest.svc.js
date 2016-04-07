@@ -39,6 +39,7 @@
         //vm.deferredGetEmployee.resolve(data);
       }).error(function (err) {
         console.log('deferredGetEmployees err', err);
+        notification.error('getEmployee', err);
         //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
         vm.deferredGetEmployee.reject('There was an error with common rest.svc.js :: getEmployee.');
       });
@@ -50,14 +51,12 @@
       //http://localhost:8181/api/employee  //This is the endpoint we want.
       //return list of all employees from node.js restful service (as a promise).
 
-      notification.notify();
-      notification.success();
-      notification.info();
-      notification.warning();
-      notification.error();
-      
-      
-      
+      // notification.notify();
+      // notification.success();
+      // notification.info();
+      // notification.warning();
+      // notification.error();
+
       vm.deferredGetEmployees = $q.defer();
       $http({
         method: 'GET',
@@ -67,6 +66,7 @@
         vm.deferredGetEmployees.resolve(data);
       }).error(function (err) {
         console.log('deferredGetEmployees err', err);
+        notification.error('getEmployees', err);
         //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
         vm.deferredGetEmployees.reject('There was an error with common rest.svc.js :: getEmployees.');
       });
@@ -86,6 +86,8 @@
       }).then(function (data) {   //TODO: success/error have been deprecated (see ng1.5 https://docs.angularjs.org/api/ng/service/$http ).
         vm.deferredCreateEmployee.resolve(data);
       }).catch(function (err) {
+        notification.error('createEmployee', err);
+
         //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
         vm.deferredCreateEmployee.reject('There was an error with common rest.svc.js :: getEmployees.');
       });
@@ -111,6 +113,8 @@
       }).catch(function (err) {
         console.log('ERROR restSvc.deleteEmployee');
         console.log('deferredGetEmployees err', err);
+        notification.error('deleteEmployee', err);
+
         //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
         vm.deferredDeleteEmployee.reject('There was an error with common rest.svc.js :: getEmployees.');
       });

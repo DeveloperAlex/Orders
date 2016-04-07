@@ -73,14 +73,14 @@
           //}
 
           .state('loginPassport', {
-            url: '/login',
+            url: '/loginPassport',
             controller: 'loginPassportController',
             controllerAs: 'login',
             templateUrl: 'app/modules/loginPassport/login.html',
             pageTitle: 'Login using Passport.js'
           })
           .state('logoutPassport', {
-            url: '/logout',
+            url: '/logoutPassport',
             // controller: 'logoutPassportController',
             // controllerAs: 'logout',
             templateUrl: 'app/modules/loginPassport/logout.html',

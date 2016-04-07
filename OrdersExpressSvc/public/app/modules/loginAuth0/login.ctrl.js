@@ -1,7 +1,7 @@
 'use strict';
 angular.module('oa-login-auth0')
-  .controller('loginAuth0Controller', ['auth', '$location', 'store',
-    function (auth, $location, store) {  //TODO: Not using ControllerAs here.
+  .controller('loginAuth0Controller', ['auth', '$location', 'store', 'notification',
+    function (auth, $location, store, notification) {  //TODO: Not using ControllerAs here.
       var vm = this;
       
       vm.login = function () {
@@ -16,10 +16,12 @@ angular.module('oa-login-auth0')
             store.set('token', token);
             store.set('refreshToken', refresh_token);
             $location.path('/');
+            notification.success(' ', 'Logged in');
           },
           function (error) {
             //debugger;
             console.log('There was an error in loginAuth0Controller', error);  //TODO: Toast
+            notification.error('Login failed', error);
           }
         );
       };

@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('oa-login-auth0')
-    .controller('logoutAuth0Controller', ['auth', '$location', 'store',
-      function (auth, $location, store) {
+    .controller('logoutAuth0Controller', ['auth', '$location', 'store', 'notification',
+      function (auth, $location, store, notification) {
         var vm = this;
         //vm.shipments = [];
         vm.auth = auth;
@@ -28,6 +28,7 @@
           store.remove('token');
           store.remove('refreshToken');
           $location.path('/loginAuth0');  //TODO: Refactor
+          notification.info('Logged out', ' ');
         };
 
         // viewShipment();
