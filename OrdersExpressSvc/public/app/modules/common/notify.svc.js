@@ -11,8 +11,8 @@
   function notification(toaster) {
     var vm = this;
     return {
-      test01: test01,
-      notify: notify,
+      //test01: test01,
+      //notify: notify,
       success: success,
       info: info,
       warn: warning,
@@ -25,9 +25,9 @@
     //TODO: Add Toastr notifications (at least for when there's a failure). Maybe do upon success too - so people see it working.
 
 
-    function test01(){
-      return 72;
-    }
+    // function test01(){
+    //   return 72;
+    // }
 
     // https://github.com/jirikavi/AngularJS-Toaster
     function notify(success, title, text) {
