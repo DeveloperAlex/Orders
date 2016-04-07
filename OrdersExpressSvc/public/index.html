@@ -60,15 +60,16 @@
     <div class="container">
         <div class="nav navbar-header navbar-left navbar-brand">Orders App</div>
         <ul class="nav navbar-left nav-pills">
+            <li class="active"><a ui-sref="home">Home</a></li>
             <li class="active"><a ui-sref="loginAuth0">Login Auth0</a></li>
             <li class="active"><a ui-sref="logoutAuth0">Logout Auth0</a></li>
             <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
             <li ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>
         </ul>
         <ul class="nav navbar-right nav-pills">
-            <li ng-hide="true"><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login</a></li>
-            <li ng-hide="true"><a ui-sref="logoutPassport"><i class="fa fa-user"></i>Logout</a></li>
-            <li ng-hide="true"><a ui-sref="signupPassport"><i class="fa fa-user"></i>SignUp</a></li>
+            <li ng-hide="true"><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login Passport</a></li>
+            <li ng-hide="true"><a ui-sref="logoutPassport"><i class="fa fa-user"></i>Logout Passport</a></li>
+            <li ng-hide="true"><a ui-sref="signupPassport"><i class="fa fa-user"></i>SignUp Passport</a></li>
             <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
             <li><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
@@ -129,14 +130,14 @@
 <script src="app/modules/loginAuth0/_module.js"></script>
 <script src="app/modules/loginAuth0/logout.ctrl.js"></script>
 <script src="app/modules/loginAuth0/login.ctrl.js"></script>
+<script src="app/modules/home/_module.js"></script>
+<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/employee/_module.js"></script>
 <script src="app/modules/employee/employeeDetail.ctrl.js"></script>
 <script src="app/modules/employee/employeeCreate.ctrl.js"></script>
 <script src="app/modules/employee/employee.dir.js"></script>
 <script src="app/modules/employee/employee.dir.forminput.js"></script>
 <script src="app/modules/employee/employee.ctrl.js"></script>
-<script src="app/modules/home/_module.js"></script>
-<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/common/rest.svc.js"></script>
 <script src="app/modules/common/notify.svc.js"></script>
 <script src="app/modules/app/_module.js"></script>
