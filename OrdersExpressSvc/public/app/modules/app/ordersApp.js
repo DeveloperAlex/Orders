@@ -28,19 +28,19 @@ angular.module('ordersApp')
 ]);
 
 
-//TODO: Move Constants to a separate file - so its easier to modify them for different environments.
-//TODO: Move secret keys out of my code (& reset them to different values - obviously).
-angular.module('ordersApp')
-  .constant('Auth0Constant', {
-    AUTH0_DOMAIN: 'developeralex.auth0.com',
-    AUTH0_CLIENT_ID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH',
-    SERVICE_BASE: 'http://app.developeralex.com' //'http://localhost:36740'
-
-    // restfulUrl: 'http://apitrans.thomsonreuters.com/api/', //Suffix url w/ a "/".
-    // restfulVersion: 'v1',
-    // webAppUrl: 'http://otptrans.thomsonreuters.com/' //Suffix url w/ a "/".
-  })
-  .constant('restfulUrl', 'http://asdf/api');  //TODO: Refactor constants to be 1 json object.
+// //TODO: Move Constants to a separate file - so its easier to modify them for different environments.
+// //TODO: Move secret keys out of my code (& reset them to different values - obviously).
+// angular.module('ordersApp')
+//   .constant('Auth0Constant', {
+//     AUTH0_DOMAIN: 'developeralex.auth0.com',
+//     AUTH0_CLIENT_ID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH',
+//     SERVICE_BASE: 'http://app.developeralex.com' //'http://localhost:36740'
+//
+//     // restfulUrl: 'http://apitrans.thomsonreuters.com/api/', //Suffix url w/ a "/".
+//     // restfulVersion: 'v1',
+//     // webAppUrl: 'http://otptrans.thomsonreuters.com/' //Suffix url w/ a "/".
+//   })
+//   .constant('restfulUrl', 'http://asdf/api');  //TODO: Refactor constants to be 1 json object.
 
 
 

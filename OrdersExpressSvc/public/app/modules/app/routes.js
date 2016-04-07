@@ -5,9 +5,9 @@
   angular.module('ordersApp')
     .config([
       '$stateProvider', '$urlRouterProvider', 'authProvider', '$httpProvider',
-      'jwtInterceptorProvider', 'Auth0Constant', '$logProvider',
+      'jwtInterceptorProvider', '$logProvider',
       function ($stateProvider, $urlRouterProvider, authProvider, $httpProvider,
-                jwtInterceptorProvider, Auth0Constant, $logProvider) {
+                jwtInterceptorProvider, $logProvider) {
 
         $logProvider.debugEnabled(true);
 
