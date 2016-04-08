@@ -99,12 +99,6 @@
             pageTitle: 'SignUp using Passport.js',
           })
 
-
-
-            // url: '/page1',
-            // templateUrl: 'app/test/page1.html',
-            // pageTitle: 'Page1',
-            // requiresLogin: true
           .state('page2', {
             url: '/page2',
             templateUrl: 'app/test/page2.html',
@@ -130,21 +124,6 @@
               }
             }
           })
-          //.state('employee_detail', {
-          //  url: '/employee/:user',
-          //  controller: 'employeeDetailController as employeedetail',
-          //  templateUrl: 'app/modules/employee/employeeDetail.html',
-          //  pageTitle: 'Employee Detail',
-          //  requiresLogin: true,
-          //  resolve: {
-          //    resolveduser: function($stateParams){
-          //      return $stateParams.user;  //Later hit restSvc.getUser('user...')
-          //    },
-          //    mongoUser: function($stateParams, restSvc){
-          //      return restSvc.getEmployee($stateParams.user);
-          //    }
-          //  }
-          //})
           .state('employee.detail', {
             url: '/detail/:user',
             controller: 'employeeDetailController as employeedetail',
@@ -160,7 +139,6 @@
               }
             }
           })
-
           .state('employeeCreate', {
             url: '/employee/create',
             controller: 'employeeCreateController as employeeCreate',
@@ -168,21 +146,10 @@
             pageTitle: 'Employee Create',
             requiresLogin: true
           })
-
         ;
 
         $urlRouterProvider.otherwise('/');
 
-
-
-        // authProvider.init({
-        //   domain: 'developeralex.auth0.com',
-        //   clientID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH',
-        //   callbackURL: location.href,
-        //   // Here include the URL to redirect to if the user tries to access a resource when not authenticated.
-        //   //loginUrl: '/login'
-        //   loginState: 'loginAuth0'
-        // });
 
         authProvider.init({
           domain: constants.auth0.domain,
@@ -194,13 +161,6 @@
 
 
 
-
-
-        // authProvider.init({
-        //   domain: Auth0Constant.AUTH0_DOMAIN,
-        //   clientID: Auth0Constant.AUTH0_CLIENT_ID,
-        //   loginUrl: '/login'
-        // });
 
         // var refreshingToken = null;
         // jwtInterceptorProvider.tokenGetter = ['store', 'jwtHelper', function (store, jwtHelper) {
