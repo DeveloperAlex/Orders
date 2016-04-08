@@ -61,8 +61,8 @@
         <div class="nav navbar-header navbar-left navbar-brand">Orders App</div>
         <ul class="nav navbar-left nav-pills">
             <li class="active"><a ui-sref="home">Home</a></li>
-            <li class="active"><a ui-sref="loginAuth0">Login Auth0</a></li>
-            <li class="active"><a ui-sref="logoutAuth0">Logout Auth0</a></li>
+            <li class="active"><a ui-sref="loginAuth0">Login</a></li>
+            <li class="active"><a ui-sref="logoutAuth0">Logout</a></li>
             <li ng-hide="true"><a ui-sref="user({ username: 'bob' })">user bob</a></li>
             <li ng-hide="true" ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>
         </ul>
@@ -120,24 +120,24 @@
 <script src="app/modules/common/models/employeeModel.js"></script>
 <script src="app/modules/app/z_old/routes.OLD.js"></script>
 <script src="app/modules/app/z_old/constants.js"></script>
-<script src="app/modules/user/_module.js"></script>
-<script src="app/modules/user/user.ctrl.js"></script>
 <script src="app/modules/order/_module.js"></script>
 <script src="app/modules/order/order.ctrl.js"></script>
 <script src="app/modules/order/mongo.svc.js"></script>
+<script src="app/modules/user/_module.js"></script>
+<script src="app/modules/user/user.ctrl.js"></script>
+<script src="app/modules/loginPassport/_module.js"></script>
+<script src="app/modules/loginPassport/login.ctrl.js"></script>
 <script src="app/modules/loginAuth0/_module.js"></script>
 <script src="app/modules/loginAuth0/logout.ctrl.js"></script>
 <script src="app/modules/loginAuth0/login.ctrl.js"></script>
-<script src="app/modules/loginPassport/_module.js"></script>
-<script src="app/modules/loginPassport/login.ctrl.js"></script>
-<script src="app/modules/home/_module.js"></script>
-<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/employee/_module.js"></script>
 <script src="app/modules/employee/employeeDetail.ctrl.js"></script>
 <script src="app/modules/employee/employeeCreate.ctrl.js"></script>
 <script src="app/modules/employee/employee.dir.js"></script>
 <script src="app/modules/employee/employee.dir.forminput.js"></script>
 <script src="app/modules/employee/employee.ctrl.js"></script>
+<script src="app/modules/home/_module.js"></script>
+<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/common/rest.svc.js"></script>
 <script src="app/modules/common/notify.svc.js"></script>
 <script src="app/modules/common/constants.js"></script>
