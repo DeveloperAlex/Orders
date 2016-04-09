@@ -29,6 +29,10 @@
 * https://auth0.com
   - https://ask.auth0.com/
   - https://auth0.com/docs/api/v2
+  - Setting up OAuth 2.0 on LinkedIn:
+    * https://auth0.com/docs/connections/social/linkedin
+    * https://www.linkedin.com/developer/apps
+
 
 ### Passport.js vs Stormpath vs Auth0
 * http://www.google.com/trends/explore?q=passportjs%2C+connect-auth%2C+everyauth#q=passportjs%2C%20auth0%2C%20stormpath&cmpt=q&tz=Etc%2FGMT%2B4
