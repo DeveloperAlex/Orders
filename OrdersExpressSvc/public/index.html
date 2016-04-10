@@ -60,12 +60,10 @@
     <div class="container">
         <div class="nav navbar-header navbar-left navbar-brand">Orders App</div>
         <ul class="nav navbar-left nav-pills">
-            <li class="active"><a ui-sref="home">Home</a></li>
-            <li class="active"><a ui-sref="loginAuth0">Login</a></li>
+            <li class="active" data-toggle="pill"><a ui-sref="home">Home</a></li>
+            <li class="active" data-toggle="pill"><a ui-sref="loginAuth0">Login</a></li>
             <!--<li class="active"><a ui-sref="logoutAuth0">Logout</a></li>-->
-            <li ><a ui-sref="logoutAuth0" ng-disabled="true">Logout</a></li>
-
-
+            <li class="active" data-toggle="pill"><a ui-sref="logoutAuth0" >Logout</a></li>
             <!--<li ng-hide="true"><a ui-sref="user({ username: 'bob' })">user bob</a></li>-->
             <!--<li ng-hide="true" ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>-->
         </ul>
