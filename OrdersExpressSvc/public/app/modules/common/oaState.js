@@ -23,19 +23,21 @@
 
     var _profile = null;
     function login(profile) {
-      debugger;
-      _profile = profile;
+      //debugger;
+      //console.log("oaState.login was called.", profile);
+      _profile = profile || store.profile;  //TODO: Fix me.
     }
 
     function logout() {
+      //console.log("oaState.logout was called.");
       _profile = null;
     }
 
     function profile() {
-      debugger;
+      //debugger;
       var obj = {};
-      if (_profile) {
-        obj.name = _profile.name || _profile.email;
+      if (_profile) {     //|| store.profile) {
+        obj.name = 'Logged in as ' + (_profile.name || _profile.email);
       } else {
         obj.name = 'Not logged in';
       }

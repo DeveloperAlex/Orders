@@ -9,7 +9,32 @@ angular.module('ordersApp')
         toaster.pop('success', "title", "text");
       };
 
-      vm.name = oaState.profile().name;
+
+      //vm.name = oaState.profile().name;
+      //vm.name = 'blah name';  //oaState.profile().name;
+      vm.name = '';
+      vm.isLoggedIn = oaState.isLoggedIn;
+
+      // $scope.watch(function() {
+      //   return "vm.isLoggedIn";  //"oaState.isLoggedIn";
+      // }, function() {
+      //   vm.name = oaState.profile().name;
+      // });
+
+      // $scope.$watch("vm.isLoggedIn", function() {
+      //   vm.name = oaState.profile().name;
+      // });
+
+      $scope.$watch(function() {
+        //return vm.isLoggedIn;  //"oaState.isLoggedIn";
+        //return oaState.isLoggedIn().toString();
+        return oaState.isLoggedIn();
+      }, function() {
+        //console.log("$watch fired");
+        vm.name = oaState.profile().name;
+      });
+
+
 
       //TODO: Fix pageTitle - used to work. S/b @stateChangeSuccess now.
       $scope.$on('$routeChangeSuccess', function (e, nextRoute) {
