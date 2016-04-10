@@ -2,11 +2,11 @@
   'use strict';
 
   //https://auth0.com/docs/client-platforms/angularjs#2-add-the-module-dependency-and-configure-the-service
-  angular.module('oa-login-auth0', ['auth0', 'angular-storage', 'angular-jwt'])
-    .config(['authProvider', function (authProvider) {
+  angular.module('oa-login-auth0', ['auth0', 'angular-storage', 'angular-jwt', 'oa-common'])
+    .config(['authProvider', 'constants', function (authProvider, constants) {
       authProvider.init({
-        domain: 'developeralex.auth0.com',
-        clientID: 'zK2QYeeXHcR5NsyULkSudRfv3QytCueH'
+        domain: constants.auth0.domain,
+        clientID: constants.auth0.clientID
       });
     }])
     .run(['auth', function(auth) {
