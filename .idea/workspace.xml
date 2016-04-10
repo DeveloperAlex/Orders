@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3c4501a9-96a0-4ca7-a9eb-4173b72f6aa9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Orders.time" afterPath="$PROJECT_DIR$/.idea/Orders.time" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.dir.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.dir.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" />
     </list>
     <ignored path="Orders.iws" />
@@ -29,11 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="_module.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_module.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ctrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -42,19 +52,41 @@
       <file leaf-file-name="logout.ctrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/logout.ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+            <state relative-caret-position="550">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/constants.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="473">
+              <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employee.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employee.dir.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.dir.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <marker date="1460250795840" expanded="true" signature="327:342" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,7 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/login/_module.js" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/login/login.html" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/login/login.ctrl.js" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/home/home.ctrl.js" />
@@ -123,9 +154,10 @@
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/ordersApp.js" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/logout.html" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.html" />
-        <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html" />
-        <option value="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" />
         <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js" />
+        <option value="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" />
+        <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html" />
+        <option value="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.dir.js" />
       </list>
     </option>
   </component>
@@ -741,7 +773,7 @@
       <workItem from="1458275980617" duration="12001000" />
       <workItem from="1458406587908" duration="18196000" />
       <workItem from="1458529719056" duration="111997000" />
-      <workItem from="1459483225741" duration="104893000" />
+      <workItem from="1459483225741" duration="106073000" />
     </task>
     <servers />
   </component>
@@ -778,7 +810,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263267000" />
+    <option name="totallyTimeSpent" value="264447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -933,14 +965,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginPassport/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginPassport/login.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="847">
@@ -1159,14 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employeeCreate.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1298,22 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/_module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1330,19 +1330,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/logout.ctrl.js">
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        <state relative-caret-position="396">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/logout.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/employee/employee.dir.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <marker date="1460250795840" expanded="true" signature="327:342" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

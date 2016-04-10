@@ -62,7 +62,10 @@
         <ul class="nav navbar-left nav-pills">
             <li class="active"><a ui-sref="home">Home</a></li>
             <li class="active"><a ui-sref="loginAuth0">Login</a></li>
-            <li class="active"><a ui-sref="logoutAuth0">Logout</a></li>
+            <!--<li class="active"><a ui-sref="logoutAuth0">Logout</a></li>-->
+            <li ><a ui-sref="logoutAuth0" ng-disabled="true">Logout</a></li>
+
+
             <!--<li ng-hide="true"><a ui-sref="user({ username: 'bob' })">user bob</a></li>-->
             <!--<li ng-hide="true" ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>-->
         </ul>
@@ -71,7 +74,7 @@
             <!--<li ng-hide="true"><a ui-sref="logoutPassport"><i class="fa fa-user"></i>Logout Passport</a></li>-->
             <!--<li ng-hide="true"><a ui-sref="signupPassport"><i class="fa fa-user"></i>SignUp Passport</a></li>-->
             <!--<li ng-hide="true"><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>-->
-            <li><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
+            <li class="active"><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
     </div>
 </nav>
