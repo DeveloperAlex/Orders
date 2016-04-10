@@ -4,7 +4,6 @@
     <list default="true" id="3c4501a9-96a0-4ca7-a9eb-4173b72f6aa9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Orders.time" afterPath="$PROJECT_DIR$/.idea/Orders.time" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/ordersApp.ctrl.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/ordersApp.ctrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/oaState.js" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/oaState.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" afterPath="$PROJECT_DIR$/OrdersExpressSvc/public/index.html" />
     </list>
@@ -30,21 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ordersApp.ctrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/ordersApp.ctrl.js">
+      <file leaf-file-name="oaState.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/oaState.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oaState.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/oaState.js">
+      <file leaf-file-name="login.ctrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="440">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_module.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ordersApp.ctrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/ordersApp.ctrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,28 +94,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.ctrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="29" />
-              <folding>
-                <marker date="1460261502293" expanded="true" signature="85:1111" placeholder="[...]" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_module.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -660,7 +657,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="js.buildTools.gulp.node_interpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="C:\Users\devel_000\AppData\Roaming\npm\node_modules\gulp" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/@Code/@github/Orders/OrdersExpressSvc/public/app/modules/loginAuth0/logout.ctrl.js&#10;loginController&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/@Code/@github/Orders/OrdersExpressSvc/public/index.html&#10;$routechange&#9;null&#9;null&#10;pageTitle&#9;null&#9;null&#10;intell&#9;null&#9;null&#10;preview&#9;null&#9;null&#10;window&#9;null&#9;null&#10;console.log&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/@Code/@github/Orders/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js&#10;loginController&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/@Code/@github/Orders/OrdersExpressSvc/public/index.html&#10;$routechange&#9;null&#9;null&#10;pageTitle&#9;null&#9;null&#10;intell&#9;null&#9;null&#10;preview&#9;null&#9;null&#10;window&#9;null&#9;null&#10;console.log&#9;null&#9;null" />
     <property name="javascript.nodejs.core.library.configured.version" value="5.1.0" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="AngularJS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -796,7 +793,7 @@
       <workItem from="1458275980617" duration="12001000" />
       <workItem from="1458406587908" duration="18196000" />
       <workItem from="1458529719056" duration="111997000" />
-      <workItem from="1459483225741" duration="119094000" />
+      <workItem from="1459483225741" duration="122666000" />
     </task>
     <servers />
   </component>
@@ -833,7 +830,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277468000" />
+    <option name="totallyTimeSpent" value="281040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -854,7 +851,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20242214" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32731378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55530477" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5541761" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.49288255" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4717833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.50711745" order="1" side_tool="false" content_ui="tabs" />
@@ -1339,32 +1336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/_module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <marker date="1460261502293" expanded="true" signature="85:1111" placeholder="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1364">
@@ -1399,10 +1370,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/app/_module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/_module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/loginAuth0/login.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OrdersExpressSvc/public/app/modules/common/oaState.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>

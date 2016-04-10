@@ -9,23 +9,34 @@
 
   /* @ngInject */
   function oaState(store, toaster) {
-    var vm = this;
     return {
       isLoggedIn: isLoggedIn,
       login: login,
       logout: logout,
       profile: profile
     };
+    //debugger;
+    var vm = this;
+    //var _profile = store.get('profile');
+    var _profile = null;
 
     function isLoggedIn() {
+      //debugger;
+      // return !!_profile;
+
+      var p = store.get('profile');
+      var t = store.get('token');
+      var t = store.get('refreshToken');
+
+      _profile = store.get('profile');
       return !!_profile;
     }
 
-    var _profile = null;
+    //debugger;
     function login(profile) {
       //debugger;
       //console.log("oaState.login was called.", profile);
-      _profile = profile || store.profile;  //TODO: Fix me.
+      _profile = profile;
     }
 
     function logout() {
