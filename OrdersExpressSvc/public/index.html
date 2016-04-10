@@ -40,10 +40,10 @@
 
     <!-- Run "gulp inject" to refresh 4 sections below -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
-    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
     <!-- endbower -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
 
@@ -63,9 +63,10 @@
             <li class="active" data-toggle="pill"><a ui-sref="home">Home</a></li>
             <li class="active" data-toggle="pill"><a ui-sref="loginAuth0">Login</a></li>
             <!--<li class="active"><a ui-sref="logoutAuth0">Logout</a></li>-->
-            <li class="active" data-toggle="pill"><a ui-sref="logoutAuth0" >Logout</a></li>
+            <li class="active" data-toggle="pill"><a ui-sref="logoutAuth0">Logout</a></li>
             <!--<li ng-hide="true"><a ui-sref="user({ username: 'bob' })">user bob</a></li>-->
             <!--<li ng-hide="true" ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>-->
+            <li data-toggle="pill" style="color: lime">{{app.name}}</li>
         </ul>
         <ul class="nav navbar-right nav-pills">
             <!--<li ng-hide="true"><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login Passport</a></li>-->
@@ -94,7 +95,6 @@
 <!--https://github.com/jirikavi/AngularJS-Toaster-->
 
 
-
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
@@ -115,7 +115,6 @@
 <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
 
 
-
 <!-- inject:js -->
 <script src="app/modules/common/_module.js"></script>
 <script src="app/modules/common/models/employeeModel.js"></script>
@@ -129,15 +128,16 @@
 <script src="app/modules/loginAuth0/_module.js"></script>
 <script src="app/modules/loginAuth0/logout.ctrl.js"></script>
 <script src="app/modules/loginAuth0/login.ctrl.js"></script>
-<script src="app/modules/home/_module.js"></script>
-<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/employee/_module.js"></script>
 <script src="app/modules/employee/employeeDetail.ctrl.js"></script>
 <script src="app/modules/employee/employeeCreate.ctrl.js"></script>
 <script src="app/modules/employee/employee.dir.js"></script>
 <script src="app/modules/employee/employee.dir.forminput.js"></script>
 <script src="app/modules/employee/employee.ctrl.js"></script>
+<script src="app/modules/home/_module.js"></script>
+<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/common/rest.svc.js"></script>
+<script src="app/modules/common/oaState.js"></script>
 <script src="app/modules/common/notify.svc.js"></script>
 <script src="app/modules/common/constants.js"></script>
 <script src="app/modules/app/_module.js"></script>
@@ -150,12 +150,14 @@
 
 <script type="application/javascript">
     //Needed for: "navbar-fixed-top" css.
-    var onResize = function() {
+    var onResize = function () {
         // apply dynamic padding at the top of the body according to the fixed navbar height
         $("body").css("padding-top", $(".navbar-fixed-top").height());
     };
     $(window).resize(onResize); //Attach the function to the window resize event
-    $(function() { onResize(); }); //Call it also when the page is ready after load or reload
+    $(function () {
+        onResize();
+    }); //Call it also when the page is ready after load or reload
 </script>
 
 </body>
