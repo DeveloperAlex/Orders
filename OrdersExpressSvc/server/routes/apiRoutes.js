@@ -67,9 +67,80 @@ router.use(function (req, res, next) {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+// Token check
+var expressJwt = require('express-jwt');  //https://github.com/auth0/express-jwt  https://www.npmjs.com/package/express-jwt
+
+//TODO: Refactor below code to use that json file not in Git.
+/*
+app.use(
+  expressJwt({
+    secret: new Buffer('passwords.auth0.client_secret', 'base64'),
+    getToken: function fromHeaderOrQuerystring (req) {
+      var token;
+      if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+        token = req.headers.authorization.split(' ')[1];
+        try {
+          jwt.verify(token, new Buffer('passwords.auth0.client_secret', 'base64'));
+        } catch(err) {
+          res.send(401, 'bad token');
+        }
+        req.token = token;  //Supposedly req.user gets set by jwt.verify. //TODO: Remove this line if not used.
+        return token;
+      }
+      return null;
+    }
+
+  })
+    .unless({path: ['/ping']})
+);
+*/
+
+
+/*
+app.use(
+  expressJwt({ secret: new Buffer('passwords.auth0.client_secret', 'base64') })
+  .unless({path: ['/ping']}));
+*/
+
+
+router.all('/*',
+  expressJwt({ secret: new Buffer(passwords.auth0.client_secret, 'base64') })
+    .unless({path: ['/ping']})
+);
+
+
+
+
+/*
+  // https://github.com/auth0/node-jsonwebtoken
+  var jwt = require('jsonwebtoken');  //https://github.com/auth0/node-jsonwebtoken
+  // invalid token - synchronous
+  try {
+    var decoded = jwt.verify(token, 'wrong-secret');
+  } catch(err) {
+    // err
+  }
+*/
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 // /api/login
 // Not needed - isn't this done by Auth0?
 //
+;  //TODO: Add /api/auth/login POST endpoint to return token.  Or /api/token
+; //Then check the token passed in & error out - if an invalid token passed in. To block any paths below getting hit.
+
+
+
+
+
+
+
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

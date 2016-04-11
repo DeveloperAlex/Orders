@@ -5,13 +5,12 @@
     .module('oa-common')
     .factory('restSvc', restSvc);
 
-  restSvc.$inject = ['$http', '$q', '$httpParamSerializer'];
+  restSvc.$inject = ['$http', '$q', '$httpParamSerializer', 'notification', 'constants'];
 
   /* @ngInject */
-  function restSvc($http, $q, $httpParamSerializer) {
+  function restSvc($http, $q, $httpParamSerializer, notification, constants) {
     var vm = this;
     return {
-      test01: test01,
       getEmployee: getEmployee,
       getEmployees: getEmployees,
       createEmployee: createEmployee,
@@ -19,27 +18,18 @@
     };
 
     //TODO: RESTful service has no versioning.
-    //vm.restfulUrl = 'http://localhost:8181/api/'; //Always end url with "/".  //TODO: Refactor - inject constants.
-    //TODO: Add Toastr notifications (at least for when there's a failure). Maybe do upon success too - so people see it working.
-
-
-    function test01(){
-      return 72;
-    }
-
 
     function getEmployee(user) {
       vm.deferredGetEmployee = $q.defer();
       $http({
         method: 'GET',
-        //url: vm.restfulUrl + 'employee'
-        url: 'http://localhost:8181/api/employee?user=' + user
-      }).success(function (data) {   //TODO: success/error have been deprecated (see ng1.5 https://docs.angularjs.org/api/ng/service/$http ).
+        //url: 'http://localhost:8181/api/employee?user=' + user
+        url: constants.restful.url + 'employee?user=' + user
+      }).then(function (data) {
         vm.deferredGetEmployee.resolve(data[0]);
-        //vm.deferredGetEmployee.resolve(data);
-      }).error(function (err) {
-        console.log('deferredGetEmployees err', err);
-        //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
+      }).catch(function (err) {
+        console.log('restSvc.deferredGetEmployee err', err);
+        notification.error('getEmployee', err);
         vm.deferredGetEmployee.reject('There was an error with common rest.svc.js :: getEmployee.');
       });
       return vm.deferredGetEmployee.promise;
@@ -53,13 +43,13 @@
       vm.deferredGetEmployees = $q.defer();
       $http({
         method: 'GET',
-        //url: vm.restfulUrl + 'employee'
-        url: 'http://localhost:8181/api/employee'
-      }).success(function (data) {   //TODO: success/error have been deprecated (see ng1.5 https://docs.angularjs.org/api/ng/service/$http ).
-        vm.deferredGetEmployees.resolve(data);
-      }).error(function (err) {
-        console.log('deferredGetEmployees err', err);
-        //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
+        //url: 'http://localhost:8181/api/employee'
+        url: constants.restful.url + 'employee'
+      }).then(function (data) {
+        vm.deferredGetEmployees.resolve(data.data);
+      }).catch(function (err) {
+        console.log('restSvc.deferredGetEmployees err', err);
+        notification.error('getEmployees', err);
         vm.deferredGetEmployees.reject('There was an error with common rest.svc.js :: getEmployees.');
       });
       return vm.deferredGetEmployees.promise;
@@ -71,15 +61,16 @@
 
       $http({
         method: 'POST',
-        //url: vm.restfulUrl + 'employee'
-        url: 'http://localhost:8181/api/employee',
+        //url: 'http://localhost:8181/api/employee',
+        url: constants.restful.url + 'employee',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},  //TODO: Maybe put this in httpInceptors - http://stackoverflow.com/questions/11442632/how-can-i-post-data-as-form-data-instead-of-a-request-payload/11443066#answer-19633847
         data: $httpParamSerializer(emp)  //TODO: Fixed in ng1.4 - so now we're good (don't need to convert data).
-      }).then(function (data) {   //TODO: success/error have been deprecated (see ng1.5 https://docs.angularjs.org/api/ng/service/$http ).
+      }).then(function (data) {
         vm.deferredCreateEmployee.resolve(data);
       }).catch(function (err) {
-        //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
-        vm.deferredCreateEmployee.reject('There was an error with common rest.svc.js :: getEmployees.');
+        console.log('restSvc.deferredCreateEmployee err', err);
+        notification.error('createEmployee', err);
+        vm.deferredCreateEmployee.reject('There was an error with common rest.svc.js :: createEmployee.');
       });
       return vm.deferredCreateEmployee.promise;
     }
@@ -89,27 +80,22 @@
       vm.deferredDeleteEmployee = $q.defer();
 
       //debugger;
-      //console.log('START restSvc.deleteEmployee');
-      //console.log('emp', emp);
-
       $http({
         method: 'DELETE',
-        url: 'http://localhost:8181/api/employee/' + emp._id
+        //url: 'http://localhost:8181/api/employee/' + emp._id
+        url: constants.restful.url + 'employee/' + emp._id
         //headers: {'Content-Type': 'application/x-www-form-urlencoded'},  //TODO: Maybe put this in httpInceptors - http://stackoverflow.com/questions/11442632/how-can-i-post-data-as-form-data-instead-of-a-request-payload/11443066#answer-19633847
         //data: $httpParamSerializer(emp._id)  //TODO: Fixed in ng1.4 - so now we're good (don't need to convert data).
-      }).then(function (data) {   //TODO: success/error have been deprecated (see ng1.5 https://docs.angularjs.org/api/ng/service/$http ).
-        //console.log('SUCCESS restSvc.deleteEmployee');
+      }).then(function (data) {
         vm.deferredDeleteEmployee.resolve(data);
       }).catch(function (err) {
-        console.log('ERROR restSvc.deleteEmployee');
-        console.log('deferredGetEmployees err', err);
-        //otpUserErrorManager.reportError(vm.otpResourceAgent.translate('otpResources.forms.errorGettingAllUnits'));
-        vm.deferredDeleteEmployee.reject('There was an error with common rest.svc.js :: getEmployees.');
+        console.log('restSvc.deleteEmployee err', err);
+        notification.error('deleteEmployee', err);
+        vm.deferredDeleteEmployee.reject('There was an error with common rest.svc.js :: deleteEmployee.');
       });
       return vm.deferredDeleteEmployee.promise;
     }
-    
-    
+
 
   }
 

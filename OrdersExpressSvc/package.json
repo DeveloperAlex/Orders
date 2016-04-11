@@ -9,21 +9,42 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "description": "OrdersExpressSvc",
+  "keywords": [
+    "example",
+    "reference app",
+    "express",
+    "passport",
+    "mongo",
+    "mongoose",
+    "node.js",
+    "angularjs",
+    "nginx"
+  ],
   "main": "server.js",
   "author": {
     "name": "DeveloperAlex",
     "email": "developeralex@gmail.com"
   },
   "license": "MIT",
+  "homepage": "https://github.com/DeveloperAlex/Orders",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DeveloperAlex/Orders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DeveloperAlex/Orders/issues"
+  },
   "dependencies": {
     "body-parser": "~1.8.1",
     "cookie-parser": "~1.3.3",
     "cors": "~2.7.1",
     "debug": "~2.0.0",
+    "errorhandler": "^1.4.3",
     "express": "^4.9.0",
     "express-jwt": "~3.3.0",
     "express-session": "^1.13.0",
     "jade": "~1.6.0",
+    "jsonwebtoken": "^5.7.0",
     "less": "^2.6.0",
     "less-middleware": "^2.0.1",
     "lodash": "^4.6.1",
@@ -33,6 +54,7 @@
     "nodemon": "^1.8.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
     "pm2": "^0.15.10",
     "serve-favicon": "~2.1.3",
     "stylus": "0.42.3"

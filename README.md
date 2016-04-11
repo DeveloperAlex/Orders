@@ -19,11 +19,24 @@
 * Sublime - good too
 * MongoChef for MongoDB - http://3t.io/mongochef/
 * Postman (Fiddler is good too)
+* JWT Debugger: https://jwt.io/
+* http://editor.swagger.io/
+  - https://github.com/swagger-api/swagger-node/blob/master/docs/quick-start.md
 
 ### Cloud Services:
 * Google Cloud (similar to AWS) - https://cloud.google.com/
 * https://mlab.com (previously called MongoLab.com)
 * https://auth0.com
+  - https://ask.auth0.com/
+  - https://auth0.com/docs/api/v2
+  - Setting up OAuth 2.0 on LinkedIn:
+    * https://auth0.com/docs/connections/social/linkedin
+    * https://www.linkedin.com/developer/apps
+
+
+### Passport.js vs Stormpath vs Auth0
+* http://www.google.com/trends/explore?q=passportjs%2C+connect-auth%2C+everyauth#q=passportjs%2C%20auth0%2C%20stormpath&cmpt=q&tz=Etc%2FGMT%2B4
+* Above link shows that Auth0 has recently surpassed Passport.js
 
 ### Uses:
 * Ubuntu 14.04
@@ -80,6 +93,7 @@
   - http://www.haproxy.org/
   - https://www.getpostman.com/docs/collections
   - http://angular-ui.github.io/ui-router/site
+  - https://github.com/jirikavi/AngularJS-Toaster
 
 * Webstorm
   - https://www.youtube.com/user/JetBrainsTV/about

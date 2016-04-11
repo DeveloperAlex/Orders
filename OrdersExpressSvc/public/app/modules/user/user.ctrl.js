@@ -1,8 +1,14 @@
+
+
 (function () {
   'use strict';
-  angular.module('ordersApp')
-    .controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
-        function ($scope, MongoService, $state, $stateParams) {
+  angular.module('oa-user')
+    // .controller('userController', ['$scope', 'MongoService', '$state', '$stateParams',
+    //     function ($scope, MongoService, $state, $stateParams) {
+    .controller('userController', ['$scope', '$state', '$stateParams',
+      function ($scope, $state, $stateParams) {
+
+
       var self = this;
 
       self.username = $stateParams.username;
@@ -28,3 +34,5 @@
   //});
 
 })();
+
+

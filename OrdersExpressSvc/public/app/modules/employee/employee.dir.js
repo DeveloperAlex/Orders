@@ -12,7 +12,7 @@
     return {
       restrict: 'E',
       //template: 'User: {{emp.user}} &nbsp; Pw: {{emp.pw}}',
-      template: '<div class="row"><button class="btn btn-xs col-sm-1" ng-click="employeeDelete(emp)">Delete</button><span class="col-sm-2">User: {{emp.user}}</span><span class="col-sm-2">Pw: {{emp.pw}}</span></div>',
+      template: '<div class="row" style="margin-top: 2px"><button class="btn btn-xs col-sm-1" ng-click="employeeDelete(emp)">Delete</button><span class="col-sm-2">User: {{emp.user}}</span><span class="col-sm-2">Pw: {{emp.pw}}</span></div>',
       scope: {
         emp: '='
       },

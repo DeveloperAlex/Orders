@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ordersApp" ng-controller="AppCtrl as vm" ng-strict-di lang="en">
+<html ng-app="ordersApp" ng-controller="AppCtrl as app" ng-strict-di lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Orders Demo App</title>
@@ -34,104 +34,130 @@
         <script src="app/modules/home/home.js"></script>
 
         <link src="app/modules/login/login.css" rel="stylesheet" type="text/css" ></link>
-        <script src="app/modules/login/login.js"></script>
+        <script src="app/modules/login/login.ctrl.js"></script>
     -->
 
 
     <!-- Run "gulp inject" to refresh 4 sections below -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <!-- endbower -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
 
 
     <!-- inject:css -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="app/modules/home/home.css">
-    <link rel="stylesheet" href="app/modules/login/login.css">
+    <link rel="stylesheet" href="app/modules/loginAuth0/login.css">
     <!-- endinject -->
 
 </head>
-<body><!--<body ng-cloak>-->
+<!--<body ng-cloak>-->
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="nav navbar-header navbar-left navbar-brand">Orders App</div>
         <ul class="nav navbar-left nav-pills">
-            <li class="active"><a ui-sref="login">Login</a></li>
-            <li><a ui-sref="user({ username: 'bob' })">user bob</a></li>
-            <li ng-click="vm.orderClicked = !vm.orderClicked;" ng-class="{'active':vm.orderClicked}"><a ui-sref="order">Order</a></li>
+            <li class="active" data-toggle="pill"><a ui-sref="home">Home</a></li>
+            <li class="active" data-toggle="pill"><a ui-sref="loginAuth0">Login</a></li>
+            <!--<li class="active"><a ui-sref="logoutAuth0">Logout</a></li>-->
+            <li class="active" data-toggle="pill"><a ui-sref="logoutAuth0">Logout</a></li>
+            <!--<li ng-hide="true"><a ui-sref="user({ username: 'bob' })">user bob</a></li>-->
+            <!--<li ng-hide="true" ng-click="app.orderClicked = !app.orderClicked;" ng-class="{'active':app.orderClicked}"><a ui-sref="order">Order</a></li>-->
+            <li data-toggle="pill" style="color: #0daef8; padding: 10px 15px">{{app.name}}</li>
         </ul>
         <ul class="nav navbar-right nav-pills">
-            <li><a ui-sref="page1"><i class="fa fa-user"></i>Login</a></li>
-            <li><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>
-            <li><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
+            <!--<li ng-hide="true"><a ui-sref="loginPassport"><i class="fa fa-user"></i>Login Passport</a></li>-->
+            <!--<li ng-hide="true"><a ui-sref="logoutPassport"><i class="fa fa-user"></i>Logout Passport</a></li>-->
+            <!--<li ng-hide="true"><a ui-sref="signupPassport"><i class="fa fa-user"></i>SignUp Passport</a></li>-->
+            <!--<li ng-hide="true"><a ui-sref="page2"><i class="fa fa-cog"></i>Setting</a></li>-->
+            <li class="active"><a ui-sref="employee"><i class="fa fa-users"></i>Employees</a></li>
         </ul>
     </div>
+</nav>
+<!--<div class="container">Debugging scope<br/>{{app | json}}</div>-->
+
+
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div ui-view></div>
+    </div>
 </div>
-<!--<div class="container">Debugging scope<br/>{{vm | json}}</div>-->
 
 
-
-<div class="container">
-    --aabboovvee--
-    <div ui-view></div>
-    <br/>
-    --bbeellooww--
-</div>
+<br/>
+<br/>
+<button ng-click="app.testToast()">Test Toast Notification</button>
+<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+<!--https://github.com/jirikavi/AngularJS-Toaster-->
 
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+<script src="bower_components/angular-storage/dist/angular-storage.js"></script>
 <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/AngularJS-Toaster/toaster.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/AngularJS-Toaster/toaster.js"></script>
 <!-- endbower -->
+<!-- Below from: https://auth0.com/docs/client-platforms/angularjs#1-add-the-auth0-scripts-and-set-the-viewport-->
+<script src="//code.angularjs.org/1.2.16/angular-cookies.js"></script>
+<script type="text/javascript" src="//cdn.auth0.com/js/lock-9.0.js"></script>
 <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
 <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
-<script type="text/javascript" src="//cdn.auth0.com/js/lock-7.js"></script>
 <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-angular-4.js"></script>
-
 
 
 <!-- inject:js -->
 <script src="app/modules/common/_module.js"></script>
 <script src="app/modules/common/models/employeeModel.js"></script>
-<script src="app/modules/login/login.js"></script>
+<script src="app/modules/user/_module.js"></script>
+<script src="app/modules/user/user.ctrl.js"></script>
+<script src="app/modules/order/_module.js"></script>
+<script src="app/modules/order/order.ctrl.js"></script>
+<script src="app/modules/order/mongo.svc.js"></script>
+<script src="app/modules/loginPassport/_module.js"></script>
+<script src="app/modules/loginPassport/login.ctrl.js"></script>
+<script src="app/modules/loginAuth0/_module.js"></script>
+<script src="app/modules/loginAuth0/logout.ctrl.js"></script>
+<script src="app/modules/loginAuth0/login.ctrl.js"></script>
 <script src="app/modules/employee/_module.js"></script>
 <script src="app/modules/employee/employeeDetail.ctrl.js"></script>
 <script src="app/modules/employee/employeeCreate.ctrl.js"></script>
 <script src="app/modules/employee/employee.dir.js"></script>
 <script src="app/modules/employee/employee.dir.forminput.js"></script>
 <script src="app/modules/employee/employee.ctrl.js"></script>
-<script src="app/modules/home/home.js"></script>
+<script src="app/modules/home/_module.js"></script>
+<script src="app/modules/home/home.ctrl.js"></script>
 <script src="app/modules/common/rest.svc.js"></script>
-<script src="app/modules/app/routes.js"></script>
+<script src="app/modules/common/oaState.js"></script>
+<script src="app/modules/common/notify.svc.js"></script>
+<script src="app/modules/common/constants.js"></script>
 <script src="app/modules/app/_module.js"></script>
+<script src="app/modules/app/routes.js"></script>
 <script src="app/modules/app/ordersApp.js"></script>
-<script src="app/modules/app/constants.js"></script>
-<script src="app/service/mongo.svc.js"></script>
-<script src="app/feature/user.ctrl.js"></script>
-<script src="app/feature/order.ctrl.js"></script>
-<script src="app/feature/login.ctrl.js"></script>
+<script src="app/modules/app/ordersApp.ctrl.js"></script>
+<script src="app/modules/app/httpInterceptors.js"></script>
 <!-- endinject -->
 
 
 <script type="application/javascript">
     //Needed for: "navbar-fixed-top" css.
-    var onResize = function() {
+    var onResize = function () {
         // apply dynamic padding at the top of the body according to the fixed navbar height
         $("body").css("padding-top", $(".navbar-fixed-top").height());
     };
     $(window).resize(onResize); //Attach the function to the window resize event
-    $(function() { onResize(); }); //Call it also when the page is ready after load or reload
+    $(function () {
+        onResize();
+    }); //Call it also when the page is ready after load or reload
 </script>
 
 </body>

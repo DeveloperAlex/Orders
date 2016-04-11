@@ -7,7 +7,8 @@
   //TODO: Dead code - rest.svc.js has replaced this.
   //TODO: Dead code - rest.svc.js has replaced this.
   //TODO: Dead code - rest.svc.js has replaced this.
-  angular.module('ordersApp').factory('MongoService', ['$http', '$q', function ($http, $q) {
+  angular.module('oa-order')
+    .factory('MongoService', ['$http', '$q', 'notification', function ($http, $q, notification) {
     var factory = {};
     factory.testProperty = 'MongoService - testProperty';
 
@@ -23,9 +24,10 @@
       }).success(function (data) {
         //console.log('data= ' + data);
         deferred.resolve(data);
-      }).error(function () {
-        alert('error - getEmployees');
-        deferred.reject(error);
+      }).error(function (err) {
+        //alert('error - getEmployees');
+        notification.warn('oa-order:MongoService', err);
+        deferred.reject(err);
       });
       return deferred.promise;
     };
