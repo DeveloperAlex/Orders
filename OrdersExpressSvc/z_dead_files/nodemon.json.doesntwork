@@ -1,7 +1,0 @@
-﻿{
-  "verbose": true,
-  "delay": "20",
-  "env": {
-    "NODE_ENV": "development"
-  }
-}
